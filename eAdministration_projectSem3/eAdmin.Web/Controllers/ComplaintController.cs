@@ -16,11 +16,16 @@ namespace eAdmin.Web.Controllers
     {
         private readonly IComplaintService _complaintService;
         private readonly IUnitOfWork _uow;
+        private readonly INotificationService _notify;
 
-        public ComplaintController(IComplaintService complaintService, IUnitOfWork uow)
+        public ComplaintController(
+            IComplaintService complaintService,
+            IUnitOfWork uow,
+            INotificationService notify)
         {
             _complaintService = complaintService;
             _uow = uow;
+            _notify = notify;
         }
 
         // ── GET: /Complaint ────────────────────────────────────────────────
@@ -108,7 +113,7 @@ namespace eAdmin.Web.Controllers
                 Title = vm.Title.Trim(),
                 Description = vm.Description.Trim(),
                 LabId = vm.LabId,
-                EquipmentId = vm.EquipmentId,   // nullable — from AJAX dropdown
+                EquipmentId = vm.EquipmentId,
                 ComplaintTypeId = vm.ComplaintTypeId,
                 Priority = vm.Priority,
                 ReportedBy = userId,
@@ -118,16 +123,15 @@ namespace eAdmin.Web.Controllers
 
             await _complaintService.CreateAndAutoAssignAsync(complaint);
 
-            TempData["Success"] = "Complaint submitted. A technician will be assigned shortly.";
+            TempData["Success"] = "Complaint submitted successfully. A technician will be assigned shortly.";
             return RedirectToAction(nameof(Index));
         }
 
-        // ── GET: /Complaint/GetEquipmentByLab?labId=1  (AJAX endpoint) ────
+        // ── GET: /Complaint/GetEquipmentByLab?labId=1  (AJAX) ─────────────
         [HttpGet]
         public async Task<IActionResult> GetEquipmentByLab(int labId)
         {
-            if (labId <= 0)
-                return Json(Array.Empty<object>());
+            if (labId <= 0) return Json(Array.Empty<object>());
 
             var equips = await _uow.Equipments.FindAsync(
                 e => e.LabId == labId && e.Condition != "OutOfService");
@@ -173,21 +177,114 @@ namespace eAdmin.Web.Controllers
         // ── POST: /Complaint/UpdateStatus ──────────────────────────────────
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateStatus(int id, string status)
+        public async Task<IActionResult> UpdateStatus(int id, string status, string? resolutionNote)
         {
+            var role = User.FindFirst("Role")?.Value ?? "";
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            // ── Only TechStaff can update status ──────────────────────────
+            if (role != "TechStaff")
+            {
+                TempData["Error"] = "Only TechStaff can update complaint status.";
+                return RedirectToAction(nameof(Details), new { id });
+            }
+
             if (string.IsNullOrEmpty(status))
             {
                 TempData["Error"] = "Please select a status.";
                 return RedirectToAction(nameof(Details), new { id });
             }
 
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-            var ok = await _complaintService.UpdateStatusAsync(id, status, userId);
+            // TechStaff cannot set Pending or Assigned — system-managed
+            if (status == "Pending" || status == "Assigned")
+            {
+                TempData["Error"] = "Cannot set status to 'Pending' or 'Assigned'. " +
+                                    "These are system-managed statuses.";
+                return RedirectToAction(nameof(Details), new { id });
+            }
 
-            TempData[ok ? "Success" : "Error"] = ok
-                ? $"Status updated to '{status}' successfully."
-                : "Complaint not found.";
+            var complaint = await _uow.Complaints.GetByIdAsync(id);
+            if (complaint == null)
+            {
+                TempData["Error"] = "Complaint not found.";
+                return RedirectToAction(nameof(Index));
+            }
 
+            // Closed complaint cannot be updated
+            if (complaint.Status == "Closed")
+            {
+                TempData["Error"] = "This complaint is already closed and cannot be updated.";
+                return RedirectToAction(nameof(Details), new { id });
+            }
+
+            var oldStatus = complaint.Status;
+            complaint.Status = status;
+
+            if (status == "Resolved" || status == "Closed")
+                complaint.ResolvedAt = DateTime.UtcNow;
+
+            // Append technician note to Description with timestamp
+            if (!string.IsNullOrWhiteSpace(resolutionNote))
+            {
+                var techName = User.Identity?.Name ?? "Technician";
+                var timestamp = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+                var entry = $"\n\n─── [{timestamp}] {techName} → {status} ───\n{resolutionNote.Trim()}";
+                complaint.Description = (complaint.Description ?? "") + entry;
+            }
+
+            _uow.Complaints.Update(complaint);
+
+            // ── Auto-update equipment condition based on new status ────────
+            if (complaint.EquipmentId.HasValue)
+            {
+                var equipment = await _uow.Equipments.GetByIdAsync(complaint.EquipmentId.Value);
+                if (equipment != null)
+                {
+                    equipment.Condition = status switch
+                    {
+                        "InProgress" => "Poor",
+                        "Resolved" => "Good",
+                        "Closed" => complaint.ResolvedAt.HasValue ? "Fair" : "OutOfService",
+                        _ => equipment.Condition
+                    };
+                    _uow.Equipments.Update(equipment);
+                }
+            }
+
+            // Audit log
+            await _uow.AuditLogs.AddAsync(new AuditLog
+            {
+                UserId = userId,
+                Action = "UpdateComplaintStatus",
+                EntityType = "Complaint",
+                EntityId = complaint.ComplaintId,
+                Details = $"Status: {oldStatus} → {status}" +
+                             (!string.IsNullOrWhiteSpace(resolutionNote)
+                                 ? $" | Note: {resolutionNote.Trim()}"
+                                 : ""),
+                CreatedAt = DateTime.UtcNow
+            });
+
+            await _uow.SaveChangesAsync();
+
+            // Notify reporter when Resolved or Closed
+            if (status == "Resolved" || status == "Closed")
+            {
+                var noteMsg = !string.IsNullOrWhiteSpace(resolutionNote)
+                    ? $" Technician note: {resolutionNote.Trim()}"
+                    : string.Empty;
+
+                await _notify.SendAsync(
+                    complaint.ReportedBy,
+                    "InApp",
+                    $"Complaint #{complaint.ComplaintId} {status}",
+                    $"Your complaint \"{complaint.Title}\" has been marked as {status}.{noteMsg}",
+                    "Complaint",
+                    complaint.ComplaintId);
+            }
+
+            TempData["Success"] = $"Status updated to '{status}'." +
+                                  (!string.IsNullOrWhiteSpace(resolutionNote) ? " Note saved." : "");
             return RedirectToAction(nameof(Details), new { id });
         }
 
