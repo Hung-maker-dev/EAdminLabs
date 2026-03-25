@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Schedule\Edit\" />
+    <Folder Include="wwwroot\uploads\Images\" />
   </ItemGroup>
 
 </Project>
