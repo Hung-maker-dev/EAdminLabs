@@ -2,6 +2,8 @@
 
 # Hung
 
+# QUang
+
 ASP.NET Core MVC (.NET 8) | Entity Framework Core 8 (Database First) | SQL Server | Onion Architecture
 
 ## Features Implemented
