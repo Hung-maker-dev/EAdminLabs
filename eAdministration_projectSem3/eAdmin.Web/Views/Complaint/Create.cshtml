@@ -1,0 +1,166 @@
+﻿@model eAdmin.Web.ViewModels.ComplaintCreateViewModel
+@{
+    ViewData["Title"] = "Submit Complaint";
+}
+
+<div class="d-flex align-items-center mb-3">
+    <a href="/Complaint/Index" class="btn btn-outline-secondary btn-sm me-2">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <h4 class="mb-0"><i class="fas fa-exclamation-triangle me-2 text-danger"></i>Submit Complaint</h4>
+</div>
+
+<div class="card shadow-sm" style="max-width:660px">
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    <strong>Please fix the following:</strong>
+                    <ul class="mb-0 mt-1">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@err.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label fw-semibold">Title <span class="text-danger">*</span></label>
+                <input asp-for="Title" class="form-control @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Title") ? "is-invalid" : "")"
+                       placeholder="Brief description of the issue (min 5 characters)" autofocus />
+                <span asp-validation-for="Title" class="invalid-feedback"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LabId" class="form-label fw-semibold">Lab <span class="text-danger">*</span></label>
+                <select asp-for="LabId" id="labSelect" class="form-select @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("LabId") ? "is-invalid" : "")">
+                    <option value="">-- Select Lab --</option>
+                    @foreach (var item in (IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)ViewBag.Labs)
+                    {
+                        <option value="@item.Value" selected="@(item.Selected)">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="LabId" class="invalid-feedback"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Equipment
+                    <small class="text-muted fw-normal">(optional — select if issue is with a specific device)</small>
+                </label>
+
+                <select name="EquipmentId" id="equipmentSelect" class="form-select" disabled>
+                    <option value="">-- Select Lab first --</option>
+                </select>
+
+                <div id="equipmentSpinner" class="mt-1 small text-muted" style="display:none">
+                    <span class="spinner-border spinner-border-sm me-1"></span> Loading equipment...
+                </div>
+                <div id="equipmentMsg" class="mt-1 small" style="display:none"></div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ComplaintTypeId" class="form-label fw-semibold">Complaint Type <span class="text-danger">*</span></label>
+                <select asp-for="ComplaintTypeId" class="form-select @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("ComplaintTypeId") ? "is-invalid" : "")">
+                    <option value="">-- Select Type --</option>
+                    @foreach (var item in (IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)ViewBag.Types)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="ComplaintTypeId" class="invalid-feedback"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Priority" class="form-label fw-semibold">Priority <span class="text-danger">*</span></label>
+                <select asp-for="Priority" class="form-select">
+                    <option value="Low">🟢 Low — Minor inconvenience</option>
+                    <option value="Medium" selected>🟡 Medium — Affects work but workaround exists</option>
+                    <option value="High">🟠 High — Significantly affects work</option>
+                    <option value="Critical">🔴 Critical — Complete blockage, urgent fix needed</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label fw-semibold">Description <span class="text-danger">*</span></label>
+                <textarea asp-for="Description" class="form-control @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Description") ? "is-invalid" : "")"
+                          rows="4" placeholder="Describe the issue: what happened, when it started, what you already tried..."></textarea>
+                <span asp-validation-for="Description" class="invalid-feedback"></span>
+                <div class="form-text">Minimum 10 characters. More detail = faster resolution.</div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+                <a href="/Complaint/Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-paper-plane me-1"></i>Submit Complaint
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const labSelect    = document.getElementById('labSelect');
+        const equipSelect  = document.getElementById('equipmentSelect');
+        const equipSpinner = document.getElementById('equipmentSpinner');
+        const equipMsg     = document.getElementById('equipmentMsg');
+
+        async function loadEquipment(labId) {
+            equipSelect.innerHTML = '<option value="">-- None (general complaint) --</option>';
+            equipSelect.disabled  = true;
+            equipMsg.style.display = 'none';
+
+            if (!labId) return;
+
+            equipSpinner.style.display = 'block';
+
+            try {
+                const res  = await fetch(`/Complaint/GetEquipmentByLab?labId=${labId}`);
+                const data = await res.json();
+                equipSpinner.style.display = 'none';
+
+                if (!data.length) {
+                    equipMsg.className     = 'mt-1 small text-muted';
+                    equipMsg.textContent   = 'No equipment registered in this lab.';
+                    equipMsg.style.display = 'block';
+                    return;
+                }
+
+                data.forEach(eq => {
+                    const opt = document.createElement('option');
+                    opt.value = eq.equipmentId;
+                    const icon = eq.condition === 'Good' ? '🟢' :
+                                 eq.condition === 'Fair' ? '🟡' :
+                                 eq.condition === 'Poor' ? '🟠' : '🔴';
+                    opt.textContent = `${icon} [${eq.assetCode}] ${eq.typeName}${eq.model ? ' – ' + eq.model : ''}`;
+                    // Pre-select if returning from validation error
+                    if (eq.equipmentId == @(Model.EquipmentId?.ToString() ?? "null")) opt.selected = true;
+                    equipSelect.appendChild(opt);
+                });
+
+                equipSelect.disabled   = false;
+                equipMsg.className     = 'mt-1 small text-success';
+                equipMsg.textContent   = `${data.length} equipment available. Select one if your complaint is about a specific device.`;
+                equipMsg.style.display = 'block';
+
+            } catch {
+                equipSpinner.style.display = 'none';
+                equipMsg.className     = 'mt-1 small text-danger';
+                equipMsg.textContent   = 'Failed to load equipment.';
+                equipMsg.style.display = 'block';
+            }
+        }
+
+        labSelect.addEventListener('change', () => loadEquipment(labSelect.value));
+
+        // Auto-load on page load if lab already selected (returning from validation error)
+        if (labSelect.value) loadEquipment(labSelect.value);
+    </script>
+}

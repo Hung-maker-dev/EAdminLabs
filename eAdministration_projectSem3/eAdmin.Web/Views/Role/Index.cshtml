@@ -1,0 +1,18 @@
+@model IEnumerable<eAdmin.Web.ViewModels.RoleViewModel>
+@{ ViewData["Title"] = "Manage Roles"; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4><i class="fas fa-shield-alt me-2 text-primary"></i>Manage Roles</h4>
+    <a href="/Role/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>New Role</a>
+</div>
+@if(TempData["Success"]!=null){<div class="alert alert-success">@TempData["Success"]</div>}
+@if(TempData["Error"]!=null){<div class="alert alert-danger">@TempData["Error"]</div>}
+<table class="table table-hover table-bordered">
+<thead class="table-dark"><tr><th>#</th><th>Role Name</th><th>Description</th><th>Users</th><th>Actions</th></tr></thead>
+<tbody>@foreach(var r in Model){<tr>
+<td>@r.RoleId</td><td><strong>@r.RoleName</strong></td><td>@r.Description</td>
+<td><span class="badge bg-info">@r.UserCount</span></td>
+<td>
+<a href="/Role/Edit/@r.RoleId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+<form method="post" action="/Role/Delete/@r.RoleId" class="d-inline">@Html.AntiForgeryToken()
+<button class="btn btn-danger btn-sm" onclick="return confirm('Delete role?')"><i class="fas fa-trash"></i></button></form>
+</td></tr>}</tbody></table>

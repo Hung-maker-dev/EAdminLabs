@@ -1,0 +1,57 @@
+@model eAdmin.Web.ViewModels.ComplaintTypeViewModel
+@{
+    ViewData["Title"] = "Edit Complaint Type";
+}
+
+<div class="d-flex align-items-center mb-3">
+    <a href="/ComplaintType/Index" class="btn btn-outline-secondary btn-sm me-2">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <h4 class="mb-0"><i class="fas fa-edit me-2 text-warning"></i>Edit Complaint Type</h4>
+</div>
+
+<div class="card shadow-sm" style="max-width:520px">
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="ComplaintTypeId" />
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    <strong>Please fix the following errors:</strong>
+                    <ul class="mb-0 mt-1">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@err.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <div class="mb-3">
+                <label asp-for="TypeName" class="form-label fw-semibold">
+                    Type Name <span class="text-danger">*</span>
+                </label>
+                <input asp-for="TypeName" class="form-control @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("TypeName") ? "is-invalid" : "")" />
+                <span asp-validation-for="TypeName" class="invalid-feedback"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label fw-semibold">
+                    Description <small class="text-muted fw-normal">(optional)</small>
+                </label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+                <a href="/ComplaintType/Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-warning">
+                    <i class="fas fa-save me-1"></i>Save Changes
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

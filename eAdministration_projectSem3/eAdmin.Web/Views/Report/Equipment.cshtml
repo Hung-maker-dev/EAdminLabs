@@ -1,0 +1,51 @@
+@model IEnumerable<eAdmin.Web.ViewModels.EquipmentViewModel>
+@{ ViewData["Title"] = "Equipment Condition Report"; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4><i class="fas fa-desktop me-2 text-success"></i>Equipment Condition Report</h4>
+    <button onclick="window.print()" class="btn btn-outline-secondary btn-sm no-print"><i class="fas fa-print me-1"></i>Print</button>
+</div>
+<form method="get" class="row g-2 mb-3 no-print">
+    <div class="col-md-3">
+        <select name="labId" asp-items="ViewBag.Labs" class="form-select form-select-sm">
+            <option value="">All Labs</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="condition" class="form-select form-select-sm">
+            <option value="">All Conditions</option>
+            <option value="Good">Good</option><option value="Fair">Fair</option>
+            <option value="Poor">Poor</option><option value="OutOfService">Out of Service</option>
+        </select>
+    </div>
+    <div class="col-md-2"><button class="btn btn-primary btn-sm w-100">Filter</button></div>
+</form>
+
+@{ dynamic s = ViewBag.Summary; }
+<div class="row g-2 mb-3">
+    <div class="col"><div class="card text-center border-success"><div class="card-body py-2"><div class="fw-bold text-success fs-4">@s.Good</div><div class="small">Good</div></div></div></div>
+    <div class="col"><div class="card text-center border-info"><div class="card-body py-2"><div class="fw-bold text-info fs-4">@s.Fair</div><div class="small">Fair</div></div></div></div>
+    <div class="col"><div class="card text-center border-warning"><div class="card-body py-2"><div class="fw-bold text-warning fs-4">@s.Poor</div><div class="small">Poor</div></div></div></div>
+    <div class="col"><div class="card text-center border-danger"><div class="card-body py-2"><div class="fw-bold text-danger fs-4">@s.OutOfService</div><div class="small">Out of Service</div></div></div></div>
+    <div class="col"><div class="card text-center border-danger"><div class="card-body py-2"><div class="fw-bold text-danger fs-4">@s.WarrantyExpired</div><div class="small">Warranty Expired</div></div></div></div>
+    <div class="col"><div class="card text-center border-warning"><div class="card-body py-2"><div class="fw-bold text-warning fs-4">@s.ExpiringSoon</div><div class="small">Warranty ≤30 days</div></div></div></div>
+</div>
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover table-sm">
+<thead class="table-dark">
+    <tr><th>Asset Code</th><th>Type</th><th>Model</th><th>Serial</th><th>Lab</th><th>Condition</th><th>Purchase Date</th><th>Warranty Expiry</th></tr>
+</thead>
+<tbody>
+@foreach(var e in Model){
+    var rowCls = e.WarrantyExpired ? "table-danger" : e.WarrantyExpiringSoon ? "table-warning" : "";
+    var condBadge = e.Condition switch { "Good"=>"bg-success","Fair"=>"bg-info","Poor"=>"bg-warning text-dark",_=>"bg-danger" };
+    <tr class="@rowCls">
+    <td><strong>@e.AssetCode</strong></td>
+    <td>@e.TypeName</td><td>@e.Model</td><td>@e.SerialNumber</td><td>@e.LabName</td>
+    <td><span class="badge @condBadge">@e.Condition</span></td>
+    <td>@(e.PurchaseDate?.ToString("dd/MM/yyyy") ?? "–")</td>
+    <td>@if(e.WarrantyExpiry.HasValue){if(e.WarrantyExpired){<span class="badge bg-danger">EXPIRED @e.WarrantyExpiry.Value.ToString("dd/MM/yy")</span>}else if(e.WarrantyExpiringSoon){<span class="badge bg-warning text-dark">@e.WarrantyExpiry.Value.ToString("dd/MM/yy")</span>}else{<span>@e.WarrantyExpiry.Value.ToString("dd/MM/yyyy")</span>}}else{<span class="text-muted">–</span>}</td>
+    </tr>}
+</tbody>
+</table>
+</div>

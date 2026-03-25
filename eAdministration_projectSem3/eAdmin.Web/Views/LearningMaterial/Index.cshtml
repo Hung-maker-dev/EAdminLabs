@@ -1,0 +1,157 @@
+﻿@model IEnumerable<eAdmin.Web.ViewModels.LearningMaterialViewModel>
+@{
+    ViewData["Title"] = "e-Learning Materials";
+    var role = User.FindFirst("Role")?.Value ?? "";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4><i class="fas fa-book-open me-2 text-success"></i>e-Learning Materials</h4>
+    @if (role == "Admin" || role == "Instructor")
+    {
+        <a href="/LearningMaterial/Create" class="btn btn-success btn-sm">
+            <i class="fas fa-upload me-1"></i>Upload Material
+        </a>
+    }
+</div>
+
+@* ── Filter bar ── *@
+<form method="get" class="row g-2 mb-4">
+    <div class="col-md-3">
+        <select name="type" class="form-select form-select-sm">
+            <option value="">All Types</option>
+            @foreach (var t in (string[])ViewBag.Types)
+            {
+                <option value="@t" selected="@(ViewBag.FilterType == t)">@t</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="deptId" class="form-select form-select-sm">
+            <option value="">All Departments</option>
+            @foreach (var d in (IEnumerable<dynamic>)ViewBag.Departments)
+            {
+                <option value="@d.DepartmentId">@d.DepartmentName</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-outline-secondary btn-sm w-100">
+            <i class="fas fa-filter me-1"></i>Filter
+        </button>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i>No materials found.
+    </div>
+}
+
+@* ── Material cards ── *@
+<div class="row g-3">
+    @foreach (var m in Model)
+    {
+        @* Pick icon and color by type *@
+        var (iconClass, badgeColor) = m.MaterialType switch
+        {
+            "Syllabus" => ("fa-graduation-cap", "bg-primary"),
+            "InstallGuide" => ("fa-tools", "bg-warning text-dark"),
+            "ELearning" => ("fa-play-circle", "bg-info"),
+            "ServerInfo" => ("fa-server", "bg-secondary"),
+            _ => ("fa-file-alt", "bg-dark")
+        };
+
+        bool hasFile = !string.IsNullOrEmpty(m.FilePath);
+        bool hasExternalUrl = !string.IsNullOrEmpty(m.ExternalUrl);
+
+        <div class="col-md-4 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+
+                @* Colored top bar *@
+                <div class="card-header @badgeColor py-2">
+                    <i class="fas @iconClass me-2"></i>
+                    <strong>@m.MaterialType</strong>
+                    @if (m.IsPublic)
+                    {
+                        <span class="badge bg-light text-dark ms-1" style="font-size:0.65rem">Public</span>
+                    }
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                    <h6 class="card-title fw-bold mb-1">@m.Title</h6>
+
+                    @if (!string.IsNullOrEmpty(m.Description))
+                    {
+                        <p class="card-text text-muted small mb-2">@m.Description</p>
+                    }
+
+                    <div class="text-muted small mb-3">
+                        <i class="fas fa-building me-1"></i>@m.DeptName
+                        &nbsp;
+                        <i class="fas fa-user me-1"></i>@m.UploaderName
+                        <br />
+                        <i class="fas fa-clock me-1"></i>@m.CreatedAt.ToString("dd/MM/yyyy")
+                    </div>
+
+                    @* ── Download / Open buttons ── *@
+                    <div class="mt-auto d-flex flex-column gap-2">
+
+                        @* File uploaded → Download button *@
+                        @if (hasFile)
+                        {
+                            <a href="@m.FilePath" download
+                               class="btn btn-success btn-sm w-100">
+                                <i class="fas fa-download me-1"></i>
+                                Download File
+                                @{
+                                    var ext = System.IO.Path.GetExtension(m.FilePath ?? "").ToUpper().TrimStart('.');
+                                }
+                                @if (!string.IsNullOrEmpty(ext))
+                                {
+                                    <span class="badge bg-white text-success ms-1" style="font-size:0.65rem">@ext</span>
+                                }
+                            </a>
+                        }
+
+                        @* External URL → Open button *@
+                        @if (hasExternalUrl)
+                        {
+                            <a href="@m.ExternalUrl" target="_blank" rel="noopener"
+                               class="btn btn-outline-primary btn-sm w-100">
+                                <i class="fas fa-external-link-alt me-1"></i>Open Link
+                            </a>
+                        }
+
+                        @* Neither file nor URL *@
+                        @if (!hasFile && !hasExternalUrl)
+                        {
+                            <span class="btn btn-outline-secondary btn-sm w-100 disabled">
+                                <i class="fas fa-ban me-1"></i>No file available
+                            </span>
+                        }
+                    </div>
+                </div>
+
+                @* Admin/Instructor actions *@
+                @if (role == "Admin" || role == "Instructor")
+                {
+                    <div class="card-footer bg-transparent d-flex gap-2 justify-content-end py-2">
+                        <a href="/LearningMaterial/Edit/@m.MaterialId"
+                           class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <form method="post" action="/LearningMaterial/Delete/@m.MaterialId" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Delete this material?')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+</div>

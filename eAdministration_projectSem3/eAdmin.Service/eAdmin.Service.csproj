@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eAdmin.Domain\eAdmin.Domain.csproj" />
+    <ProjectReference Include="..\eAdmin.Repository\eAdmin.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

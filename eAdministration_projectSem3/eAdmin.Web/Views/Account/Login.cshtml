@@ -1,0 +1,77 @@
+@model eAdmin.Web.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Đăng Nhập";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Nhập - eAdmin Lab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); min-height: 100vh; }
+        .login-card { border: none; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .login-header { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 16px 16px 0 0; }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center">
+    <div class="card login-card" style="width: 420px;">
+        <div class="login-header text-white text-center p-4">
+            <i class="fas fa-laptop-code fa-3x mb-3"></i>
+            <h4 class="fw-bold mb-1">e-Administration</h4>
+            <p class="mb-0 opacity-75">Computer Labs Management</p>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Login" method="post">
+                <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="All" class="alert alert-danger py-2" style="display:none"></div>
+                @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+                {
+                    <div class="alert alert-danger py-2">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <div>@err.ErrorMessage</div>
+                        }
+                    </div>
+                }
+
+                <div class="mb-3">
+                    <label asp-for="Username" class="form-label fw-semibold">Tên Đăng Nhập</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user text-primary"></i></span>
+                        <input asp-for="Username" class="form-control" placeholder="Nhập username" autofocus />
+                    </div>
+                    <span asp-validation-for="Username" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label fw-semibold">Mật Khẩu</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock text-primary"></i></span>
+                        <input asp-for="Password" class="form-control" placeholder="Nhập mật khẩu" />
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4 form-check">
+                    <input asp-for="RememberMe" class="form-check-input" type="checkbox" />
+                    <label asp-for="RememberMe" class="form-check-label">Ghi nhớ đăng nhập</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
+                    <i class="fas fa-sign-in-alt me-2"></i>Đăng Nhập
+                </button>
+            </form>
+        </div>
+        <div class="card-footer text-center text-muted small py-3">
+            &copy; @DateTime.Now.Year eAdmin Lab Management System
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

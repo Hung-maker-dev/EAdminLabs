@@ -1,0 +1,94 @@
+@model IEnumerable<eAdmin.Web.ViewModels.ComplaintTypeViewModel>
+@{
+    ViewData["Title"] = "Complaint Types";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4><i class="fas fa-tags me-2 text-primary"></i>Complaint Types</h4>
+    <a href="/ComplaintType/Create" class="btn btn-primary btn-sm">
+        <i class="fas fa-plus me-1"></i>New Type
+    </a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        <i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i>No complaint types found. Create one to get started.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th style="width:50px">#</th>
+                    <th>Type Name</th>
+                    <th>Description</th>
+                    <th class="text-center" style="width:120px">In Use</th>
+                    <th class="text-center" style="width:120px">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model)
+                {
+                    <tr>
+                        <td class="text-muted small">@t.ComplaintTypeId</td>
+                        <td><strong>@t.TypeName</strong></td>
+                        <td class="text-muted small">@(string.IsNullOrEmpty(t.Description) ? "–" : t.Description)</td>
+                        <td class="text-center">
+                            @if (t.ComplaintCount > 0)
+                            {
+                                <span class="badge bg-warning text-dark">
+                                    <i class="fas fa-link me-1"></i>@t.ComplaintCount complaint(s)
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Not used</span>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a href="/ComplaintType/Edit/@t.ComplaintTypeId" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            @if (t.ComplaintCount == 0)
+                            {
+                                <form method="post" action="/ComplaintType/Delete/@t.ComplaintTypeId" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Delete complaint type \'@t.TypeName\'?')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <button class="btn btn-danger btn-sm" disabled
+                                        title="Cannot delete — in use by @t.ComplaintCount complaint(s)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,10 @@
+@model eAdmin.Web.ViewModels.EquipmentTypeViewModel
+@{ ViewData["Title"] = "Edit Equipment Type"; }
+<h4><i class="fas fa-tag me-2 text-primary"></i>Edit Equipment Type</h4>
+<div class="card shadow-sm" style="max-width:480px"><div class="card-body">
+<form asp-action="Edit" method="post">@Html.AntiForgeryToken()
+<input type="hidden" asp-for="EquipmentTypeId"/>
+<div class="mb-3"><label asp-for="TypeName" class="form-label fw-semibold"></label><input asp-for="TypeName" class="form-control"/></div>
+<div class="mb-3"><label asp-for="Description" class="form-label fw-semibold"></label><input asp-for="Description" class="form-control"/></div>
+<div class="d-flex gap-2 justify-content-end"><a href="/EquipmentType/Index" class="btn btn-secondary">Cancel</a><button class="btn btn-primary">Save</button></div>
+</form></div></div>

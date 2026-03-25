@@ -1,0 +1,113 @@
+@model eAdmin.Web.ViewModels.DashboardViewModel
+@{ ViewData["Title"] = "Dashboard"; var role = User.FindFirst("Role")?.Value ?? ""; }
+
+@{
+    string GetStatusBadge(string s) => s switch {
+        "Pending"    => "bg-secondary",
+        "Assigned"   => "bg-info",
+        "InProgress" => "bg-warning text-dark",
+        "Resolved"   => "bg-success",
+        "Closed"     => "bg-dark",
+        _ => "bg-secondary"
+    };
+    string GetPriBadge(string p) => p switch {
+        "Critical" => "bg-danger",
+        "High"     => "bg-warning text-dark",
+        "Medium"   => "bg-info",
+        _          => "bg-secondary"
+    };
+}
+
+<!-- KPI cards -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card border-0 text-white bg-primary h-100">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="fs-2 fw-bold">@Model.TotalLabs</div><div>Labs</div></div>
+                <i class="fas fa-building fa-2x opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 text-white bg-success h-100">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="fs-2 fw-bold">@Model.TotalEquipments</div><div>Equipment</div></div>
+                <i class="fas fa-desktop fa-2x opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 text-white @(Model.OpenComplaints>0?"bg-danger":"bg-secondary") h-100">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="fs-2 fw-bold">@Model.OpenComplaints</div><div>Open Complaints</div></div>
+                <i class="fas fa-exclamation-triangle fa-2x opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card border-0 text-white @(Model.ExpiringSoftwareCount>0?"bg-warning":"bg-info") h-100">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="fs-2 fw-bold @(Model.ExpiringSoftwareCount>0?"text-dark":"")">@Model.ExpiringSoftwareCount</div><div class="@(Model.ExpiringSoftwareCount>0?"text-dark":"")">SW Expiring</div></div>
+                <i class="fas fa-clock fa-2x opacity-50"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <!-- Recent Complaints -->
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="mb-0"><i class="fas fa-list me-2 text-primary"></i>Recent Complaints</h6>
+                @if(role!="Student"){<a href="/Complaint" class="btn btn-sm btn-outline-primary">View All</a>}
+            </div>
+            <div class="card-body p-0">
+                @if(!Model.RecentComplaints.Any()){<p class="text-muted p-3 mb-0">No complaints found.</p>}
+                else{
+                <div class="table-responsive"><table class="table table-hover mb-0 small">
+                <thead class="table-light"><tr><th>#</th><th>Title</th><th>Lab</th><th>Priority</th><th>Status</th><th>Date</th></tr></thead>
+                <tbody>@foreach(var c in Model.RecentComplaints){<tr>
+                <td>@c.ComplaintId</td>
+                <td><a href="/Complaint/Details/@c.ComplaintId">@c.Title</a></td>
+                <td>@c.LabName</td>
+                <td><span class="badge @GetPriBadge(c.Priority)">@c.Priority</span></td>
+                <td><span class="badge @GetStatusBadge(c.Status)">@c.Status</span></td>
+                <td>@c.CreatedAt.ToString("dd/MM")</td>
+                </tr>}</tbody></table></div>}
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications panel -->
+    <div class="col-lg-4">
+        <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="mb-0"><i class="fas fa-bell me-2 text-warning"></i>Notifications
+                @if(Model.UnreadNotifications>0){<span class="badge bg-danger ms-1">@Model.UnreadNotifications</span>}
+                </h6>
+                <a href="/Notification/Index" class="btn btn-sm btn-outline-warning">View All</a>
+            </div>
+            <div class="list-group list-group-flush">
+                @if(!Model.RecentNotifications.Any()){<div class="list-group-item text-muted small">No notifications</div>}
+                @foreach(var n in Model.RecentNotifications){
+                <div class="list-group-item @(!n.IsRead?"list-group-item-light fw-semibold":"") py-2">
+                    <div class="d-flex justify-content-between">
+                        <span class="small">@n.Subject</span>
+                        <span class="badge @(n.NotificationType=="SMS"?"bg-success":"bg-primary") ms-1" style="font-size:0.6rem">@n.NotificationType</span>
+                    </div>
+                    <div class="text-muted" style="font-size:0.75rem">@n.CreatedAt.ToString("dd/MM HH:mm")</div>
+                </div>}
+            </div>
+        </div>
+
+        @if(role=="Admin" && Model.PendingRequests>0){
+        <div class="card shadow-sm mt-3 border-warning">
+            <div class="card-body py-2">
+                <i class="fas fa-clipboard-list me-2 text-warning"></i>
+                <strong>@Model.PendingRequests</strong> pending extra lab request(s)
+                <a href="/Lab/ExtraRequests" class="btn btn-sm btn-warning ms-2">Review</a>
+            </div>
+        </div>}
+    </div>
+</div>

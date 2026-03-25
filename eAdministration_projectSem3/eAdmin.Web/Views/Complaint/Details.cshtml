@@ -1,0 +1,46 @@
+@model eAdmin.Domain.Entities.Complaint
+@{ ViewData["Title"] = "Complaint Details"; var role = User.FindFirst("Role")?.Value ?? ""; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4><i class="fas fa-clipboard me-2 text-primary"></i>Complaint #@Model.ComplaintId</h4>
+    <a href="/Complaint/Index" class="btn btn-outline-secondary btn-sm"><i class="fas fa-arrow-left me-1"></i>Back</a>
+</div>
+<div class="row g-3">
+<div class="col-md-8">
+<div class="card shadow-sm">
+<div class="card-header"><strong>@Model.Title</strong></div>
+<div class="card-body">
+<p><strong>Description:</strong> @Model.Description</p>
+<div class="row g-2">
+<div class="col-md-4"><span class="text-muted small">Lab</span><p><strong>@Model.Lab?.LabName</strong></p></div>
+<div class="col-md-4"><span class="text-muted small">Equipment</span><p><strong>@(Model.Equipment?.AssetCode ?? "–")</strong></p></div>
+<div class="col-md-4"><span class="text-muted small">Type</span><p><strong>@Model.ComplaintType?.TypeName</strong></p></div>
+<div class="col-md-4"><span class="text-muted small">Priority</span>
+<p>@{var pb = Model.Priority switch{"Critical"=>"bg-danger","High"=>"bg-warning text-dark","Medium"=>"bg-info",_=>"bg-secondary"};}
+<span class="badge @pb">@Model.Priority</span></p></div>
+<div class="col-md-4"><span class="text-muted small">Status</span>
+<p>@{var sb = Model.Status switch{"Pending"=>"bg-secondary","Assigned"=>"bg-info","InProgress"=>"bg-warning text-dark","Resolved"=>"bg-success","Closed"=>"bg-dark",_=>"bg-secondary"};}
+<span class="badge @sb">@Model.Status</span></p></div>
+<div class="col-md-4"><span class="text-muted small">Reported By</span><p><strong>@Model.Reporter?.FullName</strong></p></div>
+<div class="col-md-4"><span class="text-muted small">Assigned To</span><p><strong>@(Model.Assignee?.FullName ?? "–")</strong></p></div>
+<div class="col-md-4"><span class="text-muted small">Created</span><p>@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p></div>
+<div class="col-md-4"><span class="text-muted small">Resolved</span><p>@(Model.ResolvedAt?.ToString("dd/MM/yyyy HH:mm") ?? "–")</p></div>
+</div>
+</div>
+</div>
+</div>
+@if(role == "TechStaff" || role == "Admin"){
+<div class="col-md-4">
+<div class="card shadow-sm border-warning">
+<div class="card-header bg-warning fw-bold"><i class="fas fa-edit me-2"></i>Update Status</div>
+<div class="card-body">
+<form asp-controller="Complaint" asp-action="UpdateStatus" method="post">@Html.AntiForgeryToken()
+<input type="hidden" name="id" value="@Model.ComplaintId"/>
+<div class="mb-3"><label class="form-label fw-semibold">New Status</label>
+<select name="status" class="form-select">
+@foreach(var s in new[]{"Pending","Assigned","InProgress","Resolved","Closed"}){
+<option value="@s" selected="@(Model.Status==s)">@s</option>}</select></div>
+<button class="btn btn-warning w-100"><i class="fas fa-save me-1"></i>Update</button>
+</form>
+</div></div>
+</div>}
+</div>

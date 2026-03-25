@@ -1,0 +1,11 @@
+@model eAdmin.Web.ViewModels.DepartmentViewModel
+@{ ViewData["Title"] = "Edit Department"; }
+<h4><i class="fas fa-edit me-2 text-warning"></i>Edit Department</h4>
+<div class="card shadow-sm" style="max-width:500px"><div class="card-body">
+<form asp-action="Edit" method="post">@Html.AntiForgeryToken()
+<input type="hidden" asp-for="DepartmentId"/>
+<div class="mb-3"><label asp-for="DepartmentName" class="form-label fw-semibold"></label><input asp-for="DepartmentName" class="form-control"/></div>
+<div class="mb-3"><label asp-for="Code" class="form-label fw-semibold">Code</label><input asp-for="Code" class="form-control"/></div>
+<div class="mb-3"><label asp-for="HodUserId" class="form-label fw-semibold">HOD</label><select asp-for="HodUserId" asp-items="ViewBag.HodList" class="form-select"><option value="">-- None --</option></select></div>
+<div class="d-flex gap-2 justify-content-end"><a href="/Department/Index" class="btn btn-secondary">Cancel</a><button class="btn btn-warning">Save</button></div>
+</form></div></div>

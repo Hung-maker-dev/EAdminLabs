@@ -1,0 +1,195 @@
+﻿@model eAdmin.Web.ViewModels.LearningMaterialViewModel
+@{
+    ViewData["Title"] = "Edit Material";
+}
+
+<div class="container-fluid" style="background:#f5f7fa; min-height:100vh;">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="min-height:100vh;">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-3 w-100" style="max-width:680px;">
+            <a href="/LearningMaterial/Index" class="btn btn-outline-secondary btn-sm me-2">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h4 class="mb-0">
+                <i class="fas fa-edit me-2 text-warning"></i>
+                Edit Learning Material
+            </h4>
+        </div>
+
+        <!-- Card -->
+        <div class="card shadow border-0 w-100" style="max-width:680px; border-radius:12px;">
+            <div class="card-body p-4">
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="MaterialId" />
+                    <input type="hidden" asp-for="UploadedBy" />
+                    <input type="hidden" asp-for="FilePath" id="existingFilePath" />
+
+                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+                    {
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <strong>Please fix the following:</strong>
+                            <ul class="mb-0 mt-1">
+                                @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                {
+                                    <li>@err.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label fw-semibold">
+                            Title <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="Title"
+                               class="form-control @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Title") ? "is-invalid" : "")" />
+                        <span asp-validation-for="Title" class="invalid-feedback"></span>
+                    </div>
+
+                    <!-- Type + Department -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-5">
+                            <label asp-for="MaterialType" class="form-label fw-semibold">
+                                Type <span class="text-danger">*</span>
+                            </label>
+                            <select asp-for="MaterialType" class="form-select">
+                                <option value="Syllabus">📋 Syllabus</option>
+                                <option value="InstallGuide">🔧 Install Guide</option>
+                                <option value="ELearning">🎓 E-Learning</option>
+                                <option value="ServerInfo">🖥️ Server Info</option>
+                                <option value="Other">📄 Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-7">
+                            <label asp-for="DepartmentId" class="form-label fw-semibold">Department</label>
+                            <select asp-for="DepartmentId" asp-items="ViewBag.Departments" class="form-select">
+                                <option value="">All Departments (Public)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-semibold">
+                            Description <small class="text-muted fw-normal">(optional)</small>
+                        </label>
+                        <textarea asp-for="Description" class="form-control" rows="2"></textarea>
+                    </div>
+
+                    <!-- File / URL -->
+                    <div class="card border-warning mb-3">
+                        <div class="card-header bg-warning py-2 fw-semibold">
+                            <i class="fas fa-file-alt me-2"></i>Content Source
+                        </div>
+
+                        <div class="card-body">
+
+                            <!-- Current file -->
+                            @if (!string.IsNullOrEmpty(Model.FilePath))
+                            {
+                                <div class="alert alert-info py-2 d-flex justify-content-between align-items-center mb-3">
+                                    <span class="small">
+                                        <i class="fas fa-paperclip me-1"></i>
+                                        <strong>Current file:</strong>
+                                        <a href="@Model.FilePath" target="_blank" class="ms-1">
+                                            @System.IO.Path.GetFileName(Model.FilePath)
+                                        </a>
+                                    </span>
+
+                                    <button type="button"
+                                            class="btn btn-sm btn-outline-danger"
+                                            onclick="clearFile(this)">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            }
+
+                            <!-- Upload new -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-file-upload me-1 text-success"></i>
+                                    @(string.IsNullOrEmpty(Model.FilePath) ? "Upload File" : "Replace File")
+                                    <small class="text-muted">(leave blank to keep current)</small>
+                                </label>
+
+                                <input type="file" name="uploadedFile" id="uploadedFile"
+                                       class="form-control"
+                                       accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.zip,.png,.jpg,.jpeg" />
+
+                                <div id="filePreview" class="mt-1 small text-success" style="display:none">
+                                    <i class="fas fa-check-circle me-1"></i>
+                                    New file: <span id="fileName"></span>
+                                </div>
+
+                                <div class="form-text">Max 20MB</div>
+                            </div>
+
+                            <div class="text-center text-muted mb-3">— OR —</div>
+
+                            <!-- URL -->
+                            <div>
+                                <label asp-for="ExternalUrl" class="form-label fw-semibold">
+                                    <i class="fas fa-link me-1 text-info"></i>External URL
+                                </label>
+                                <input asp-for="ExternalUrl"
+                                       class="form-control @(!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("ExternalUrl") ? "is-invalid" : "")"
+                                       placeholder="https://..." />
+                                <span asp-validation-for="ExternalUrl" class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Public -->
+                    <div class="mb-4">
+                        <div class="form-check form-switch">
+                            <input asp-for="IsPublic" class="form-check-input" />
+                            <label asp-for="IsPublic" class="form-check-label fw-semibold">Make Public</label>
+                            <div class="form-text">Visible to all students if enabled.</div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="/LearningMaterial/Index" class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                        <button type="submit" class="btn btn-warning">
+                            <i class="fas fa-save me-1"></i>Save Changes
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // File preview
+        document.getElementById('uploadedFile').addEventListener('change', function () {
+            const preview = document.getElementById('filePreview');
+            const name = document.getElementById('fileName');
+
+            if (this.files && this.files[0]) {
+                name.textContent = `${this.files[0].name} (${(this.files[0].size / 1024).toFixed(1)} KB)`;
+                preview.style.display = 'block';
+            } else {
+                preview.style.display = 'none';
+            }
+        });
+
+        // Remove current file
+        function clearFile(btn) {
+            document.getElementById('existingFilePath').value = '';
+            btn.closest('.alert').remove();
+        }
+    </script>
+}
