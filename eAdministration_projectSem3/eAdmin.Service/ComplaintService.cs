@@ -9,9 +9,9 @@ using Microsoft.Extensions.Logging;
 namespace eAdmin.Service
 {
     /// <summary>
-    /// Xử lý toàn bộ nghiệp vụ liên quan đến Complaint.
-    /// Thuật toán auto-assign: Least-Loaded TechStaff
-    /// (chọn nhân viên kỹ thuật đang có ít complaint mở nhất).
+    /// Handles all Complaint business logic.
+    /// Auto-assign algorithm: Least-Loaded TechStaff.
+    /// Equipment condition is auto-updated based on complaint priority and status.
     /// </summary>
     public class ComplaintService : IComplaintService
     {
@@ -19,25 +19,25 @@ namespace eAdmin.Service
         private readonly INotificationService _notify;
         private readonly ILogger<ComplaintService> _logger;
 
-        public ComplaintService(IUnitOfWork uow, INotificationService notify,
+        public ComplaintService(
+            IUnitOfWork uow,
+            INotificationService notify,
             ILogger<ComplaintService> logger)
         {
-            _uow    = uow;
+            _uow = uow;
             _notify = notify;
             _logger = logger;
         }
 
-        // ─────────────────────────────────────────────────────────────────
-        // TẠO COMPLAINT VÀ TỰ ĐỘNG PHÂN CÔNG
-        // ─────────────────────────────────────────────────────────────────
+        // ── CREATE & AUTO-ASSIGN ───────────────────────────────────────────
         /// <summary>
-        /// Tạo complaint mới, sau đó tìm TechStaff phù hợp (least-loaded)
-        /// và phân công tự động. Gửi thông báo InApp đến người được phân công.
+        /// Creates a new complaint, auto-assigns to the least-loaded TechStaff,
+        /// and immediately updates equipment condition based on priority.
         /// </summary>
         public async Task<Complaint> CreateAndAutoAssignAsync(Complaint complaint)
         {
-            // 1. Khởi tạo trạng thái ban đầu
-            complaint.Status    = "Pending";
+            // 1. Set initial state
+            complaint.Status = "Pending";
             complaint.CreatedAt = DateTime.UtcNow;
 
             await _uow.Complaints.AddAsync(complaint);
@@ -46,7 +46,7 @@ namespace eAdmin.Service
             _logger.LogInformation("Complaint #{Id} created by User #{UserId}",
                 complaint.ComplaintId, complaint.ReportedBy);
 
-            // 2. Lấy danh sách TechStaff đang hoạt động
+            // 2. Get all active TechStaff
             var allTechStaff = await _uow.Users.FindAsync(
                 u => u.Role.RoleName == "TechStaff" && u.IsActive);
 
@@ -57,46 +57,84 @@ namespace eAdmin.Service
                 return complaint;
             }
 
-            // 3. Đếm complaint đang mở của từng TechStaff
+            // 3. Count open complaints per TechStaff (Least-Loaded Algorithm)
             var openComplaints = await _uow.Complaints.FindAsync(
-                c => c.AssignedTo.HasValue
-                  && c.Status != "Resolved"
-                  && c.Status != "Closed");
+                c => c.AssignedTo.HasValue &&
+                     c.Status != "Resolved" &&
+                     c.Status != "Closed");
 
-            // 4. Chọn TechStaff ít việc nhất (Least-Loaded Algorithm)
+            // 4. Select TechStaff with fewest open complaints
             var selectedStaff = allTechStaff
                 .OrderBy(s => openComplaints.Count(c => c.AssignedTo == s.UserId))
                 .First();
 
-            // 5. Gán và cập nhật trạng thái
+            // 5. Assign and update status
             complaint.AssignedTo = selectedStaff.UserId;
-            complaint.Status     = "Assigned";
+            complaint.Status = "Assigned";
             _uow.Complaints.Update(complaint);
             await _uow.SaveChangesAsync();
 
             _logger.LogInformation("Complaint #{Id} assigned to TechStaff #{StaffId}",
                 complaint.ComplaintId, selectedStaff.UserId);
 
-            // 6. Thông báo cho TechStaff được phân công
-            await _notify.SendAsync(selectedStaff.UserId, "InApp",
-                "Bạn có nhiệm vụ mới",
-                $"Complaint #{complaint.ComplaintId}: {complaint.Title} đã được giao cho bạn.",
+            // 6. Auto-update equipment condition based on complaint priority
+            //    Low / Medium  → Fair   (device still usable but has issues)
+            //    High / Critical → Poor (device significantly impaired)
+            if (complaint.EquipmentId.HasValue)
+            {
+                var equipment = await _uow.Equipments.GetByIdAsync(complaint.EquipmentId.Value);
+                if (equipment != null)
+                {
+                    equipment.Condition = complaint.Priority switch
+                    {
+                        "Low" => "Fair",
+                        "Medium" => "Fair",
+                        "High" => "Poor",
+                        "Critical" => "Poor",
+                        _ => equipment.Condition
+                    };
+                    _uow.Equipments.Update(equipment);
+                    await _uow.SaveChangesAsync();
+
+                    _logger.LogInformation(
+                        "Equipment #{EqId} condition updated to '{Condition}' " +
+                        "based on complaint priority '{Priority}'",
+                        equipment.EquipmentId, equipment.Condition, complaint.Priority);
+                }
+            }
+
+            // 7. Notify assigned TechStaff — InApp + SMS
+            await _notify.SendAsync(
+                selectedStaff.UserId, "InApp",
+                "New Complaint Assigned",
+                $"Complaint #{complaint.ComplaintId}: \"{complaint.Title}\" has been assigned to you. " +
+                $"Priority: {complaint.Priority}",
                 "Complaint", complaint.ComplaintId);
 
-            // 7. Thông báo xác nhận cho người gửi
-            await _notify.SendAsync(complaint.ReportedBy, "InApp",
-                "Khiếu nại đã tiếp nhận",
-                $"Complaint #{complaint.ComplaintId} của bạn đã được tiếp nhận và phân công xử lý.",
+            await _notify.SendAsync(
+                selectedStaff.UserId, "SMS",
+                "New Complaint Assigned",
+                $"[eAdmin] Complaint #{complaint.ComplaintId} ({complaint.Priority}): " +
+                $"{complaint.Title} — assigned to you.",
+                "Complaint", complaint.ComplaintId);
+
+            // 8. Notify reporter — confirmation
+            await _notify.SendAsync(
+                complaint.ReportedBy, "InApp",
+                "Complaint Received",
+                $"Your complaint #{complaint.ComplaintId} \"{complaint.Title}\" has been received " +
+                $"and assigned to a technician.",
                 "Complaint", complaint.ComplaintId);
 
             return complaint;
         }
 
-        // ─────────────────────────────────────────────────────────────────
-        // CẬP NHẬT TRẠNG THÁI
-        // ─────────────────────────────────────────────────────────────────
+        // ── UPDATE STATUS ─────────────────────────────────────────────────
         /// <summary>
-        /// Cập nhật trạng thái complaint. Tự động set ResolvedAt khi Resolved.
+        /// Updates complaint status.
+        /// Note: Equipment condition update on status change is handled in
+        /// ComplaintController.UpdateStatus (so TechStaff note can be included).
+        /// This method is kept for interface compatibility.
         /// </summary>
         public async Task<bool> UpdateStatusAsync(int complaintId, string newStatus, int updatedByUserId)
         {
@@ -104,42 +142,43 @@ namespace eAdmin.Service
             if (complaint == null) return false;
 
             complaint.Status = newStatus;
-            if (newStatus == "Resolved")
+            if (newStatus == "Resolved" || newStatus == "Closed")
                 complaint.ResolvedAt = DateTime.UtcNow;
 
             _uow.Complaints.Update(complaint);
 
-            // Ghi audit log
             await _uow.AuditLogs.AddAsync(new AuditLog
             {
-                UserId     = updatedByUserId,
-                Action     = "UpdateComplaintStatus",
+                UserId = updatedByUserId,
+                Action = "UpdateComplaintStatus",
                 EntityType = "Complaint",
-                EntityId   = complaintId,
-                Details    = $"{{\"NewStatus\":\"{newStatus}\"}}"
+                EntityId = complaintId,
+                Details = $"{{\"NewStatus\":\"{newStatus}\"}}",
+                CreatedAt = DateTime.UtcNow
             });
 
             await _uow.SaveChangesAsync();
 
-            // Thông báo cho người gửi khi Resolved
-            if (newStatus == "Resolved")
-                await _notify.SendAsync(complaint.ReportedBy, "InApp",
-                    "Complaint Resolved",
-                    $"Your complaint #{complaintId} \"{complaint.Title}\" has been resolved.",
+            if (newStatus == "Resolved" || newStatus == "Closed")
+                await _notify.SendAsync(
+                    complaint.ReportedBy, "InApp",
+                    $"Complaint #{complaintId} {newStatus}",
+                    $"Your complaint \"{complaint.Title}\" has been marked as {newStatus}.",
                     "Complaint", complaintId);
 
             return true;
         }
 
+        // ── QUERIES ────────────────────────────────────────────────────────
         public async Task<IEnumerable<Complaint>> GetComplaintsByLabAsync(int labId)
             => await _uow.Complaints.FindAsync(c => c.LabId == labId);
 
         public async Task<IEnumerable<Complaint>> GetComplaintsByUserAsync(int userId)
-            => await _uow.Complaints.FindAsync(c => c.ReportedBy == userId || c.AssignedTo == userId);
+            => await _uow.Complaints.FindAsync(
+                c => c.ReportedBy == userId || c.AssignedTo == userId);
 
         public async Task<IEnumerable<Complaint>> GetComplaintsByDepartmentAsync(int departmentId)
         {
-            // Lấy complaint dựa trên người gửi thuộc department
             var deptUsers = await _uow.Users.FindAsync(u => u.DepartmentId == departmentId);
             var userIds = deptUsers.Select(u => u.UserId).ToHashSet();
             return await _uow.Complaints.FindAsync(c => userIds.Contains(c.ReportedBy));
