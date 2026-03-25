@@ -58,4 +58,7 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\uploads\Images\backgroudLginForm.jpg
 wwwroot\uploads\materials\20260323_221320_OnTapCuoiMon.docx
+wwwroot\uploads\materials\20260324_134843_OV7091 Java Programming-The Complete Guide for Beginners.pdf
+wwwroot\uploads\materials\20260324_134919_OV7091 Java Programming-The Complete Guide for Beginners.pdf

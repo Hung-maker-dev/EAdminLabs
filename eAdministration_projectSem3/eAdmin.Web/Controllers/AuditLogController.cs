@@ -5,6 +5,7 @@ using eAdmin.Web.Filters;
 using eAdmin.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace eAdmin.Web.Controllers
 {
@@ -17,53 +18,70 @@ namespace eAdmin.Web.Controllers
 
         public async Task<IActionResult> Index(AuditLogFilterViewModel filter)
         {
-            var logs = await _uow.AuditLogs.GetAllAsync();
+            if (filter.Action == "Index")
+                filter.Action = null;
+            // ✅ Query trực tiếp DB (KHÔNG dùng GetAllAsync nữa)
+            var logs = _uow.AuditLogs.Query();
             var users = await _uow.Users.GetAllAsync();
 
             // ── Filters ───────────────────────────────────────────────────
-            if (!string.IsNullOrEmpty(filter.Username))
+            // ── Filters (FIX) ─────────────────────────────────────────────
+
+            // Username
+            if (!string.IsNullOrWhiteSpace(filter.Username))
             {
                 var matchIds = users
-                    .Where(u => u.Username.Contains(filter.Username))
-                    .Select(u => (int?)u.UserId)   // cast to int? for comparison
+                    .Where(u => u.Username != null && u.Username.Contains(filter.Username))
+                    .Select(u => (int?)u.UserId)
                     .ToHashSet();
 
-                logs = logs.Where(l => matchIds.Contains(l.UserId));
+                if (matchIds.Count > 0) // ⭐ quan trọng
+                    logs = logs.Where(l => matchIds.Contains(l.UserId));
             }
 
-            if (!string.IsNullOrEmpty(filter.Action))
-                logs = logs.Where(l => l.Action.Contains(filter.Action));
+            // Action (không phân biệt hoa thường)
+            if (!string.IsNullOrWhiteSpace(filter.Action))
+            {
+                var action = filter.Action.ToLower();
+                logs = logs.Where(l => l.Action != null && l.Action.ToLower().Contains(action));
+            }
 
-            if (!string.IsNullOrEmpty(filter.EntityType))
+            // EntityType
+            if (!string.IsNullOrWhiteSpace(filter.EntityType))
                 logs = logs.Where(l => l.EntityType == filter.EntityType);
 
+            // Date
             if (filter.FromDate.HasValue)
                 logs = logs.Where(l => l.CreatedAt >= filter.FromDate.Value);
 
             if (filter.ToDate.HasValue)
-                logs = logs.Where(l => l.CreatedAt <= filter.ToDate.Value.AddDays(1));
+                logs = logs.Where(l => l.CreatedAt < filter.ToDate.Value.AddDays(1));
+            // 🔥 Tổng số record
+            filter.TotalRecords = await logs.CountAsync();
 
-            // ── Map to ViewModel ──────────────────────────────────────────
-            filter.Results = logs
+            // 🔥 Phân trang
+            var logList = await logs
                 .OrderByDescending(l => l.CreatedAt)
-                .Take(500)
-                .Select(l =>
+                .Skip((filter.Page - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToListAsync();
+
+            // ── Map ───────────────────────────────────────────────────────
+            filter.Results = logList.Select(l =>
+            {
+                var u = users.FirstOrDefault(u => (int?)u.UserId == l.UserId);
+                return new AuditLogViewModel
                 {
-                    // Fix: compare int? with int? by casting
-                    var u = users.FirstOrDefault(u => (int?)u.UserId == l.UserId);
-                    return new AuditLogViewModel
-                    {
-                        AuditLogId = l.LogId,
-                        Action = l.Action,
-                        EntityType = l.EntityType,
-                        EntityId = l.EntityId,
-                        Details = l.Details,
-                        CreatedAt = l.CreatedAt,
-                        UserFullName = u?.FullName ?? "System",
-                        Username = u?.Username ?? "–"
-                    };
-                })
-                .ToList();
+                    AuditLogId = l.LogId,
+                    Action = l.Action,
+                    EntityType = l.EntityType,
+                    EntityId = l.EntityId,
+                    Details = l.Details,
+                    CreatedAt = l.CreatedAt,
+                    UserFullName = u?.FullName ?? "System",
+                    Username = u?.Username ?? "–"
+                };
+            }).ToList();
 
             return View(filter);
         }

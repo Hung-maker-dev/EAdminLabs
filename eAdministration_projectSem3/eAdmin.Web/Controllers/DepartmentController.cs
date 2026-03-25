@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using eAdmin.Domain.Entities;
@@ -38,14 +38,50 @@ namespace eAdmin.Web.Controllers
             return View(new DepartmentViewModel());
         }
 
-        [HttpPost][ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(DepartmentViewModel vm)
         {
-            if (!ModelState.IsValid) { await PopulateHodList(); return View(vm); }
-            await _uow.Departments.AddAsync(new Department { DepartmentName = vm.DepartmentName, Code = vm.Code, HodUserId = vm.HodUserId });
-            await _uow.SaveChangesAsync();
-            TempData["Success"] = "Department created.";
-            return RedirectToAction(nameof(Index));
+            if (!ModelState.IsValid)
+            {
+                await PopulateHodList();
+                return View(vm);
+            }
+
+            // ✅ Trim dữ liệu
+            var name = vm.DepartmentName?.Trim();
+
+            // ✅ Check duplicate
+            var exists = (await _uow.Departments.GetAllAsync())
+                .Any(d => d.DepartmentName.Trim().ToLower() == name.ToLower());
+
+            if (exists)
+            {
+                ModelState.AddModelError("DepartmentName", "Department name already exists!");
+                await PopulateHodList();
+                return View(vm);
+            }
+
+            try
+            {
+                await _uow.Departments.AddAsync(new Department
+                {
+                    DepartmentName = name,
+                    Code = vm.Code?.Trim(),
+                    HodUserId = vm.HodUserId
+                });
+
+                await _uow.SaveChangesAsync();
+
+                TempData["Success"] = "Department created.";
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Something went wrong while saving.");
+                await PopulateHodList();
+                return View(vm);
+            }
         }
 
         [HttpGet]
@@ -57,15 +93,39 @@ namespace eAdmin.Web.Controllers
             return View(new DepartmentViewModel { DepartmentId = d.DepartmentId, DepartmentName = d.DepartmentName, Code = d.Code, HodUserId = d.HodUserId });
         }
 
-        [HttpPost][ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(DepartmentViewModel vm)
         {
-            if (!ModelState.IsValid) { await PopulateHodList(); return View(vm); }
+            if (!ModelState.IsValid)
+            {
+                await PopulateHodList();
+                return View(vm);
+            }
+
+            var name = vm.DepartmentName?.Trim();
+
+            var exists = (await _uow.Departments.GetAllAsync())
+                .Any(d => d.DepartmentName.Trim().ToLower() == name.ToLower()
+                       && d.DepartmentId != vm.DepartmentId);
+
+            if (exists)
+            {
+                ModelState.AddModelError("DepartmentName", "Department name already exists!");
+                await PopulateHodList();
+                return View(vm);
+            }
+
             var d = await _uow.Departments.GetByIdAsync(vm.DepartmentId);
             if (d == null) return NotFound();
-            d.DepartmentName = vm.DepartmentName; d.Code = vm.Code; d.HodUserId = vm.HodUserId;
+
+            d.DepartmentName = name;
+            d.Code = vm.Code?.Trim();
+            d.HodUserId = vm.HodUserId;
+
             _uow.Departments.Update(d);
             await _uow.SaveChangesAsync();
+
             TempData["Success"] = "Department updated.";
             return RedirectToAction(nameof(Index));
         }

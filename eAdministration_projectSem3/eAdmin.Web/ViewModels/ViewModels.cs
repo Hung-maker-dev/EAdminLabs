@@ -201,6 +201,11 @@ namespace eAdmin.Web.ViewModels
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
         public List<AuditLogViewModel> Results { get; set; } = new();
+        public int Page { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
+
+        public int TotalRecords { get; set; }
+        public int TotalPages => (int)Math.Ceiling((double)TotalRecords / PageSize);
     }
 
     public class DashboardViewModel
