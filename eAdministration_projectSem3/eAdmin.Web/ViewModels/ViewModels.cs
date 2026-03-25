@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -88,7 +88,7 @@ namespace eAdmin.Web.ViewModels
         [Required] public int LabId { get; set; }
         [Required] public int InstructorId { get; set; }
         [Required][StringLength(100)] public string SubjectName { get; set; } = string.Empty;
-        [Required][Range(1,7)] public int DayOfWeek { get; set; }
+        [Required][Range(1, 7)] public int DayOfWeek { get; set; }
         [Required] public TimeSpan StartTime { get; set; }
         [Required] public TimeSpan EndTime { get; set; }
         [Required] public DateTime EffectiveFrom { get; set; }
@@ -118,22 +118,61 @@ namespace eAdmin.Web.ViewModels
         public int EquipmentCount { get; set; }
     }
 
-    public class EquipmentViewModel
+    public class EquipmentViewModel : IValidatableObject
     {
         public int EquipmentId { get; set; }
-        [Required][StringLength(50)] public string AssetCode { get; set; } = string.Empty;
-        [Required] public int LabId { get; set; }
-        [Required] public int EquipmentTypeId { get; set; }
-        [StringLength(100)] public string? Model { get; set; }
-        [StringLength(100)] public string? SerialNumber { get; set; }
+
+        [Required(ErrorMessage = "Asset Code is required")]
+        [StringLength(50)]
+        public string AssetCode { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Lab is required")]
+        public int? LabId { get; set; }
+
+        [Required(ErrorMessage = "Equipment Type is required")]
+        public int? EquipmentTypeId { get; set; }
+
+        [Required(ErrorMessage = "Model is required")]
+        public string? Model { get; set; }
+
+        [Required(ErrorMessage = "Serial Number is required")]
+        public string? SerialNumber { get; set; }
+
+        [Required(ErrorMessage = "Purchase Date is required")]
+        [DataType(DataType.Date)]
         public DateTime? PurchaseDate { get; set; }
+
+        [Required(ErrorMessage = "Warranty Expiry is required")]
+        [DataType(DataType.Date)]
         public DateTime? WarrantyExpiry { get; set; }
+
+        [Required]
         public string Condition { get; set; } = "Good";
+
         public string? Notes { get; set; }
-        public string LabName { get; set; } = string.Empty;
-        public string TypeName { get; set; } = string.Empty;
+
+        public string LabName { get; set; } = "";
+        public string TypeName { get; set; } = "";
+
+        // dùng trong Index để tô màu hàng
         public bool WarrantyExpired => WarrantyExpiry.HasValue && WarrantyExpiry.Value.Date < DateTime.Today;
         public bool WarrantyExpiringSoon => WarrantyExpiry.HasValue && !WarrantyExpired && WarrantyExpiry.Value.Date <= DateTime.Today.AddDays(30);
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (PurchaseDate.HasValue && WarrantyExpiry.HasValue)
+            {
+                if (WarrantyExpiry.Value <= PurchaseDate.Value)
+                    yield return new ValidationResult(
+                        "Warranty must be after Purchase Date",
+                        new[] { nameof(WarrantyExpiry) });
+
+                if (PurchaseDate.Value > DateTime.Today)
+                    yield return new ValidationResult(
+                        "Purchase Date cannot be in the future",
+                        new[] { nameof(PurchaseDate) });
+            }
+        }
     }
 
     public class SoftwareViewModel
@@ -183,7 +222,7 @@ namespace eAdmin.Web.ViewModels
 
     public class AuditLogViewModel
     {
-        public int AuditLogId { get; set; }  // maps to LogId
+        public int AuditLogId { get; set; }
         public string UserFullName { get; set; } = string.Empty;
         public string Username { get; set; } = string.Empty;
         public string Action { get; set; } = string.Empty;
@@ -201,11 +240,6 @@ namespace eAdmin.Web.ViewModels
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
         public List<AuditLogViewModel> Results { get; set; } = new();
-        public int Page { get; set; } = 1;
-        public int PageSize { get; set; } = 10;
-
-        public int TotalRecords { get; set; }
-        public int TotalPages => (int)Math.Ceiling((double)TotalRecords / PageSize);
     }
 
     public class DashboardViewModel
