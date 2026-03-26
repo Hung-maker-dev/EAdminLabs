@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+      "projectUniqueName": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
       "projectName": "eAdmin.Domain",
-      "projectPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+      "projectPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\obj\\",
+      "outputPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

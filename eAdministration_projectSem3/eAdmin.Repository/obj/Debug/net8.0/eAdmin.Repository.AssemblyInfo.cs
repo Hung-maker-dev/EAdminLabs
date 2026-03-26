@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eAdmin.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65cfa1232466b95a32336dfee3df72369ce91324")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b744515d53cf5a6b697c9aea15945143719a1b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("eAdmin.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eAdmin.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

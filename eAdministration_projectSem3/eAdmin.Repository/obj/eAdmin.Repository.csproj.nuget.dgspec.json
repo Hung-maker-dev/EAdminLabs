@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {}
+    "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {}
   },
   "projects": {
-    "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
+    "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+        "projectUniqueName": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
         "projectName": "eAdmin.Domain",
-        "projectPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+        "projectPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\obj\\",
+        "outputPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {
+    "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
+        "projectUniqueName": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
         "projectName": "eAdmin.Repository",
-        "projectPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
+        "projectPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\obj\\",
+        "outputPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
-                "projectPath": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj"
+              "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
+                "projectPath": "D:\\projectSem3Nhap\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj"
               }
             }
           }
