@@ -14,8 +14,58 @@
     }
 </div>
 
-@* ── Filter bar ── *@
+@* ── Toast alerts ── *@
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="fas fa-check-circle"></i>
+        <span>@TempData["Success"]</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Warning"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>@TempData["Warning"]</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="fas fa-times-circle"></i>
+        <span>@TempData["Error"]</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@* ── Filter + Search bar ── *@
 <form method="get" class="row g-2 mb-4">
+    @* Search *@
+    <div class="col-md-4">
+        <div class="input-group input-group-sm">
+            <span class="input-group-text bg-white">
+                <i class="fas fa-search text-muted"></i>
+            </span>
+            <input type="text"
+                   name="search"
+                   class="form-control"
+                   placeholder="Search by title, description, type..."
+                   value="@ViewBag.Search" />
+            @if (!string.IsNullOrEmpty(ViewBag.Search as string))
+            {
+                <a href="/LearningMaterial/Index@(ViewBag.FilterType != null || ViewBag.FilterDept != null
+                                       ? "?type=" + ViewBag.FilterType + "&deptId=" + ViewBag.FilterDept
+                                       : "")"
+               class="btn btn-outline-secondary" title="Clear search">
+                <i class="fas fa-times"></i>
+            </a>
+                        }
+        </div>
+    </div>
+
+    @* Type filter *@
     <div class="col-md-3">
         <select name="type" class="form-select form-select-sm">
             <option value="">All Types</option>
@@ -25,6 +75,8 @@
             }
         </select>
     </div>
+
+    @* Dept filter *@
     <div class="col-md-3">
         <select name="deptId" class="form-select form-select-sm">
             <option value="">All Departments</option>
@@ -34,6 +86,7 @@
             }
         </select>
     </div>
+
     <div class="col-md-2">
         <button class="btn btn-outline-secondary btn-sm w-100">
             <i class="fas fa-filter me-1"></i>Filter
@@ -41,10 +94,31 @@
     </div>
 </form>
 
+@* ── Result summary ── *@
+@{
+    var totalCount = Model.Count();
+    var searchActive = !string.IsNullOrEmpty(ViewBag.Search as string);
+}
+@if (searchActive && totalCount > 0)
+{
+    <p class="text-muted small mb-3">
+        <i class="fas fa-info-circle me-1"></i>
+        Tìm thấy <strong>@totalCount</strong> kết quả cho "<strong>@ViewBag.Search</strong>"
+    </p>
+}
+
 @if (!Model.Any())
 {
     <div class="alert alert-info">
-        <i class="fas fa-info-circle me-2"></i>No materials found.
+        <i class="fas fa-info-circle me-2"></i>
+        @if (searchActive)
+        {
+            <span>Không tìm thấy tài liệu nào khớp với "<strong>@ViewBag.Search</strong>".</span>
+        }
+        else
+        {
+            <span>No materials found.</span>
+        }
     </div>
 }
 
@@ -66,15 +140,26 @@
         bool hasExternalUrl = !string.IsNullOrEmpty(m.ExternalUrl);
 
         <div class="col-md-4 col-lg-3">
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 shadow-sm border-0 @(m.HasCrossUserDuplicate ? "border border-warning" : "")">
 
                 @* Colored top bar *@
-                <div class="card-header @badgeColor py-2">
-                    <i class="fas @iconClass me-2"></i>
-                    <strong>@m.MaterialType</strong>
-                    @if (m.IsPublic)
+                <div class="card-header @badgeColor py-2 d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="fas @iconClass me-2"></i>
+                        <strong>@m.MaterialType</strong>
+                        @if (m.IsPublic)
+                        {
+                            <span class="badge bg-light text-dark ms-1" style="font-size:0.65rem">Public</span>
+                        }
+                    </span>
+                    @* Duplicate warning badge *@
+                    @if (m.HasCrossUserDuplicate)
                     {
-                        <span class="badge bg-light text-dark ms-1" style="font-size:0.65rem">Public</span>
+                        <span class="badge bg-white text-warning border border-warning ms-1"
+                              style="font-size:0.65rem; cursor:default;"
+                              title="Tài liệu tương tự đã được giảng viên khác tạo trong cùng khoa này">
+                            <i class="fas fa-exclamation-triangle me-1"></i>Trùng lặp
+                        </span>
                     }
                 </div>
 
@@ -84,6 +169,15 @@
                     @if (!string.IsNullOrEmpty(m.Description))
                     {
                         <p class="card-text text-muted small mb-2">@m.Description</p>
+                    }
+
+                    @* Cross-user duplicate inline note *@
+                    @if (m.HasCrossUserDuplicate)
+                    {
+                        <div class="alert alert-warning py-1 px-2 mb-2" style="font-size:0.75rem;">
+                            <i class="fas fa-exclamation-triangle me-1"></i>
+                            Tài liệu tương tự đã tồn tại từ giảng viên khác trong khoa này.
+                        </div>
                     }
 
                     <div class="text-muted small mb-3">
@@ -97,7 +191,6 @@
                     @* ── Download / Open buttons ── *@
                     <div class="mt-auto d-flex flex-column gap-2">
 
-                        @* File uploaded → Download button *@
                         @if (hasFile)
                         {
                             <a href="@m.FilePath" download
@@ -114,7 +207,6 @@
                             </a>
                         }
 
-                        @* External URL → Open button *@
                         @if (hasExternalUrl)
                         {
                             <a href="@m.ExternalUrl" target="_blank" rel="noopener"
@@ -123,7 +215,6 @@
                             </a>
                         }
 
-                        @* Neither file nor URL *@
                         @if (!hasFile && !hasExternalUrl)
                         {
                             <span class="btn btn-outline-secondary btn-sm w-100 disabled">

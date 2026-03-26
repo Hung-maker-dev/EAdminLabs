@@ -205,6 +205,7 @@ namespace eAdmin.Web.ViewModels
         public string UploaderName { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public int UploadedBy { get; set; }
+        public bool HasCrossUserDuplicate { get; set; }
     }
 
     public class NotificationViewModel

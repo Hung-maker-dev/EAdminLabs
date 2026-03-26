@@ -36,7 +36,7 @@ namespace eAdmin.Web.Controllers
         }
 
         // ── GET: /LearningMaterial ─────────────────────────────────────────
-        public async Task<IActionResult> Index(string? type, int? deptId)
+        public async Task<IActionResult> Index(string? type, int? deptId, string? search)
         {
             var role = User.FindFirst("Role")?.Value ?? "";
             var userDeptClaim = User.FindFirst("DepartmentId")?.Value;
@@ -46,33 +46,67 @@ namespace eAdmin.Web.Controllers
             var users = await _uow.Users.GetAllAsync();
             var depts = await _uow.Departments.GetAllAsync();
 
-            // Students only see their dept + public
-            if (role == "Student")
-                all = all.Where(m => m.IsPublic || m.DepartmentId == userDept);
+            // Students/ Instructor only see their dept + public
+            if (role == "Student" || role == "Instructor")
+            {
+                all = all.Where(m =>
+                    m.IsPublic ||
+                    m.DepartmentId == null ||
+                    m.DepartmentId == userDept
+                );
+            }
 
             if (!string.IsNullOrEmpty(type)) all = all.Where(m => m.MaterialType == type);
             if (deptId.HasValue) all = all.Where(m => m.DepartmentId == deptId);
 
-            var vm = all.Select(m => new LearningMaterialViewModel
+            // ── Search filter ──────────────────────────────────────────────
+            if (!string.IsNullOrWhiteSpace(search))
             {
-                MaterialId = m.MaterialId,
-                Title = m.Title,
-                MaterialType = m.MaterialType,
-                Description = m.Description,
-                FilePath = m.FilePath,
-                ExternalUrl = m.ExternalUrl,
-                DepartmentId = m.DepartmentId,
-                IsPublic = m.IsPublic,
-                CreatedAt = m.CreatedAt,
-                UploadedBy = m.UploadedBy,
-                DeptName = depts.FirstOrDefault(d => d.DepartmentId == m.DepartmentId)?.DepartmentName ?? "All Departments",
-                UploaderName = users.FirstOrDefault(u => u.UserId == m.UploadedBy)?.FullName ?? ""
+                var searchLower = search.Trim().ToLower();
+                all = all.Where(m =>
+                    m.Title.ToLower().Contains(searchLower) ||
+                    (m.Description != null && m.Description.ToLower().Contains(searchLower)) ||
+                    m.MaterialType.ToLower().Contains(searchLower));
+            }
+
+            var allList = all.ToList();
+
+            // ── Build a set of (Title+Type+Dept) to detect cross-user duplicates ──
+            // A material is a "duplicate" if another record with different UploadedBy
+            // shares the same Title (case-insensitive) + MaterialType + DepartmentId
+            var allMaterials = await _uow.LearningMaterials.GetAllAsync(); // full unfiltered set
+            var vm = allList.Select(m =>
+            {
+                var hasCrossUserDuplicate = allMaterials.Any(other =>
+                    other.MaterialId != m.MaterialId &&
+                    other.Title.ToLower() == m.Title.ToLower() &&
+                    other.MaterialType == m.MaterialType &&
+                    other.DepartmentId == m.DepartmentId &&
+                    other.UploadedBy != m.UploadedBy);
+
+                return new LearningMaterialViewModel
+                {
+                    MaterialId = m.MaterialId,
+                    Title = m.Title,
+                    MaterialType = m.MaterialType,
+                    Description = m.Description,
+                    FilePath = m.FilePath,
+                    ExternalUrl = m.ExternalUrl,
+                    DepartmentId = m.DepartmentId,
+                    IsPublic = m.IsPublic,
+                    CreatedAt = m.CreatedAt,
+                    UploadedBy = m.UploadedBy,
+                    DeptName = depts.FirstOrDefault(d => d.DepartmentId == m.DepartmentId)?.DepartmentName ?? "All Departments",
+                    UploaderName = users.FirstOrDefault(u => u.UserId == m.UploadedBy)?.FullName ?? "",
+                    HasCrossUserDuplicate = hasCrossUserDuplicate
+                };
             }).OrderByDescending(m => m.CreatedAt).ToList();
 
             ViewBag.Types = MaterialTypes;
             ViewBag.Departments = await _uow.Departments.GetAllAsync();
             ViewBag.FilterType = type;
             ViewBag.FilterDept = deptId;
+            ViewBag.Search = search;
             return View(vm);
         }
 
@@ -104,37 +138,39 @@ namespace eAdmin.Web.Controllers
             if (string.IsNullOrEmpty(vm.MaterialType) || !MaterialTypes.Contains(vm.MaterialType))
                 ModelState.AddModelError("MaterialType", "Please select a valid material type.");
 
-            // Must have at least one of: file, URL
             bool hasFile = uploadedFile != null && uploadedFile.Length > 0;
             bool hasUrl = !string.IsNullOrEmpty(vm.ExternalUrl);
             if (!hasFile && !hasUrl)
                 ModelState.AddModelError("", "Please either upload a file or provide an External URL.");
 
-            // Validate URL format if provided
             if (hasUrl && !Uri.TryCreate(vm.ExternalUrl, UriKind.Absolute, out _))
                 ModelState.AddModelError("ExternalUrl", "Please enter a valid URL (must start with http:// or https://).");
 
-            // Validate file extension
             if (hasFile)
             {
                 var ext = Path.GetExtension(uploadedFile!.FileName).ToLowerInvariant();
                 if (!AllowedExtensions.Contains(ext))
                     ModelState.AddModelError("", $"File type '{ext}' is not allowed. Allowed: {string.Join(", ", AllowedExtensions)}");
 
-                if (uploadedFile.Length > 20 * 1024 * 1024) // 20MB limit
+                if (uploadedFile.Length > 20 * 1024 * 1024)
                     ModelState.AddModelError("", "File size must not exceed 20MB.");
             }
 
-            // ── Duplicate check: same Title + same Type + same Department ──
-            var duplicates = await _uow.LearningMaterials.FindAsync(m =>
+            var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            // ── Duplicate check: SAME user + same Title + same Type + same Department → BLOCK ──
+            var selfDuplicates = await _uow.LearningMaterials.FindAsync(m =>
+                m.UploadedBy == uid &&
                 m.Title.ToLower() == vm.Title.ToLower() &&
                 m.MaterialType == vm.MaterialType &&
                 m.DepartmentId == vm.DepartmentId);
 
-            if (duplicates.Any())
+            if (selfDuplicates.Any())
+            {
                 ModelState.AddModelError("Title",
-                    $"A '{vm.MaterialType}' material titled '{vm.Title}' already exists " +
-                    $"for this department. Please use a different title or type.");
+                    $"Bạn đã tạo tài liệu '{vm.MaterialType}' với tiêu đề '{vm.Title}' cho khoa này rồi. " +
+                    $"Vui lòng dùng tiêu đề khác.");
+            }
 
             if (!ModelState.IsValid)
             {
@@ -142,12 +178,19 @@ namespace eAdmin.Web.Controllers
                 return View(vm);
             }
 
+            // ── Check cross-user duplicate (warn only, do NOT block) ───────
+            var crossUserDuplicates = await _uow.LearningMaterials.FindAsync(m =>
+                m.UploadedBy != uid &&
+                m.Title.ToLower() == vm.Title.ToLower() &&
+                m.MaterialType == vm.MaterialType &&
+                m.DepartmentId == vm.DepartmentId);
+
+            bool hasCrossUserWarning = crossUserDuplicates.Any();
+
             // ── Save file ──────────────────────────────────────────────────
             string? savedFilePath = null;
             if (hasFile)
                 savedFilePath = await SaveFileAsync(uploadedFile!);
-
-            var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
             await _uow.LearningMaterials.AddAsync(new LearningMaterial
             {
@@ -164,20 +207,34 @@ namespace eAdmin.Web.Controllers
             await _uow.SaveChangesAsync();
 
             // Notify students in department
-            if (vm.DepartmentId.HasValue)
+            var students = await _uow.Users.FindAsync(u =>
+                u.Role.RoleName == "Student" &&
+                u.IsActive &&
+                (
+                    vm.IsPublic ||                             // Public → tất cả student
+                    (vm.DepartmentId.HasValue &&              // Theo khoa → đúng khoa
+                     u.DepartmentId == vm.DepartmentId)
+                )
+            );
+
+            foreach (var s in students)
             {
-                var students = await _uow.Users.FindAsync(
-                    u => u.Role.RoleName == "Student" &&
-                         u.DepartmentId == vm.DepartmentId &&
-                         u.IsActive);
-                foreach (var s in students)
-                    await _notify.SendAsync(s.UserId, "InApp",
-                        "New Learning Material",
-                        $"New {vm.MaterialType} uploaded: {vm.Title}",
-                        "LearningMaterial", 0);
+                await _notify.SendAsync(
+                    s.UserId,
+                    "InApp",
+                    "New Learning Material",
+                    $"New {vm.MaterialType} uploaded: {vm.Title}",
+                    "LearningMaterial",
+                    0 // nếu muốn chuẩn hơn có thể thay bằng materialId
+                );
             }
 
-            TempData["Success"] = $"Material '{vm.Title}' uploaded successfully.";
+            if (hasCrossUserWarning)
+                TempData["Warning"] = $"Tài liệu '{vm.Title}' đã được tạo thành công, nhưng lưu ý: " +
+                                      $"đã có giảng viên khác tạo tài liệu tương tự (cùng tiêu đề, loại và khoa).";
+            else
+                TempData["Success"] = $"Material '{vm.Title}' uploaded successfully.";
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -234,7 +291,6 @@ namespace eAdmin.Web.Controllers
             bool hasUrl = !string.IsNullOrEmpty(vm.ExternalUrl);
             bool hasExistingFile = !string.IsNullOrEmpty(vm.FilePath);
 
-            // Must have at least one source
             if (!hasNewFile && !hasUrl && !hasExistingFile)
                 ModelState.AddModelError("", "Please upload a file or provide an External URL.");
 
@@ -251,16 +307,23 @@ namespace eAdmin.Web.Controllers
                     ModelState.AddModelError("", "File size must not exceed 20MB.");
             }
 
-            // Duplicate check — exclude self
-            var duplicates = await _uow.LearningMaterials.FindAsync(m =>
+            var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var role = User.FindFirst("Role")?.Value ?? "";
+
+            // ── Duplicate check: same owner, same title+type+dept, exclude self → BLOCK ──
+            var selfDuplicates = await _uow.LearningMaterials.FindAsync(m =>
+                m.UploadedBy == uid &&
                 m.Title.ToLower() == vm.Title.ToLower() &&
                 m.MaterialType == vm.MaterialType &&
                 m.DepartmentId == vm.DepartmentId &&
                 m.MaterialId != vm.MaterialId);
 
-            if (duplicates.Any())
+            if (selfDuplicates.Any())
                 ModelState.AddModelError("Title",
-                    $"Another '{vm.MaterialType}' material titled '{vm.Title}' already exists for this department.");
+                    $"Bạn đã có tài liệu '{vm.MaterialType}' với tiêu đề '{vm.Title}' trong khoa này rồi.");
+
+            // Admin: also block if exact duplicate exists from any owner (optional stricter rule for admin edits)
+            // Keeping consistent: Admin edits also only blocked if same-owner duplicate
 
             if (!ModelState.IsValid)
             {
@@ -268,37 +331,49 @@ namespace eAdmin.Web.Controllers
                 return View(vm);
             }
 
-            var m = await _uow.LearningMaterials.GetByIdAsync(vm.MaterialId);
-            if (m == null) return NotFound();
+            // ── Cross-user duplicate warning (after save) ──────────────────
+            var crossUserDuplicates = await _uow.LearningMaterials.FindAsync(m =>
+                m.UploadedBy != uid &&
+                m.Title.ToLower() == vm.Title.ToLower() &&
+                m.MaterialType == vm.MaterialType &&
+                m.DepartmentId == vm.DepartmentId &&
+                m.MaterialId != vm.MaterialId);
+
+            bool hasCrossUserWarning = crossUserDuplicates.Any();
+
+            var entity = await _uow.LearningMaterials.GetByIdAsync(vm.MaterialId);
+            if (entity == null) return NotFound();
 
             // Replace file if new one uploaded
             if (hasNewFile)
             {
-                // Delete old file
-                if (!string.IsNullOrEmpty(m.FilePath))
-                    DeletePhysicalFile(m.FilePath);
-
-                m.FilePath = await SaveFileAsync(uploadedFile!);
+                if (!string.IsNullOrEmpty(entity.FilePath))
+                    DeletePhysicalFile(entity.FilePath);
+                entity.FilePath = await SaveFileAsync(uploadedFile!);
             }
             else if (!hasExistingFile)
             {
-                // User cleared the file path manually
-                if (!string.IsNullOrEmpty(m.FilePath))
-                    DeletePhysicalFile(m.FilePath);
-                m.FilePath = null;
+                if (!string.IsNullOrEmpty(entity.FilePath))
+                    DeletePhysicalFile(entity.FilePath);
+                entity.FilePath = null;
             }
 
-            m.Title = vm.Title;
-            m.MaterialType = vm.MaterialType;
-            m.Description = vm.Description;
-            m.ExternalUrl = vm.ExternalUrl;
-            m.DepartmentId = vm.DepartmentId;
-            m.IsPublic = vm.IsPublic;
+            entity.Title = vm.Title;
+            entity.MaterialType = vm.MaterialType;
+            entity.Description = vm.Description;
+            entity.ExternalUrl = vm.ExternalUrl;
+            entity.DepartmentId = vm.DepartmentId;
+            entity.IsPublic = vm.IsPublic;
 
-            _uow.LearningMaterials.Update(m);
+            _uow.LearningMaterials.Update(entity);
             await _uow.SaveChangesAsync();
 
-            TempData["Success"] = $"Material '{vm.Title}' updated.";
+            if (hasCrossUserWarning)
+                TempData["Warning"] = $"Tài liệu '{vm.Title}' đã được cập nhật, nhưng lưu ý: " +
+                                      $"đã có giảng viên khác tạo tài liệu tương tự (cùng tiêu đề, loại và khoa).";
+            else
+                TempData["Success"] = $"Material '{vm.Title}' updated.";
+
             return RedirectToAction(nameof(Index));
         }
 
