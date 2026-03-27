@@ -154,7 +154,7 @@ namespace eAdmin.Web.ViewModels
         public string LabName { get; set; } = "";
         public string TypeName { get; set; } = "";
 
-        // dùng trong Index để tô màu hàng
+     
         public bool WarrantyExpired => WarrantyExpiry.HasValue && WarrantyExpiry.Value.Date < DateTime.Today;
         public bool WarrantyExpiringSoon => WarrantyExpiry.HasValue && !WarrantyExpired && WarrantyExpiry.Value.Date <= DateTime.Today.AddDays(30);
 

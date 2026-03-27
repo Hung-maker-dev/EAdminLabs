@@ -18,7 +18,6 @@ namespace eAdmin.Web.Controllers
         private readonly IUnitOfWork _uow;
         public EquipmentController(IUnitOfWork uow) => _uow = uow;
 
-        // ===== INDEX =====
         public async Task<IActionResult> Index(int? labId, string? condition, string? assetCode)
         {
             var all = await _uow.Equipments.GetAllAsync();
@@ -54,13 +53,12 @@ namespace eAdmin.Web.Controllers
             return View(vm);
         }
 
-        // ===== CREATE =====
         [HttpGet]
         [AuthorizeRoles("Admin", "Instructor")]
         public async Task<IActionResult> Create()
         {
             await PopulateDropdowns();
-            return View(new EquipmentViewModel());
+            return View(new EquipmentViewModel { Condition = "Good" });
         }
 
         [HttpPost]
@@ -68,14 +66,14 @@ namespace eAdmin.Web.Controllers
         [AuthorizeRoles("Admin", "Instructor")]
         public async Task<IActionResult> Create(EquipmentViewModel vm)
         {
-            // --- Normalize inputs ---
             vm.AssetCode = vm.AssetCode?.Trim() ?? "";
             vm.Model = vm.Model?.Trim();
             vm.SerialNumber = vm.SerialNumber?.Trim();
             vm.Notes = vm.Notes?.Trim();
-            vm.Condition = "Good"; // always Good on create
 
-            // --- Validate AssetCode ---
+            if (string.IsNullOrEmpty(vm.Condition))
+                vm.Condition = "Good";
+
             if (string.IsNullOrEmpty(vm.AssetCode))
                 ModelState.AddModelError("AssetCode", "Asset code is required.");
             else if (vm.AssetCode.Length < 2)
@@ -83,50 +81,52 @@ namespace eAdmin.Web.Controllers
             else if (vm.AssetCode.Length > 50)
                 ModelState.AddModelError("AssetCode", "Asset code must not exceed 50 characters.");
 
-            // --- Validate Lab ---
             if (vm.LabId == null || vm.LabId <= 0)
                 ModelState.AddModelError("LabId", "Please select a lab.");
 
-            // --- Validate Equipment Type ---
             if (vm.EquipmentTypeId == null || vm.EquipmentTypeId <= 0)
                 ModelState.AddModelError("EquipmentTypeId", "Please select an equipment type.");
 
-            // --- Validate PurchaseDate ---
             if (vm.PurchaseDate == null)
                 ModelState.AddModelError("PurchaseDate", "Purchase date is required.");
             else if (vm.PurchaseDate.Value > DateTime.Today)
                 ModelState.AddModelError("PurchaseDate", "Purchase date cannot be in the future.");
             else if (vm.PurchaseDate.Value.Year < 1990)
-                ModelState.AddModelError("PurchaseDate", "Purchase date seems too far in the past (before 1990).");
+                ModelState.AddModelError("PurchaseDate", "Purchase date too old.");
 
-            // --- Validate WarrantyExpiry ---
             if (vm.WarrantyExpiry == null)
                 ModelState.AddModelError("WarrantyExpiry", "Warranty expiry date is required.");
             else if (vm.PurchaseDate.HasValue && vm.WarrantyExpiry.Value <= vm.PurchaseDate.Value)
-                ModelState.AddModelError("WarrantyExpiry", "Warranty expiry must be after the purchase date.");
+                ModelState.AddModelError("WarrantyExpiry", "Warranty must be after purchase date.");
+            else if (vm.PurchaseDate.HasValue && (vm.WarrantyExpiry.Value - vm.PurchaseDate.Value).TotalDays < 30)
+                ModelState.AddModelError("WarrantyExpiry", "Warranty must be at least 30 days after purchase date.");
 
-            // --- Validate SerialNumber length ---
-            if (!string.IsNullOrEmpty(vm.SerialNumber) && vm.SerialNumber.Length > 100)
-                ModelState.AddModelError("SerialNumber", "Serial number must not exceed 100 characters.");
+            var validConditions = new[] { "Good", "Fair", "Poor" };
+            if (!validConditions.Contains(vm.Condition))
+                ModelState.AddModelError("Condition", "Invalid condition selected.");
 
-            // --- Duplicate AssetCode check ---
-            if (!string.IsNullOrEmpty(vm.AssetCode) && !ModelState.ContainsKey("AssetCode"))
+            if (!string.IsNullOrEmpty(vm.AssetCode) &&
+                vm.AssetCode.Length >= 2 && vm.AssetCode.Length <= 50)
             {
                 var assetLower = vm.AssetCode.ToLower();
-                var exists = await _uow.Equipments.FindAsync(e => e.AssetCode.ToLower() == assetLower);
+                var exists = await _uow.Equipments
+                    .FindAsync(e => e.AssetCode.ToLower() == assetLower);
+
                 if (exists.Any())
-                    ModelState.AddModelError("AssetCode", $"Asset code '{vm.AssetCode}' already exists. Please use a different code.");
+                    ModelState.AddModelError("AssetCode",
+                        $"Asset code '{vm.AssetCode}' already exists.");
             }
 
-            // --- Duplicate SerialNumber check ---
             if (!string.IsNullOrEmpty(vm.SerialNumber))
             {
                 var snLower = vm.SerialNumber.ToLower();
                 var snExists = await _uow.Equipments.FindAsync(e =>
                     !string.IsNullOrEmpty(e.SerialNumber) &&
                     e.SerialNumber.ToLower() == snLower);
+
                 if (snExists.Any())
-                    ModelState.AddModelError("SerialNumber", $"Serial number '{vm.SerialNumber}' already exists.");
+                    ModelState.AddModelError("SerialNumber",
+                        $"Serial number '{vm.SerialNumber}' already exists.");
             }
 
             if (!ModelState.IsValid)
@@ -144,21 +144,20 @@ namespace eAdmin.Web.Controllers
                 SerialNumber = vm.SerialNumber,
                 PurchaseDate = vm.PurchaseDate!.Value,
                 WarrantyExpiry = vm.WarrantyExpiry!.Value,
-                Condition = "Good",
+                Condition = vm.Condition,
                 Notes = vm.Notes
             };
 
             await _uow.Equipments.AddAsync(entity);
-            await _uow.SaveChangesAsync(); // Save first to get the generated ID
+            await _uow.SaveChangesAsync();
 
             await WriteAuditAsync("CreateEquipment", "Equipment", entity.EquipmentId, vm.AssetCode);
-            await _uow.SaveChangesAsync(); // Save audit log
+            await _uow.SaveChangesAsync();
 
             TempData["Success"] = $"Equipment '{vm.AssetCode}' created successfully.";
             return RedirectToAction(nameof(Index));
         }
 
-        // ===== EDIT =====
         [HttpGet]
         [AuthorizeRoles("Admin", "Instructor", "TechStaff")]
         public async Task<IActionResult> Edit(int id)
@@ -167,6 +166,7 @@ namespace eAdmin.Web.Controllers
             if (e == null) return NotFound();
 
             await PopulateDropdowns();
+
             return View(new EquipmentViewModel
             {
                 EquipmentId = e.EquipmentId,
@@ -177,7 +177,7 @@ namespace eAdmin.Web.Controllers
                 SerialNumber = e.SerialNumber,
                 PurchaseDate = e.PurchaseDate,
                 WarrantyExpiry = e.WarrantyExpiry,
-                Condition = e.Condition,
+                Condition = string.IsNullOrEmpty(e.Condition) ? "Good" : e.Condition,
                 Notes = e.Notes
             });
         }
@@ -187,66 +187,38 @@ namespace eAdmin.Web.Controllers
         [AuthorizeRoles("Admin", "Instructor", "TechStaff")]
         public async Task<IActionResult> Edit(EquipmentViewModel vm)
         {
-            // --- Normalize inputs ---
             vm.AssetCode = vm.AssetCode?.Trim() ?? "";
             vm.Model = vm.Model?.Trim();
             vm.SerialNumber = vm.SerialNumber?.Trim();
             vm.Notes = vm.Notes?.Trim();
 
-            // --- Validate AssetCode ---
-            if (string.IsNullOrEmpty(vm.AssetCode))
-                ModelState.AddModelError("AssetCode", "Asset code is required.");
-            else if (vm.AssetCode.Length < 2)
-                ModelState.AddModelError("AssetCode", "Asset code must be at least 2 characters.");
-            else if (vm.AssetCode.Length > 50)
-                ModelState.AddModelError("AssetCode", "Asset code must not exceed 50 characters.");
-
-            // --- Validate Lab ---
-            if (vm.LabId == null || vm.LabId <= 0)
-                ModelState.AddModelError("LabId", "Please select a lab.");
-
-            // --- Validate Equipment Type ---
-            if (vm.EquipmentTypeId == null || vm.EquipmentTypeId <= 0)
-                ModelState.AddModelError("EquipmentTypeId", "Please select an equipment type.");
-
-            // --- Validate Condition ---
             var validConditions = new[] { "Good", "Fair", "Poor" };
-            if (string.IsNullOrEmpty(vm.Condition) || !validConditions.Contains(vm.Condition))
-                ModelState.AddModelError("Condition", "Please select a valid condition.");
+            if (!validConditions.Contains(vm.Condition))
+                ModelState.AddModelError("Condition", "Invalid condition.");
 
-            if (vm.Condition == "OutOfService")
-                ModelState.AddModelError("Condition", "Cannot manually set status to Out of Service here. Use the dedicated workflow.");
-
-            // --- Validate PurchaseDate ---
             if (vm.PurchaseDate == null)
                 ModelState.AddModelError("PurchaseDate", "Purchase date is required.");
             else if (vm.PurchaseDate.Value > DateTime.Today)
                 ModelState.AddModelError("PurchaseDate", "Purchase date cannot be in the future.");
             else if (vm.PurchaseDate.Value.Year < 1990)
-                ModelState.AddModelError("PurchaseDate", "Purchase date seems too far in the past (before 1990).");
+                ModelState.AddModelError("PurchaseDate", "Purchase date too old.");
 
-            // --- Validate WarrantyExpiry ---
             if (vm.WarrantyExpiry == null)
                 ModelState.AddModelError("WarrantyExpiry", "Warranty expiry date is required.");
             else if (vm.PurchaseDate.HasValue && vm.WarrantyExpiry.Value <= vm.PurchaseDate.Value)
-                ModelState.AddModelError("WarrantyExpiry", "Warranty expiry must be after the purchase date.");
+                ModelState.AddModelError("WarrantyExpiry", "Warranty must be after purchase date.");
+            else if (vm.PurchaseDate.HasValue && (vm.WarrantyExpiry.Value - vm.PurchaseDate.Value).TotalDays < 30)
+                ModelState.AddModelError("WarrantyExpiry", "Warranty must be at least 30 days after purchase date.");
 
-            // --- Validate SerialNumber length ---
-            if (!string.IsNullOrEmpty(vm.SerialNumber) && vm.SerialNumber.Length > 100)
-                ModelState.AddModelError("SerialNumber", "Serial number must not exceed 100 characters.");
+            var assetLower = vm.AssetCode.ToLower();
+            var exists = await _uow.Equipments.FindAsync(e =>
+                e.AssetCode.ToLower() == assetLower &&
+                e.EquipmentId != vm.EquipmentId);
 
-            // --- Duplicate AssetCode check (exclude current) ---
-            if (!string.IsNullOrEmpty(vm.AssetCode) && !ModelState.ContainsKey("AssetCode"))
-            {
-                var assetLower = vm.AssetCode.ToLower();
-                var exists = await _uow.Equipments.FindAsync(e =>
-                    e.AssetCode.ToLower() == assetLower &&
-                    e.EquipmentId != vm.EquipmentId);
-                if (exists.Any())
-                    ModelState.AddModelError("AssetCode", $"Asset code '{vm.AssetCode}' is already used by another equipment.");
-            }
+            if (exists.Any())
+                ModelState.AddModelError("AssetCode",
+                    $"Asset code '{vm.AssetCode}' already exists.");
 
-            // --- Duplicate SerialNumber check (exclude current) ---
             if (!string.IsNullOrEmpty(vm.SerialNumber))
             {
                 var snLower = vm.SerialNumber.ToLower();
@@ -254,8 +226,10 @@ namespace eAdmin.Web.Controllers
                     !string.IsNullOrEmpty(e.SerialNumber) &&
                     e.SerialNumber.ToLower() == snLower &&
                     e.EquipmentId != vm.EquipmentId);
+
                 if (snExists.Any())
-                    ModelState.AddModelError("SerialNumber", $"Serial number '{vm.SerialNumber}' is already used by another equipment.");
+                    ModelState.AddModelError("SerialNumber",
+                        $"Serial number '{vm.SerialNumber}' already exists.");
             }
 
             if (!ModelState.IsValid)
@@ -286,7 +260,6 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ===== DELETE =====
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin", "Instructor")]
@@ -295,31 +268,24 @@ namespace eAdmin.Web.Controllers
             var e = await _uow.Equipments.GetByIdAsync(id);
             if (e == null) return NotFound();
 
-            if (e.Condition != "OutOfService")
-            {
-                TempData["Error"] = "Only equipment with status 'Out of Service' can be deleted.";
-                return RedirectToAction(nameof(Index));
-            }
-
             var assetCode = e.AssetCode;
             _uow.Equipments.Remove(e);
             await _uow.SaveChangesAsync();
 
-            TempData["Success"] = $"Equipment '{assetCode}' has been deleted.";
+            TempData["Success"] = $"Equipment '{assetCode}' deleted.";
             return RedirectToAction(nameof(Index));
         }
 
-        // ===== DROPDOWNS =====
         private async Task PopulateDropdowns()
         {
             ViewBag.Labs = new SelectList(await _uow.Labs.GetAllAsync(), "LabId", "LabName");
             ViewBag.EquipmentTypes = new SelectList(await _uow.EquipmentTypes.GetAllAsync(), "EquipmentTypeId", "TypeName");
         }
 
-        // ===== AUDIT =====
         private async Task WriteAuditAsync(string action, string entityType, int entityId, string details)
         {
             var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
             await _uow.AuditLogs.AddAsync(new AuditLog
             {
                 UserId = uid,

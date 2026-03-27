@@ -14,49 +14,53 @@
         <form asp-action="Create" method="post">
             @Html.AntiForgeryToken()
 
-            <!-- 🔥 ERROR SUMMARY -->
-            <div asp-validation-summary="All" class="alert alert-danger"></div>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <strong>Please fix the following errors:</strong>
+                    <ul class="mb-0 mt-1">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@err.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
 
             <input type="hidden" asp-for="SoftwareId" />
 
             <div class="row g-3">
 
-                <!-- SOFTWARE NAME -->
                 <div class="col-md-6">
                     <label asp-for="SoftwareName" class="form-label fw-semibold"></label>
                     <input asp-for="SoftwareName" class="form-control" />
                     <span asp-validation-for="SoftwareName" class="text-danger"></span>
                 </div>
 
-                <!-- VERSION -->
                 <div class="col-md-3">
                     <label asp-for="Version" class="form-label fw-semibold"></label>
                     <input asp-for="Version" class="form-control" />
                     <span asp-validation-for="Version" class="text-danger"></span>
                 </div>
 
-                <!-- LICENSE EXPIRY -->
                 <div class="col-md-3">
                     <label asp-for="LicenseExpiry" class="form-label fw-semibold">License Expiry</label>
                     <input asp-for="LicenseExpiry" type="date" class="form-control" />
                     <span asp-validation-for="LicenseExpiry" class="text-danger"></span>
                 </div>
 
-                <!-- LICENSE KEY -->
                 <div class="col-md-6">
                     <label asp-for="LicenseKey" class="form-label fw-semibold"></label>
                     <input asp-for="LicenseKey" class="form-control" />
                     <span asp-validation-for="LicenseKey" class="text-danger"></span>
                 </div>
 
-                <!-- INSTALL GUIDE -->
                 <div class="col-md-6">
                     <label asp-for="InstallGuideUrl" class="form-label fw-semibold">Install Guide URL</label>
                     <input asp-for="InstallGuideUrl" class="form-control" placeholder="https://..." />
                     <span asp-validation-for="InstallGuideUrl" class="text-danger"></span>
                 </div>
 
-                <!-- LAB -->
                 <div class="col-md-6">
                     <label asp-for="LabId" class="form-label fw-semibold">
                         Lab (blank = all labs)
@@ -69,7 +73,6 @@
 
             </div>
 
-            <!-- BUTTON -->
             <div class="d-flex gap-2 justify-content-end mt-3">
                 <a href="/Software/Index" class="btn btn-secondary">Cancel</a>
                 <button type="submit" class="btn btn-primary">
@@ -80,4 +83,3 @@
         </form>
     </div>
 </div>
-

@@ -16,14 +16,13 @@
     }
 </div>
 
-<!-- 🔍 SEARCH DUY NHẤT -->
+
 <div class="mb-3" style="max-width:400px">
     <input type="text" id="searchBox"
            class="form-control"
            placeholder="Search Asset Code..." />
 </div>
 
-<!-- ❌ ĐÃ XÓA Ô SEARCH TRONG FORM -->
 <form method="get" class="row g-2 mb-3">
     <div class="col-md-3">
         <select name="labId" asp-items="ViewBag.Labs" class="form-select form-select-sm">
@@ -52,6 +51,7 @@
                 <th>Asset Code</th>
                 <th>Type</th>
                 <th>Model</th>
+                <th>Serial Number</th>
                 <th>Lab</th>
                 <th>Condition</th>
                 <th>Purchase Date</th>
@@ -74,12 +74,11 @@
                 };
 
                 <tr class="@rowCls">
-                    <!-- 🔥 CHỈ SEARCH THEO ASSET -->
                     <td class="asset"><strong>@e.AssetCode</strong></td>
                     <td>@e.TypeName</td>
                     <td>@e.Model</td>
+                    <td>@(string.IsNullOrEmpty(e.SerialNumber) ? "-" : e.SerialNumber)</td>
                     <td>@e.LabName</td>
-
                     <td><span class="badge @condBadge">@e.Condition</span></td>
 
                     <td>
@@ -141,7 +140,6 @@
     </table>
 </div>
 
-<!-- 🔥 SCRIPT: CHỈ LỌC ASSET CODE -->
 @section Scripts {
 <script>
     document.getElementById("searchBox").addEventListener("keyup", function () {

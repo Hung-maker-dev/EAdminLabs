@@ -10,16 +10,6 @@
     }
 </div>
 
-<!-- ✅ FIX 1 THÔNG BÁO -->
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show">
-        @TempData["Success"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-}
-
-<!-- 🔍 SEARCH -->
 <input type="text" id="searchBox" class="form-control mb-3" placeholder="Search by software name...">
 
 <div class="table-responsive">

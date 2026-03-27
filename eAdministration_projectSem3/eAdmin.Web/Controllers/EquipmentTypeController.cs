@@ -16,7 +16,6 @@ namespace eAdmin.Web.Controllers
         private readonly IUnitOfWork _uow;
         public EquipmentTypeController(IUnitOfWork uow) => _uow = uow;
 
-        // ================= INDEX =================
         public async Task<IActionResult> Index()
         {
             var types = await _uow.EquipmentTypes.GetAllAsync();
@@ -33,7 +32,7 @@ namespace eAdmin.Web.Controllers
             return View(vm);
         }
 
-        // ================= CREATE =================
+      
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public IActionResult Create() => View(new EquipmentTypeViewModel());
@@ -43,25 +42,24 @@ namespace eAdmin.Web.Controllers
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create(EquipmentTypeViewModel vm)
         {
-            // Trim input
+           
             vm.TypeName = vm.TypeName?.Trim() ?? string.Empty;
             vm.Description = vm.Description?.Trim();
 
-            // Validate required
             if (string.IsNullOrEmpty(vm.TypeName))
             {
                 ModelState.AddModelError("TypeName", "Type name is required.");
                 return View(vm);
             }
 
-            // Validate length
+           
             if (vm.TypeName.Length < 2)
             {
                 ModelState.AddModelError("TypeName", "Type name must be at least 2 characters.");
                 return View(vm);
             }
 
-            // Check duplicate (case-insensitive)
+           
             var inputName = vm.TypeName.ToLower();
 
             var existing = await _uow.EquipmentTypes
@@ -74,7 +72,7 @@ namespace eAdmin.Web.Controllers
                 return View(vm);
             }
 
-            // Save
+           
             await _uow.EquipmentTypes.AddAsync(new EquipmentType
             {
                 TypeName = vm.TypeName,
@@ -87,7 +85,7 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ================= EDIT =================
+        
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
@@ -108,25 +106,25 @@ namespace eAdmin.Web.Controllers
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(EquipmentTypeViewModel vm)
         {
-            // Trim input
+          
             vm.TypeName = vm.TypeName?.Trim() ?? string.Empty;
             vm.Description = vm.Description?.Trim();
 
-            // Validate required
+           
             if (string.IsNullOrEmpty(vm.TypeName))
             {
                 ModelState.AddModelError("TypeName", "Type name is required.");
                 return View(vm);
             }
 
-            // Validate length
+          
             if (vm.TypeName.Length < 2)
             {
                 ModelState.AddModelError("TypeName", "Type name must be at least 2 characters.");
                 return View(vm);
             }
 
-            // Check duplicate (exclude current record)
+           
             var inputName = vm.TypeName.ToLower();
 
             var existing = await _uow.EquipmentTypes
@@ -140,11 +138,9 @@ namespace eAdmin.Web.Controllers
                 return View(vm);
             }
 
-            // Get entity
             var t = await _uow.EquipmentTypes.GetByIdAsync(vm.EquipmentTypeId);
             if (t == null) return NotFound();
 
-            // Update
             t.TypeName = vm.TypeName;
             t.Description = vm.Description;
 
@@ -155,13 +151,12 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ================= DELETE =================
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Delete(int id)
         {
-            // Check FK usage
+        
             var equips = await _uow.Equipments
                 .FindAsync(e => e.EquipmentTypeId == id);
 

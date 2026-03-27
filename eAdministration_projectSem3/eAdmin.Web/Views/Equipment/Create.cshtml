@@ -1,101 +1,100 @@
 ﻿@model eAdmin.Web.ViewModels.EquipmentViewModel
 @{
-    ViewData["Title"] = "Add Equipment";
+    ViewData["Title"] = "Create Equipment";
 }
 
-<div class="container">
-    <div class="d-flex align-items-center mb-3">
-        <a href="/Equipment/Index" class="btn btn-outline-secondary btn-sm me-2">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <h4 class="mb-0">
-            <i class="fas fa-plus me-2 text-primary"></i>Add Equipment
-        </h4>
-    </div>
+<h4>
+    <i class="fas fa-desktop me-2 text-primary"></i>
+    Create Equipment
+</h4>
 
-    <!-- 🔥 CENTER FORM -->
-    <div class="row justify-content-center mt-3 mb-4">
-        <div class="col-md-6">
+<div class="card shadow-sm">
+    <div class="card-body">
 
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <form asp-action="Create" method="post">
-                        @Html.AntiForgeryToken()
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
 
-                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-                        <p class="text-muted small fw-semibold text-uppercase mb-2 border-bottom pb-1">
-                            Identification
-                        </p>
-
-                        <div class="mb-3">
-                            <label asp-for="AssetCode" class="form-label fw-semibold"></label>
-                            <input asp-for="AssetCode" class="form-control" />
-                            <span asp-validation-for="AssetCode" class="text-danger"></span>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label asp-for="LabId" class="form-label fw-semibold"></label>
-                                <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select">
-                                    <option value="">-- Select Lab --</option>
-                                </select>
-                                <span asp-validation-for="LabId" class="text-danger"></span>
-                            </div>
-                            <div class="col">
-                                <label asp-for="EquipmentTypeId" class="form-label fw-semibold"></label>
-                                <select asp-for="EquipmentTypeId" asp-items="ViewBag.EquipmentTypes" class="form-select">
-                                    <option value="">-- Select Type --</option>
-                                </select>
-                                <span asp-validation-for="EquipmentTypeId" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label asp-for="Model" class="form-label fw-semibold"></label>
-                                <input asp-for="Model" class="form-control" />
-                                <span asp-validation-for="Model" class="text-danger"></span>
-                            </div>
-                            <div class="col">
-                                <label asp-for="SerialNumber" class="form-label fw-semibold"></label>
-                                <input asp-for="SerialNumber" class="form-control" />
-                                <span asp-validation-for="SerialNumber" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <p class="text-muted small fw-semibold text-uppercase mb-2 border-bottom pb-1 mt-3">
-                            Purchase & Warranty
-                        </p>
-
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label asp-for="PurchaseDate" class="form-label fw-semibold"></label>
-                                <input asp-for="PurchaseDate" type="date" class="form-control" />
-                                <span asp-validation-for="PurchaseDate" class="text-danger"></span>
-                            </div>
-                            <div class="col">
-                                <label asp-for="WarrantyExpiry" class="form-label fw-semibold"></label>
-                                <input asp-for="WarrantyExpiry" type="date" class="form-control" />
-                                <span asp-validation-for="WarrantyExpiry" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Notes" class="form-label fw-semibold"></label>
-                            <textarea asp-for="Notes" class="form-control"></textarea>
-                        </div>
-
-                        <input type="hidden" asp-for="Condition" value="Good" />
-
-                        <div class="d-flex justify-content-end">
-                            <a href="/Equipment/Index" class="btn btn-secondary me-2">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Add</button>
-                        </div>
-                    </form>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <strong>Please fix the following errors:</strong>
+                    <ul class="mb-0 mt-1">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@err.ErrorMessage</li>
+                        }
+                    </ul>
                 </div>
+            }
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Asset Code</label>
+                    <input asp-for="AssetCode" class="form-control" />
+                    <span asp-validation-for="AssetCode" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Model</label>
+                    <input asp-for="Model" class="form-control" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Serial Number</label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Lab</label>
+                    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select">
+                        <option value="">-- Select Lab --</option>
+                    </select>
+                    <span asp-validation-for="LabId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Equipment Type</label>
+                    <select asp-for="EquipmentTypeId" asp-items="ViewBag.EquipmentTypes" class="form-select">
+                        <option value="">-- Select Type --</option>
+                    </select>
+                    <span asp-validation-for="EquipmentTypeId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Condition</label>
+                        <input type="hidden" asp-for="Condition" value="Good" />
+                        <input type="text" class="form-control" value="Good" disabled />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Purchase Date</label>
+                    <input asp-for="PurchaseDate" type="date" class="form-control" />
+                    <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Warranty Expiry</label>
+                    <input asp-for="WarrantyExpiry" type="date" class="form-control" />
+                    <span asp-validation-for="WarrantyExpiry" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Notes</label>
+                    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                </div>
+
             </div>
 
-        </div>
+            <div class="d-flex gap-2 justify-content-end mt-3">
+                <a href="/Equipment/Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-1"></i> Save
+                </button>
+            </div>
+
+        </form>
     </div>
 </div>

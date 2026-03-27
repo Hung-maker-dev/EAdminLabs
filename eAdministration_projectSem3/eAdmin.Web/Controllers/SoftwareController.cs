@@ -43,7 +43,6 @@ namespace eAdmin.Web.Controllers
             return View(vm);
         }
 
-        // ================= CREATE =================
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create()
@@ -91,7 +90,6 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ================= EDIT =================
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
@@ -154,7 +152,6 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ================= DELETE =================
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin")]
@@ -171,23 +168,29 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ================= VALIDATE =================
         private void Validate(SoftwareViewModel vm)
         {
             if (string.IsNullOrWhiteSpace(vm.SoftwareName))
-                ModelState.AddModelError("SoftwareName", "Software Name is required");
-
-            if (string.IsNullOrWhiteSpace(vm.Version))
-                ModelState.AddModelError("Version", "Version is required");
-
-            if (string.IsNullOrWhiteSpace(vm.LicenseKey))
-                ModelState.AddModelError("LicenseKey", "License Key is required");
-
-            if (string.IsNullOrWhiteSpace(vm.InstallGuideUrl))
-                ModelState.AddModelError("InstallGuideUrl", "Install Guide URL is required");
+                ModelState.AddModelError("SoftwareName", "Software Name is required.");
 
             if (vm.SoftwareName?.Length < 2)
-                ModelState.AddModelError("SoftwareName", "Must be at least 2 characters");
+                ModelState.AddModelError("SoftwareName", "Must be at least 2 characters.");
+
+            if (string.IsNullOrWhiteSpace(vm.Version))
+                ModelState.AddModelError("Version", "Version is required.");
+
+            if (string.IsNullOrWhiteSpace(vm.LicenseKey))
+                ModelState.AddModelError("LicenseKey", "License Key is required.");
+
+            if (string.IsNullOrWhiteSpace(vm.InstallGuideUrl))
+                ModelState.AddModelError("InstallGuideUrl", "Install Guide URL is required.");
+
+            if (vm.LicenseExpiry == null)
+                ModelState.AddModelError("LicenseExpiry", "License Expiry is required.");
+            else if (vm.LicenseExpiry.Value < DateTime.Today)
+                ModelState.AddModelError("LicenseExpiry", "License Expiry cannot be in the past.");
+            else if ((vm.LicenseExpiry.Value - DateTime.Today).TotalDays < 30)
+                ModelState.AddModelError("LicenseExpiry", "License Expiry must be at least 30 days from today.");
         }
 
         private async Task PopulateLabs()
