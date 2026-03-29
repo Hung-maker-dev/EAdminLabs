@@ -1,22 +1,81 @@
 @model IEnumerable<eAdmin.Web.ViewModels.SoftwareViewModel>
 @{ ViewData["Title"] = "Software Licenses"; }
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4><i class="fas fa-compact-disc me-2 text-purple"></i>Software License Management</h4>
-    @if(User.FindFirst("Role")?.Value=="Admin"){<a href="/Software/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>Add Software</a>}
+    @if(User.FindFirst("Role")?.Value=="Admin"){
+        <a href="/Software/Create" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus me-1"></i>Add Software
+        </a>
+    }
 </div>
-@if(TempData["Success"]!=null){<div class="alert alert-success">@TempData["Success"]</div>}
-<div class="table-responsive"><table class="table table-hover table-bordered align-middle">
-<thead class="table-dark"><tr><th>Name</th><th>Version</th><th>License Expiry</th><th>Days Left</th><th>Lab</th><th>Status</th><th>Actions</th></tr></thead>
-<tbody>@foreach(var s in Model){
+
+<input type="text" id="searchBox" class="form-control mb-3" placeholder="Search by software name...">
+
+<div class="table-responsive">
+<table class="table table-hover table-bordered align-middle">
+<thead class="table-dark">
+<tr>
+<th>Name</th><th>Version</th><th>License Expiry</th>
+<th>Days Left</th><th>Lab</th><th>Status</th><th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+@foreach(var s in Model){
 var rowClass = s.IsExpired ? "table-danger" : s.IsExpiringSoon ? "table-warning" : "";
+
 <tr class="@rowClass">
-<td><strong>@s.SoftwareName</strong></td><td>@s.Version</td>
+<td><strong>@s.SoftwareName</strong></td>
+<td>@s.Version</td>
+
 <td>@(s.LicenseExpiry?.ToString("dd/MM/yyyy") ?? "No expiry")</td>
-<td>@if(s.DaysUntilExpiry.HasValue){if(s.IsExpired){<span class="badge bg-danger">EXPIRED</span>}else if(s.IsExpiringSoon){<span class="badge bg-warning text-dark">@s.DaysUntilExpiry days</span>}else{<span class="text-muted">@s.DaysUntilExpiry days</span>}}else{<span class="text-muted">–</span>}</td>
+
+<td>
+@if(s.DaysUntilExpiry.HasValue){
+    if(s.IsExpired){<span class="badge bg-danger">EXPIRED</span>}
+    else if(s.IsExpiringSoon){<span class="badge bg-warning text-dark">@s.DaysUntilExpiry days</span>}
+    else{<span class="text-muted">@s.DaysUntilExpiry days</span>}
+}else{<span class="text-muted">–</span>}
+</td>
+
 <td>@s.LabName</td>
-<td>@if(s.IsExpired){<span class="badge bg-danger">Expired</span>}else if(s.IsExpiringSoon){<span class="badge bg-warning text-dark">Expiring Soon</span>}else{<span class="badge bg-success">Active</span>}</td>
-<td>@if(User.FindFirst("Role")?.Value=="Admin"){
-<a href="/Software/Edit/@s.SoftwareId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-<form method="post" action="/Software/Delete/@s.SoftwareId" class="d-inline">@Html.AntiForgeryToken()
-<button class="btn btn-danger btn-sm" onclick="return confirm('Delete?')"><i class="fas fa-trash"></i></button></form>
-}</td></tr>}</tbody></table></div>
+
+<td>
+@if(s.IsExpired){<span class="badge bg-danger">Expired</span>}
+else if(s.IsExpiringSoon){<span class="badge bg-warning text-dark">Expiring Soon</span>}
+else{<span class="badge bg-success">Active</span>}
+</td>
+
+<td>
+@if(User.FindFirst("Role")?.Value=="Admin"){
+<a href="/Software/Edit/@s.SoftwareId" class="btn btn-warning btn-sm">
+<i class="fas fa-edit"></i></a>
+
+<form method="post" action="/Software/Delete/@s.SoftwareId" class="d-inline">
+@Html.AntiForgeryToken()
+<button class="btn btn-danger btn-sm" onclick="return confirm('Delete?')">
+<i class="fas fa-trash"></i>
+</button>
+</form>
+}
+</td>
+</tr>
+}
+</tbody>
+</table>
+</div>
+
+@section Scripts{
+<script>
+document.getElementById("searchBox").addEventListener("keyup", function () {
+    let keyword = this.value.toLowerCase();
+    let rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(row => {
+        let name = row.children[0].innerText.toLowerCase();
+        row.style.display = name.includes(keyword) ? "" : "none";
+    });
+});
+</script>
+}

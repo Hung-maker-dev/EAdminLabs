@@ -1,20 +1,106 @@
-@model eAdmin.Web.ViewModels.EquipmentViewModel
-@{ ViewData["Title"] = "Edit Equipment"; }
-<h4><i class="fas fa-edit me-2 text-warning"></i>Edit Equipment</h4>
-<div class="card shadow-sm"><div class="card-body">
-<form asp-action="Edit" method="post">@Html.AntiForgeryToken()
-<input type="hidden" asp-for="EquipmentId"/>
-<div class="row g-3">
-<div class="col-md-4"><label asp-for="AssetCode" class="form-label fw-semibold"></label><input asp-for="AssetCode" class="form-control" readonly/></div>
-<div class="col-md-4"><label asp-for="LabId" class="form-label fw-semibold">Lab</label><select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select"></select></div>
-<div class="col-md-4"><label asp-for="EquipmentTypeId" class="form-label fw-semibold">Type</label><select asp-for="EquipmentTypeId" asp-items="ViewBag.EquipmentTypes" class="form-select"></select></div>
-<div class="col-md-4"><label asp-for="Model" class="form-label fw-semibold">Model</label><input asp-for="Model" class="form-control"/></div>
-<div class="col-md-4"><label asp-for="SerialNumber" class="form-label fw-semibold">Serial Number</label><input asp-for="SerialNumber" class="form-control"/></div>
-<div class="col-md-4"><label asp-for="Condition" class="form-label fw-semibold">Condition</label>
-<select asp-for="Condition" class="form-select"><option>Good</option><option>Fair</option><option>Poor</option><option>OutOfService</option></select></div>
-<div class="col-md-4"><label asp-for="PurchaseDate" class="form-label fw-semibold">Purchase Date</label><input asp-for="PurchaseDate" type="date" class="form-control"/></div>
-<div class="col-md-4"><label asp-for="WarrantyExpiry" class="form-label fw-semibold">Warranty Expiry</label><input asp-for="WarrantyExpiry" type="date" class="form-control"/></div>
-<div class="col-md-12"><label asp-for="Notes" class="form-label fw-semibold">Notes</label><textarea asp-for="Notes" class="form-control" rows="2"></textarea></div>
+﻿@model eAdmin.Web.ViewModels.EquipmentViewModel
+@{
+    ViewData["Title"] = "Edit Equipment";
+}
+
+<h4>
+    <i class="fas fa-desktop me-2 text-primary"></i>
+    Edit Equipment
+</h4>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="EquipmentId" />
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <strong>Please fix the following errors:</strong>
+                    <ul class="mb-0 mt-1">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@err.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <div class="row g-3">
+
+                <!-- Row 1 -->
+                <div class="col-md-4">
+                    <label asp-for="AssetCode" class="form-label fw-semibold"></label>
+                    <input asp-for="AssetCode" class="form-control" />
+                    <span asp-validation-for="AssetCode" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Model" class="form-label fw-semibold"></label>
+                    <input asp-for="Model" class="form-control" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="SerialNumber" class="form-label fw-semibold"></label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-md-6">
+                    <label asp-for="LabId" class="form-label fw-semibold"></label>
+                    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select"></select>
+                    <span asp-validation-for="LabId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="EquipmentTypeId" class="form-label fw-semibold"></label>
+                    <select asp-for="EquipmentTypeId" asp-items="ViewBag.EquipmentTypes" class="form-select"></select>
+                    <span asp-validation-for="EquipmentTypeId" class="text-danger"></span>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-md-4">
+                    <label asp-for="Condition" class="form-label fw-semibold"></label>
+                    <select asp-for="Condition" class="form-select">
+                        <option value="Good">Good</option>
+                        <option value="Fair">Fair</option>
+                        <option value="Poor">Poor</option>
+                    </select>
+                    <span asp-validation-for="Condition" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="PurchaseDate" class="form-label fw-semibold"></label>
+                    <input asp-for="PurchaseDate" type="date" class="form-control" />
+                    <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="WarrantyExpiry" class="form-label fw-semibold"></label>
+                    <input asp-for="WarrantyExpiry" type="date" class="form-control" />
+                    <span asp-validation-for="WarrantyExpiry" class="text-danger"></span>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="col-12">
+                    <label asp-for="Notes" class="form-label fw-semibold"></label>
+                    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                </div>
+
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end mt-3">
+                <a href="/Equipment/Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-1"></i> Save
+                </button>
+            </div>
+
+        </form>
+    </div>
 </div>
-<div class="d-flex gap-2 justify-content-end mt-3"><a href="/Equipment/Index" class="btn btn-secondary">Cancel</a><button class="btn btn-warning">Save</button></div>
-</form></div></div>

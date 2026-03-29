@@ -1,11 +1,27 @@
 @model IEnumerable<eAdmin.Web.ViewModels.EquipmentViewModel>
-@{ ViewData["Title"] = "Equipment Management"; var role = User.FindFirst("Role")?.Value ?? ""; }
+@{
+    ViewData["Title"] = "Equipment Management";
+    var role = User.FindFirst("Role")?.Value ?? "";
+}
+
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4><i class="fas fa-desktop me-2 text-primary"></i>Equipment Management</h4>
-    @if(role == "Admin" || role == "Instructor"){
-    <a href="/Equipment/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>Add Equipment</a>}
+    <h4>
+        <i class="fas fa-desktop me-2 text-primary"></i>Equipment Management
+    </h4>
+    @if (role == "Admin" || role == "Instructor")
+    {
+        <a href="/Equipment/Create" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus me-1"></i>Add Equipment
+        </a>
+    }
 </div>
-@if(TempData["Success"] != null){<div class="alert alert-success">@TempData["Success"]</div>}
+
+
+<div class="mb-3" style="max-width:400px">
+    <input type="text" id="searchBox"
+           class="form-control"
+           placeholder="Search Asset Code..." />
+</div>
 
 <form method="get" class="row g-2 mb-3">
     <div class="col-md-3">
@@ -16,39 +32,129 @@
     <div class="col-md-3">
         <select name="condition" class="form-select form-select-sm">
             <option value="">All Conditions</option>
-            <option value="Good">Good</option><option value="Fair">Fair</option>
-            <option value="Poor">Poor</option><option value="OutOfService">Out of Service</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
         </select>
     </div>
-    <div class="col-md-2"><button class="btn btn-outline-secondary btn-sm w-100"><i class="fas fa-filter me-1"></i>Filter</button></div>
+    <div class="col-md-2">
+        <button class="btn btn-outline-secondary btn-sm w-100">
+            <i class="fas fa-filter me-1"></i>Filter
+        </button>
+    </div>
 </form>
 
 <div class="table-responsive">
-<table class="table table-hover table-bordered align-middle">
-<thead class="table-dark">
-    <tr><th>Asset Code</th><th>Type</th><th>Model</th><th>Lab</th><th>Condition</th><th>Warranty</th><th>Actions</th></tr>
-</thead>
-<tbody>
-@foreach(var e in Model){
-    var rowCls = e.WarrantyExpired ? "table-danger" : e.WarrantyExpiringSoon ? "table-warning" : "";
-    var condBadge = e.Condition switch { "Good"=>"bg-success","Fair"=>"bg-info","Poor"=>"bg-warning text-dark",_=>"bg-danger" };
-    <tr class="@rowCls">
-    <td><strong>@e.AssetCode</strong></td>
-    <td>@e.TypeName</td>
-    <td>@e.Model</td>
-    <td>@e.LabName</td>
-    <td><span class="badge @condBadge">@e.Condition</span></td>
-    <td>
-        @if(e.WarrantyExpiry.HasValue){
-            if(e.WarrantyExpired){<span class="badge bg-danger"><i class="fas fa-exclamation-triangle me-1"></i>Expired @e.WarrantyExpiry.Value.ToString("dd/MM/yy")</span>}
-            else if(e.WarrantyExpiringSoon){<span class="badge bg-warning text-dark">Expiring @e.WarrantyExpiry.Value.ToString("dd/MM/yy")</span>}
-            else{<span>@e.WarrantyExpiry.Value.ToString("dd/MM/yyyy")</span>}
-        } else { <span class="text-muted">–</span> }
-    </td>
-    <td>
-        <a href="/Equipment/Edit/@e.EquipmentId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-    </td>
-    </tr>}
-</tbody>
-</table>
+    <table class="table table-hover table-bordered align-middle" id="equipmentTable">
+        <thead class="table-dark">
+            <tr>
+                <th>Asset Code</th>
+                <th>Type</th>
+                <th>Model</th>
+                <th>Serial Number</th>
+                <th>Lab</th>
+                <th>Condition</th>
+                <th>Purchase Date</th>
+                <th>Warranty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Model)
+            {
+                var rowCls = e.WarrantyExpired ? "table-danger"
+                             : e.WarrantyExpiringSoon ? "table-warning"
+                             : "";
+                var condBadge = e.Condition switch
+                {
+                    "Good" => "bg-success",
+                    "Fair" => "bg-info",
+                    "Poor" => "bg-warning text-dark",
+                    _ => "bg-secondary"
+                };
+
+                <tr class="@rowCls">
+                    <td class="asset"><strong>@e.AssetCode</strong></td>
+                    <td>@e.TypeName</td>
+                    <td>@e.Model</td>
+                    <td>@(string.IsNullOrEmpty(e.SerialNumber) ? "-" : e.SerialNumber)</td>
+                    <td>@e.LabName</td>
+                    <td><span class="badge @condBadge">@e.Condition</span></td>
+
+                    <td>
+                        @if (e.PurchaseDate.HasValue)
+                        {
+                            <span>@e.PurchaseDate.Value.ToString("dd/MM/yyyy")</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+
+                    <td>
+                        @if (e.WarrantyExpiry.HasValue)
+                        {
+                            if (e.WarrantyExpired)
+                            {
+                                <span class="badge bg-danger">
+                                    Expired @e.WarrantyExpiry.Value.ToString("dd/MM/yy")
+                                </span>
+                            }
+                            else if (e.WarrantyExpiringSoon)
+                            {
+                                <span class="badge bg-warning text-dark">
+                                    Expiring @e.WarrantyExpiry.Value.ToString("dd/MM/yy")
+                                </span>
+                            }
+                            else
+                            {
+                                <span>@e.WarrantyExpiry.Value.ToString("dd/MM/yyyy")</span>
+                            }
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+
+                    <td>
+                        <a href="/Equipment/Edit/@e.EquipmentId" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        @if (role == "Admin" || role == "Instructor")
+                        {
+                            <form method="post" action="/Equipment/Delete/@e.EquipmentId" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Are you sure to delete this equipment?')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
+@section Scripts {
+<script>
+    document.getElementById("searchBox").addEventListener("keyup", function () {
+        let keyword = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#equipmentTable tbody tr");
+
+        rows.forEach(row => {
+            let asset = row.querySelector(".asset").innerText.toLowerCase();
+
+            if (asset.includes(keyword)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>
+}

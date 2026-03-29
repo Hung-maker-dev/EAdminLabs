@@ -1,28 +1,125 @@
-@model eAdmin.Web.ViewModels.AuditLogFilterViewModel
-@{ ViewData["Title"] = "Audit Log"; }
-<h4><i class="fas fa-history me-2 text-secondary"></i>Audit Log</h4>
-<div class="card mb-3 shadow-sm"><div class="card-body">
-<form method="get" class="row g-2 align-items-end">
-<div class="col-md-2"><label class="form-label small fw-semibold">Username</label><input name="Username" value="@Model.Username" class="form-control form-control-sm"/></div>
-<div class="col-md-2"><label class="form-label small fw-semibold">Action</label><input name="Action" value="@Model.Action" class="form-control form-control-sm" placeholder="e.g. Login"/></div>
-<div class="col-md-2"><label class="form-label small fw-semibold">Entity Type</label>
-<select name="EntityType" class="form-select form-select-sm">
-<option value="">All</option>
-@foreach(var t in new[]{"User","Lab","Equipment","Complaint","Software","Schedule","LearningMaterial","ExtraLabRequest"}){
-<option value="@t" selected="@(Model.EntityType==t)">@t</option>}</select></div>
-<div class="col-md-2"><label class="form-label small fw-semibold">From Date</label><input name="FromDate" type="date" value="@Model.FromDate?.ToString("yyyy-MM-dd")" class="form-control form-control-sm"/></div>
-<div class="col-md-2"><label class="form-label small fw-semibold">To Date</label><input name="ToDate" type="date" value="@Model.ToDate?.ToString("yyyy-MM-dd")" class="form-control form-control-sm"/></div>
-<div class="col-md-2"><button class="btn btn-primary btn-sm w-100"><i class="fas fa-search me-1"></i>Search</button></div>
-</form></div></div>
+﻿@model eAdmin.Web.ViewModels.AuditLogFilterViewModel
+@{
+    ViewData["Title"] = "Audit Log";
+}
 
-<p class="text-muted small">Showing @Model.Results.Count record(s)</p>
-<div class="table-responsive"><table class="table table-hover table-sm table-bordered">
-<thead class="table-dark"><tr><th>Time</th><th>User</th><th>Action</th><th>Entity</th><th>ID</th><th>Details</th></tr></thead>
-<tbody>@foreach(var l in Model.Results){<tr>
-<td class="text-nowrap small">@l.CreatedAt.ToString("dd/MM/yy HH:mm")</td>
-<td><strong>@l.Username</strong><br/><small class="text-muted">@l.UserFullName</small></td>
-<td><span class="badge bg-secondary">@l.Action</span></td>
-<td>@l.EntityType</td>
-<td>@l.EntityId</td>
-<td class="small text-muted">@l.Details</td>
-</tr>}</tbody></table></div>
+<h4><i class="fas fa-history me-2 text-secondary"></i>Audit Log</h4>
+
+<div class="card mb-3 shadow-sm">
+    <div class="card-body">
+
+        <form method="get" class="row g-2 align-items-end">
+
+            <!-- 🔥 giữ page khi search -->
+            <input type="hidden" name="Page" value="@Model.Page" />
+
+            <div class="col-md-2">
+                <label class="form-label small fw-semibold">Username</label>
+                <input name="Username" value="@Model.Username" class="form-control form-control-sm" />
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label small fw-semibold">Action</label>
+                <input name="Action" value="@Model.Action" class="form-control form-control-sm" placeholder="e.g. Login" />
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label small fw-semibold">Entity Type</label>
+                <select name="EntityType" class="form-select form-select-sm">
+                    <option value="">All</option>
+                    @foreach (var t in new[] { "User", "Lab", "Equipment", "Complaint", "Software", "Schedule", "LearningMaterial", "ExtraLabRequest" })
+                    {
+                        <option value="@t" selected="@(Model.EntityType == t)">@t</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label small fw-semibold">From Date</label>
+                <input name="FromDate" type="date" value="@Model.FromDate?.ToString("yyyy-MM-dd")" class="form-control form-control-sm" />
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label small fw-semibold">To Date</label>
+                <input name="ToDate" type="date" value="@Model.ToDate?.ToString("yyyy-MM-dd")" class="form-control form-control-sm" />
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-sm w-100">
+                    <i class="fas fa-search me-1"></i>Search
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<p class="text-muted small">
+    Showing @Model.Results.Count of @Model.TotalRecords record(s)
+</p>
+
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Time</th>
+                <th>User</th>
+                <th>Action</th>
+                <th>Entity</th>
+                <th>ID</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var l in Model.Results)
+            {
+                <tr>
+                    <td class="text-nowrap small">@l.CreatedAt.ToString("dd/MM/yy HH:mm")</td>
+                    <td>
+                        <strong>@l.Username</strong><br />
+                        <small class="text-muted">@l.UserFullName</small>
+                    </td>
+                    <td><span class="badge bg-secondary">@l.Action</span></td>
+                    <td>@l.EntityType</td>
+                    <td>@l.EntityId</td>
+                    <td class="small text-muted">@l.Details</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- 🔥 PAGINATION -->
+<nav class="mt-2">
+    <ul class="pagination pagination-sm justify-content-center">
+
+        <!-- Prev -->
+        <li class="page-item @(Model.Page == 1 ? "disabled" : "")">
+            <a class="page-link"
+               href="?Page=@(Model.Page - 1)&Username=@Model.Username&Action=@Model.Action&EntityType=@Model.EntityType&FromDate=@Model.FromDate?.ToString("yyyy-MM-dd")&ToDate=@Model.ToDate?.ToString("yyyy-MM-dd")">
+                Previous
+            </a>
+        </li>
+
+        <!-- Page numbers -->
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link"
+                   href="?Page=@i&Username=@Model.Username&Action=@Model.Action&EntityType=@Model.EntityType&FromDate=@Model.FromDate?.ToString("yyyy-MM-dd")&ToDate=@Model.ToDate?.ToString("yyyy-MM-dd")">
+                    @i
+                </a>
+            </li>
+        }
+
+        <!-- Next -->
+        <li class="page-item @(Model.Page == Model.TotalPages ? "disabled" : "")">
+            <a class="page-link"
+               href="?Page=@(Model.Page + 1)&Username=@Model.Username&Action=@Model.Action&EntityType=@Model.EntityType&FromDate=@Model.FromDate?.ToString("yyyy-MM-dd")&ToDate=@Model.ToDate?.ToString("yyyy-MM-dd")">
+                Next
+            </a>
+        </li>
+
+    </ul>
+</nav>

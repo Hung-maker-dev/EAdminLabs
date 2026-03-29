@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\",
+  "WorkspaceRootPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadmin_sem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -171,6 +172,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadmin_sem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|f:\\e project fix\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\equipmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\equipmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|f:\\e project fix\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|f:\\e project fix\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\equipment\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\equipment\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|f:\\e project fix\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\equipmenttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\equipmenttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 3ee631364210ffe7a1398b6d52bb29b38774a672
     }
   ],
   "DocumentGroupContainers": [
@@ -180,6 +197,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 43,
           "Children": [
             {
@@ -193,10 +211,39 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-29T07:02:22.43Z",
+=======
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SoftwareController.cs",
+              "DocumentMoniker": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "ToolTip": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAAMkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T06:33:30.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Equipment\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Equipment\\Create.cshtml",
+              "ToolTip": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Equipment\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Equipment\\Create.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAADwv0UAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T06:29:31.121Z",
+>>>>>>> 3ee631364210ffe7a1398b6d52bb29b38774a672
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\UnitOfWork.cs",
@@ -334,12 +381,22 @@
               "ToolTip": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
               "RelativeToolTip": "eAdmin.Web\\Controllers\\UserController.cs",
               "ViewState": "AgIAAMwAAAAAAAAAAAAIwOQAAAAiAAAAAAAAAA==",
+=======
+              "DocumentIndex": 0,
+              "Title": "EquipmentController.cs",
+              "DocumentMoniker": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\EquipmentController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\EquipmentController.cs",
+              "ToolTip": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\EquipmentController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\EquipmentController.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAiwCoBAAABAAAAAAAAAA==",
+>>>>>>> 3ee631364210ffe7a1398b6d52bb29b38774a672
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T07:59:05.014Z",
+              "WhenOpened": "2026-03-27T06:27:32.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
@@ -713,6 +770,17 @@
               "ViewState": "AgIAACwAAAAAAAAAAAAIwCsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-19T04:35:45.254Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "EquipmentTypeController.cs",
+              "DocumentMoniker": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\EquipmentTypeController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\EquipmentTypeController.cs",
+              "ToolTip": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\EquipmentTypeController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\EquipmentTypeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T06:25:43.576Z",
+>>>>>>> 3ee631364210ffe7a1398b6d52bb29b38774a672
               "EditorCaption": ""
             }
           ]

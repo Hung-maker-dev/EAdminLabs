@@ -33,3 +33,56 @@ var sbadge = c.Status=="Resolved"?"bg-success":c.Status=="Closed"?"bg-dark":c.St
 <td class="small">@c.CreatedAt.ToString("dd/MM/yy")</td>
 <td class="small">@(c.ResolvedAt?.ToString("dd/MM/yy")??"-")</td>
 </tr>}</tbody></table></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="row g-3 mb-3">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold"><i class="fas fa-chart-pie me-2"></i>Complaints by Status</div>
+            <div class="card-body"><canvas id="chartComplaintStatus" height="200"></canvas></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold"><i class="fas fa-chart-bar me-2"></i>Complaints by Priority</div>
+            <div class="card-body"><canvas id="chartComplaintPriority" height="200"></canvas></div>
+        </div>
+    </div>
+</div>
+
+@{
+    var byPriority = Model.GroupBy(c => c.Priority).Select(g => new { Label = g.Key ?? "Unknown", Count = g.Count() }).ToList();
+    var byLab = Model.GroupBy(c => c.LabName).Select(g => new { Label = g.Key, Count = g.Count() }).ToList();
+}
+
+<script>
+    // Status Donut
+    new Chart(document.getElementById('chartComplaintStatus'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Pending', 'In Progress', 'Resolved', 'Closed'],
+            datasets: [{
+                data: [@s.Pending, @s.InProgress, @s.Resolved, @s.Closed],
+                backgroundColor: ['#ffc107','#0dcaf0','#198754','#343a40']
+            }]
+        },
+        options: { plugins: { legend: { position: 'bottom' } }, cutout: '55%' }
+    });
+
+    // Priority Bar
+    new Chart(document.getElementById('chartComplaintPriority'), {
+        type: 'bar',
+        data: {
+            labels: [@Html.Raw(string.Join(",", byPriority.Select(p => $"'{p.Label}'")))],
+            datasets: [{
+                label: 'Complaints',
+                data: [@string.Join(",", byPriority.Select(p => p.Count))],
+                backgroundColor: ['#dc3545','#ffc107','#0dcaf0','#6c757d']
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+        }
+    });
+</script>

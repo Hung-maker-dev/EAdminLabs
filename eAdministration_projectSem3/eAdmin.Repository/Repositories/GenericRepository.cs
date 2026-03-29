@@ -56,12 +56,14 @@ namespace eAdmin.Repository.Repositories
         public async Task AddAsync(T entity)
             => await _dbSet.AddAsync(entity);
 
-        /// <summary>Cập nhật entity (chưa SaveChanges)</summary>
+        /// <summary>Cập nhật entity (chưa SaveChanges)</summary>   
         public void Update(T entity)
             => _dbSet.Update(entity);
 
         /// <summary>Xóa entity (chưa SaveChanges)</summary>
         public void Remove(T entity)
             => _dbSet.Remove(entity);
+        public IQueryable<T> Query()
+            => _dbSet.AsNoTracking();
     }
 }

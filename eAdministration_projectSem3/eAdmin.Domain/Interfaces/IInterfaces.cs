@@ -20,6 +20,8 @@ namespace eAdmin.Domain.Interfaces
         Task AddAsync(T entity);
         void Update(T entity);
         void Remove(T entity);
+        IQueryable<T> Query();
+
     }
 
     // =====================================================================

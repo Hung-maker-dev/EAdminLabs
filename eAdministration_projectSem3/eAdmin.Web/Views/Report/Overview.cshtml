@@ -26,3 +26,72 @@
 <div class="card-body"><div class="d-flex justify-content-between"><span>Expiring ≤ 30 days</span><strong class="text-danger">@ViewBag.ExpiringSW</strong></div>
 <hr class="my-2"/><a href="/Report/SoftwareExpiry" class="btn btn-sm btn-outline-warning w-100">View Full Report</a></div></div></div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="row g-3 mt-2">
+    <!-- Equipment Condition Donut -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold bg-success text-white"><i class="fas fa-desktop me-2"></i>Equipment Condition</div>
+            <div class="card-body"><canvas id="chartEquipOverview" height="220"></canvas></div>
+        </div>
+    </div>
+    <!-- Complaints Status Bar -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold bg-danger text-white"><i class="fas fa-exclamation-triangle me-2"></i>Complaints Status</div>
+            <div class="card-body"><canvas id="chartComplaintsOverview" height="220"></canvas></div>
+        </div>
+    </div>
+    <!-- Users & Labs Bar -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold bg-primary text-white"><i class="fas fa-chart-bar me-2"></i>Labs & Users</div>
+            <div class="card-body"><canvas id="chartLabsUsers" height="220"></canvas></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Equipment Overview Donut
+    new Chart(document.getElementById('chartEquipOverview'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Good', 'Poor / Out of Service', 'Others'],
+            datasets: [{
+                data: [@ViewBag.EquipmentGood, @ViewBag.EquipmentPoor,
+                       @ViewBag.TotalEquipment - @ViewBag.EquipmentGood - @ViewBag.EquipmentPoor],
+                backgroundColor: ['#198754','#dc3545','#adb5bd']
+            }]
+        },
+        options: { plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
+    });
+
+    // Complaints Overview Bar
+    new Chart(document.getElementById('chartComplaintsOverview'), {
+        type: 'bar',
+        data: {
+            labels: ['Total', 'Open'],
+            datasets: [{
+                label: 'Complaints',
+                data: [@ViewBag.TotalComplaints, @ViewBag.OpenComplaints],
+                backgroundColor: ['#6c757d','#dc3545']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+    });
+
+    // Labs & Users
+    new Chart(document.getElementById('chartLabsUsers'), {
+        type: 'bar',
+        data: {
+            labels: ['Total Labs', 'Active Labs', 'Total Users', 'Active Users'],
+            datasets: [{
+                label: 'Count',
+                data: [@ViewBag.TotalLabs, @ViewBag.ActiveLabs, @ViewBag.TotalUsers, @ViewBag.ActiveUsers],
+                backgroundColor: ['#0d6efd','#0dcaf0','#6f42c1','#20c997']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+    });
+</script>

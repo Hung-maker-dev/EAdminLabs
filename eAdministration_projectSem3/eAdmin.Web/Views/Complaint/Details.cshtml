@@ -1,46 +1,290 @@
 @model eAdmin.Domain.Entities.Complaint
-@{ ViewData["Title"] = "Complaint Details"; var role = User.FindFirst("Role")?.Value ?? ""; }
+@{
+    ViewData["Title"] = "Complaint Details";
+    var role = User.FindFirst("Role")?.Value ?? "";
+    var pb = Model.Priority switch
+    {
+        "Critical" => "bg-danger",
+        "High" => "bg-warning text-dark",
+        "Medium" => "bg-info text-dark",
+        _ => "bg-secondary"
+    };
+    var sb = Model.Status switch
+    {
+        "Pending" => "bg-secondary",
+        "Assigned" => "bg-info text-dark",
+        "InProgress" => "bg-warning text-dark",
+        "Resolved" => "bg-success",
+        "Closed" => "bg-dark",
+        _ => "bg-secondary"
+    };
+
+    // Status options per role
+    // TechStaff: cannot select Pending or Assigned (those are system-set)
+    // Admin: can select all
+    var statusOptions = role == "Admin"
+        ? new[] { "Pending", "Assigned", "InProgress", "Resolved", "Closed" }
+        : new[] { "InProgress", "Resolved", "Closed" };
+
+    // Resolution type hints for TechStaff
+    var resolutionTypes = new[] {
+        "Fixed — issue fully resolved",
+        "Partially Fixed — workaround applied, needs follow-up",
+        "Cannot Fix — requires external repair/vendor",
+        "Replaced — equipment replaced with new unit",
+        "Needs Parts — waiting for spare parts",
+        "Needs Budget Approval — cost approval required",
+        "Escalated — forwarded to senior technician",
+        "User Error — guided user, no hardware issue",
+        "Other"
+    };
+}
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4><i class="fas fa-clipboard me-2 text-primary"></i>Complaint #@Model.ComplaintId</h4>
-    <a href="/Complaint/Index" class="btn btn-outline-secondary btn-sm"><i class="fas fa-arrow-left me-1"></i>Back</a>
+    <a href="/Complaint/Index" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-arrow-left me-1"></i>Back
+    </a>
 </div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        <i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
 <div class="row g-3">
-<div class="col-md-8">
-<div class="card shadow-sm">
-<div class="card-header"><strong>@Model.Title</strong></div>
-<div class="card-body">
-<p><strong>Description:</strong> @Model.Description</p>
-<div class="row g-2">
-<div class="col-md-4"><span class="text-muted small">Lab</span><p><strong>@Model.Lab?.LabName</strong></p></div>
-<div class="col-md-4"><span class="text-muted small">Equipment</span><p><strong>@(Model.Equipment?.AssetCode ?? "–")</strong></p></div>
-<div class="col-md-4"><span class="text-muted small">Type</span><p><strong>@Model.ComplaintType?.TypeName</strong></p></div>
-<div class="col-md-4"><span class="text-muted small">Priority</span>
-<p>@{var pb = Model.Priority switch{"Critical"=>"bg-danger","High"=>"bg-warning text-dark","Medium"=>"bg-info",_=>"bg-secondary"};}
-<span class="badge @pb">@Model.Priority</span></p></div>
-<div class="col-md-4"><span class="text-muted small">Status</span>
-<p>@{var sb = Model.Status switch{"Pending"=>"bg-secondary","Assigned"=>"bg-info","InProgress"=>"bg-warning text-dark","Resolved"=>"bg-success","Closed"=>"bg-dark",_=>"bg-secondary"};}
-<span class="badge @sb">@Model.Status</span></p></div>
-<div class="col-md-4"><span class="text-muted small">Reported By</span><p><strong>@Model.Reporter?.FullName</strong></p></div>
-<div class="col-md-4"><span class="text-muted small">Assigned To</span><p><strong>@(Model.Assignee?.FullName ?? "–")</strong></p></div>
-<div class="col-md-4"><span class="text-muted small">Created</span><p>@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p></div>
-<div class="col-md-4"><span class="text-muted small">Resolved</span><p>@(Model.ResolvedAt?.ToString("dd/MM/yyyy HH:mm") ?? "–")</p></div>
+
+    @* {{!-- ── Left: Complaint Info ── --}} *@
+    <div class="col-md-8">
+        <div class="card shadow-sm h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <strong>@Model.Title</strong>
+                <div class="d-flex gap-2">
+                    <span class="badge @pb">@Model.Priority</span>
+                    <span class="badge @sb">@Model.Status</span>
+                </div>
+            </div>
+            <div class="card-body">
+
+                @if (!string.IsNullOrEmpty(Model.Description))
+                {
+                    <div class="mb-3 p-3 bg-light rounded">
+                        <div class="text-muted small fw-semibold mb-1">
+                            <i class="fas fa-align-left me-1"></i>DESCRIPTION
+                        </div>
+                        <p class="mb-0">@Model.Description</p>
+                    </div>
+                }
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Lab</span>
+                        <strong>@(Model.Lab?.LabName ?? "–")</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Equipment</span>
+                        <strong>@(Model.Equipment?.AssetCode ?? "–")</strong>
+                        @if (Model.Equipment != null)
+                        {
+                            <div class="small text-muted">@Model.Equipment.Model</div>
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Type</span>
+                        <strong>@(Model.ComplaintType?.TypeName ?? "–")</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Reported By</span>
+                        <strong>@(Model.Reporter?.FullName ?? "–")</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Assigned To</span>
+                        @if (Model.Assignee != null)
+                        {
+                            <strong class="text-primary">@Model.Assignee.FullName</strong>
+                        }
+                        else
+                        {
+
+                            <span class="badge bg-danger">Unassigned</span>
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <span class="text-muted small d-block">Created</span>
+                        <strong>@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</strong>
+                    </div>
+                    @if (Model.ResolvedAt.HasValue)
+                    {
+                        <div class="col-md-4">
+                            <span class="text-muted small d-block">Resolved At</span>
+                            <strong class="text-success">@Model.ResolvedAt.Value.ToString("dd/MM/yyyy HH:mm")</strong>
+                        </div>
+                    }
+                </div>
+
+                @* Resolution note — shown if exists *@
+                @if (!string.IsNullOrEmpty(ViewBag.ResolutionNote as string))
+                {
+                    <div class="mt-3 p-3 border-start border-4 border-success bg-light rounded">
+                        <div class="text-success small fw-semibold mb-1">
+                            <i class="fas fa-tools me-1"></i>TECHNICIAN RESOLUTION NOTE
+                        </div>
+                        <p class="mb-0">@ViewBag.ResolutionNote</p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    @* {{!-- ── Right: Update Status (TechStaff / Admin only) ── --}} *@
+    @if ((role == "TechStaff" || role == "Admin") &&
+        Model.Status != "Closed")
+    {
+        <div class="col-md-4">
+            <div class="card shadow-sm border-warning">
+                <div class="card-header bg-warning fw-bold">
+                    <i class="fas fa-tools me-2"></i>Update Resolution Status
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Complaint" asp-action="UpdateStatus" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@Model.ComplaintId" />
+
+                        @* {{!-- Status selector — TechStaff sees limited options --}} *@
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                New Status <span class="text-danger">*</span>
+                            </label>
+                            @foreach (var s in statusOptions)
+                            {
+                                var icon = s switch
+                                {
+                                    "InProgress" => "fa-spinner text-warning",
+                                    "Resolved" => "fa-check-circle text-success",
+                                    "Closed" => "fa-lock text-dark",
+                                    _ => "fa-circle text-secondary"
+                                };
+                                var hint = s switch
+                                {
+                                    "InProgress" => "Currently working on this issue",
+                                    "Resolved" => "Issue has been fixed — will notify reporter",
+                                    "Closed" => "Permanently close this complaint",
+                                    "Pending" => "Return to waiting queue",
+                                    "Assigned" => "Mark as assigned only",
+                                    _ => ""
+                                };
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio"
+                                           name="status" id="status_@s"
+                                           value="@s" @(Model.Status == s ? "checked" : "") />
+                                    <label class="form-check-label" for="status_@s">
+                                        <i class="fas @icon me-1"></i>
+                                        <strong>@s</strong>
+                                        @if (!string.IsNullOrEmpty(hint))
+                                        {
+                                            <div class="small text-muted ms-3">@hint</div>
+                                        }
+                                    </label>
+                                </div>
+                            }
+                        </div>
+
+                        @* {{!-- Resolution type quick-pick --}} *@
+                        <div class="mb-3" id="resolutionSection">
+                            <label class="form-label fw-semibold">
+                                Resolution Type
+                                <small class="text-muted fw-normal">(optional)</small>
+                            </label>
+                            <select name="resolutionType" id="resolutionType" class="form-select form-select-sm mb-2"
+                                    onchange="appendResolutionType(this.value)">
+                                <option value="">-- Quick pick --</option>
+                                @foreach (var rt in resolutionTypes)
+                                {
+                                    <option value="@rt">@rt</option>
+                                }
+                            </select>
+                        </div>
+
+                        @* {{!-- Resolution note textarea --}} *@
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                <i class="fas fa-comment-alt me-1 text-primary"></i>
+                                Technician Note
+                                <small class="text-muted fw-normal">(recommended)</small>
+                            </label>
+                            <textarea name="resolutionNote" id="resolutionNote"
+                                  class="form-control" rows="4"
+                                  placeholder="Describe what was done:&#10;• What was the root cause?&#10;• How was it fixed?&#10;• Any follow-up needed?&#10;• Parts replaced or needed?"></textarea>
+                            <div class="form-text">
+                                This note will be visible to the reporter and saved for audit purposes.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning w-100 fw-semibold">
+                            <i class="fas fa-save me-1"></i>Update Status
+                        </button>
+
+                        @if (role == "TechStaff")
+                        {
+                            <div class="mt-2 small text-muted text-center">
+                                <i class="fas fa-info-circle me-1"></i>
+                                "Assigned" status is set automatically by the system.
+                            </div>
+                        }
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (Model.Status == "Closed")
+    {
+        <div class="col-md-4">
+            <div class="card shadow-sm border-dark">
+                <div class="card-header bg-dark text-white">
+                    <i class="fas fa-lock me-2"></i>Complaint Closed
+                </div>
+                <div class="card-body text-muted small">
+                    This complaint has been closed and cannot be updated further.
+                </div>
+            </div>
+        </div>
+    }
+
 </div>
-</div>
-</div>
-</div>
-@if(role == "TechStaff" || role == "Admin"){
-<div class="col-md-4">
-<div class="card shadow-sm border-warning">
-<div class="card-header bg-warning fw-bold"><i class="fas fa-edit me-2"></i>Update Status</div>
-<div class="card-body">
-<form asp-controller="Complaint" asp-action="UpdateStatus" method="post">@Html.AntiForgeryToken()
-<input type="hidden" name="id" value="@Model.ComplaintId"/>
-<div class="mb-3"><label class="form-label fw-semibold">New Status</label>
-<select name="status" class="form-select">
-@foreach(var s in new[]{"Pending","Assigned","InProgress","Resolved","Closed"}){
-<option value="@s" selected="@(Model.Status==s)">@s</option>}</select></div>
-<button class="btn btn-warning w-100"><i class="fas fa-save me-1"></i>Update</button>
-</form>
-</div></div>
-</div>}
-</div>
+
+@section Scripts {
+    <script>
+        function appendResolutionType(value) {
+            if (!value) return;
+            const ta = document.getElementById('resolutionNote');
+            if (ta.value && !ta.value.endsWith('\n')) ta.value += '\n';
+            ta.value += value + ': ';
+            ta.focus();
+            // Reset dropdown
+            document.getElementById('resolutionType').value = '';
+        }
+
+        // Show/hide resolution section based on status
+        document.querySelectorAll('input[name="status"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                const section = document.getElementById('resolutionSection');
+                // Show resolution fields only when moving forward
+                const showFor = ['InProgress', 'Resolved', 'Closed'];
+                section.style.display = showFor.includes(this.value) ? 'block' : 'none';
+            });
+        });
+    </script>
+}
