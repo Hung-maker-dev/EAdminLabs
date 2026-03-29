@@ -28,8 +28,25 @@ namespace eAdmin.Repository.Repositories
             => await _dbSet.FindAsync(id);
 
         /// <summary>Lấy toàn bộ bản ghi</summary>
+        // 🔹 method cũ (giữ lại)
         public async Task<IEnumerable<T>> GetAllAsync()
-            => await _dbSet.AsNoTracking().ToListAsync();
+        {
+            return await _dbSet.AsNoTracking().ToListAsync();
+        }
+
+        // 🔹 method mới (có include)
+        public async Task<IEnumerable<T>> GetAllAsync(
+            params Expression<Func<T, object>>[] includes)
+        {
+            IQueryable<T> query = _dbSet;
+
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return await query.AsNoTracking().ToListAsync();
+        }
 
         /// <summary>Tìm theo điều kiện lambda</summary>
         public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)

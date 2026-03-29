@@ -4,8 +4,8 @@
     <h4><i class="fas fa-users me-2 text-primary"></i>Manage Users</h4>
     <a href="/User/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>New User</a>
 </div>
-@if (TempData["Success"] != null) { <div class="alert alert-success">@TempData["Success"]</div> }
-@if (TempData["Error"] != null) { <div class="alert alert-danger">@TempData["Error"]</div> }
+@* @if (TempData["Success"] != null) { <div class="alert alert-success">@TempData["Success"]</div> }
+@if (TempData["Error"] != null) { <div class="alert alert-danger">@TempData["Error"]</div> } *@
 <form method="get" class="row g-2 mb-3">
     <div class="col-md-3"><select name="role" class="form-select form-select-sm"><option value="">All Roles</option>@foreach(var r in (IEnumerable<dynamic>)ViewBag.Roles){<option value="@r.RoleName" selected="@(ViewBag.FilterRole==r.RoleName)">@r.RoleName</option>}</select></div>
     <div class="col-md-3"><select name="deptId" class="form-select form-select-sm"><option value="">All Departments</option>@foreach(var d in (IEnumerable<dynamic>)ViewBag.Departments){<option value="@d.DepartmentId">@d.DepartmentName</option>}</select></div>

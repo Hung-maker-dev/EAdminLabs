@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,29 +19,91 @@ namespace eAdmin.Web.Controllers
         private readonly IUnitOfWork _uow;
         public UserController(IUnitOfWork uow) => _uow = uow;
 
+        //[AuthorizeRoles("Admin")]
+        //public async Task<IActionResult> Index(string? role, int? deptId)
+        //{
+        //    var users = await _uow.Users.GetAllAsync();
+        //    var roles = await _uow.Roles.GetAllAsync();
+        //    var depts = await _uow.Departments.GetAllAsync();
+
+        //    var vm = users.Select(u => new UserViewModel
+        //    {
+        //        UserId = u.UserId,
+        //        Username = u.Username,
+        //        FullName = u.FullName,
+        //        Email = u.Email,
+        //        Phone = u.Phone,
+        //        RoleId = u.RoleId,
+        //        DepartmentId = u.DepartmentId,
+        //        IsActive = u.IsActive,
+
+        //        // 🔥 map thủ công (QUAN TRỌNG)
+        //        RoleName = roles.FirstOrDefault(r => r.RoleId == u.RoleId)?.RoleName ?? "",
+        //        DeptName = depts.FirstOrDefault(d => d.DepartmentId == u.DepartmentId)?.DepartmentName ?? ""
+        //    });
+
+        //    // 🔥 FILTER SAU KHI MAP
+        //    if (!string.IsNullOrEmpty(role))
+        //        vm = vm.Where(u => u.RoleName == role);
+
+        //    if (deptId.HasValue)
+        //        vm = vm.Where(u => u.DepartmentId == deptId);
+
+        //    ViewBag.Roles = roles;
+        //    ViewBag.Departments = depts;
+        //    ViewBag.FilterRole = role;
+        //    ViewBag.FilterDept = deptId;
+
+        //    return View(vm.ToList());
+        //}
+
         [AuthorizeRoles("Admin")]
-        public async Task<IActionResult> Index(string? role, int? deptId)
+        public async Task<IActionResult> Index(string? role, int? deptId, string? search)
         {
             var users = await _uow.Users.GetAllAsync();
-            if (!string.IsNullOrEmpty(role))
-                users = users.Where(u => u.Role?.RoleName == role);
-            if (deptId.HasValue)
-                users = users.Where(u => u.DepartmentId == deptId);
+            var roles = await _uow.Roles.GetAllAsync();
+            var depts = await _uow.Departments.GetAllAsync();
 
             var vm = users.Select(u => new UserViewModel
             {
-                UserId = u.UserId, Username = u.Username, FullName = u.FullName,
-                Email = u.Email, Phone = u.Phone, RoleId = u.RoleId,
-                DepartmentId = u.DepartmentId, IsActive = u.IsActive,
-                RoleName = u.Role?.RoleName ?? "",
-                DeptName = u.Department?.DepartmentName ?? ""
-            }).ToList();
+                UserId = u.UserId,
+                Username = u.Username,
+                FullName = u.FullName,
+                Email = u.Email,
+                Phone = u.Phone,
+                RoleId = u.RoleId,
+                DepartmentId = u.DepartmentId,
+                IsActive = u.IsActive,
+                RoleName = roles.FirstOrDefault(r => r.RoleId == u.RoleId)?.RoleName ?? "",
+                DeptName = depts.FirstOrDefault(d => d.DepartmentId == u.DepartmentId)?.DepartmentName ?? ""
+            });
 
-            ViewBag.Roles = await _uow.Roles.GetAllAsync();
-            ViewBag.Departments = await _uow.Departments.GetAllAsync();
+            // 🔥 SEARCH
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                search = search.ToLower();
+                vm = vm.Where(u =>
+                    u.Username.ToLower().Contains(search) ||
+                    u.FullName.ToLower().Contains(search) ||
+                    u.Email.ToLower().Contains(search)
+                );
+            }
+
+            // 🔥 FILTER
+            if (!string.IsNullOrEmpty(role))
+                vm = vm.Where(u => u.RoleName == role);
+
+            if (deptId.HasValue)
+                vm = vm.Where(u => u.DepartmentId == deptId);
+
+            // giữ lại giá trị filter
+            ViewBag.Roles = roles;
+            ViewBag.Departments = depts;
             ViewBag.FilterRole = role;
             ViewBag.FilterDept = deptId;
-            return View(vm);
+            ViewBag.Search = search;
+
+            return View(vm.ToList());
         }
 
         [HttpGet][AuthorizeRoles("Admin")]
@@ -100,8 +162,8 @@ namespace eAdmin.Web.Controllers
 
             var user = await _uow.Users.GetByIdAsync(vm.UserId);
             if (user == null) return NotFound();
-
-            user.FullName = vm.FullName; user.Email = vm.Email; user.Phone = vm.Phone;
+            
+            user.FullName = vm.FullName; user.Email = vm.Email; user.Phone = vm.Phone; user.Username = vm.Username;
             user.RoleId = vm.RoleId; user.DepartmentId = vm.DepartmentId; user.IsActive = vm.IsActive;
             _uow.Users.Update(user);
             await WriteAuditAsync("EditUser", "User", user.UserId, $"Updated user {user.Username}");
@@ -141,30 +203,63 @@ namespace eAdmin.Web.Controllers
         public async Task<IActionResult> Profile()
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
             var user = await _uow.Users.GetByIdAsync(userId);
+            var roles = await _uow.Roles.GetAllAsync();
+            var depts = await _uow.Departments.GetAllAsync();
+
             if (user == null) return NotFound();
+
             return View(new UserViewModel
             {
-                UserId = user.UserId, Username = user.Username, FullName = user.FullName,
-                Email = user.Email, Phone = user.Phone, RoleId = user.RoleId,
+                UserId = user.UserId,
+                Username = user.Username,
+                FullName = user.FullName,
+                Email = user.Email,
+                Phone = user.Phone,
+                RoleId = user.RoleId,
                 DepartmentId = user.DepartmentId,
-                RoleName = user.Role?.RoleName ?? "",
-                DeptName = user.Department?.DepartmentName ?? ""
+
+                // 🔥 map thủ công (giống Index)
+                RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "",
+                DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? ""
             });
         }
-
-        [HttpPost][ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile(UserViewModel vm)
         {
-            ModelState.Remove("Password"); ModelState.Remove("RoleId");
-            if (!ModelState.IsValid) return View(vm);
+            // bỏ validation không cần
+            ModelState.Remove("Password");
+            ModelState.Remove("RoleId");
+
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             var user = await _uow.Users.GetByIdAsync(userId);
+
             if (user == null) return NotFound();
-            user.FullName = vm.FullName; user.Email = vm.Email; user.Phone = vm.Phone;
+
+            if (!ModelState.IsValid)
+            {
+                // 🔥 load lại Role + Department để không mất dữ liệu
+                var roles = await _uow.Roles.GetAllAsync();
+                var depts = await _uow.Departments.GetAllAsync();
+
+                vm.RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "";
+                vm.DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? "";
+
+                return View(vm);
+            }
+
+            // 🔥 update
+            user.FullName = vm.FullName;
+            user.Email = vm.Email;
+            user.Phone = vm.Phone;
+
             _uow.Users.Update(user);
             await _uow.SaveChangesAsync();
-            TempData["Success"] = "Profile updated.";
+
+            TempData["Success"] = "Profile updated successfully.";
+
             return RedirectToAction(nameof(Profile));
         }
 

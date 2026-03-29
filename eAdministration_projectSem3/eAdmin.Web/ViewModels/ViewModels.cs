@@ -25,6 +25,19 @@ namespace eAdmin.Web.ViewModels
         public string RoleName { get; set; } = string.Empty;
         public string DeptName { get; set; } = string.Empty;
     }
+    public class ProfileViewModel
+    {
+        public int UserId { get; set; }
+
+        [Required] public string FullName { get; set; }
+        [Required] public string Email { get; set; }
+        public string? Phone { get; set; }
+
+        public string Username { get; set; }
+
+        public string RoleName { get; set; }
+        public string DeptName { get; set; }
+    }
 
     public class ChangePasswordViewModel
     {

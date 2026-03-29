@@ -1,4 +1,4 @@
-@model eAdmin.Web.ViewModels.UserViewModel
+﻿@model eAdmin.Web.ViewModels.UserViewModel
 @{
     ViewData["Title"] = "My Profile";
 }
@@ -10,11 +10,30 @@
             <div class="card-body">
                 <form asp-action="Profile" method="post">
                     @Html.AntiForgeryToken()
+
                     <input type="hidden" asp-for="UserId" />
-                    <div class="mb-3"><label class="form-label fw-semibold">Username</label><input value="@Model.Username" class="form-control" readonly /></div>
-                    <div class="mb-3"><label asp-for="FullName" class="form-label fw-semibold"></label><input asp-for="FullName" class="form-control" /></div>
-                    <div class="mb-3"><label asp-for="Email" class="form-label fw-semibold"></label><input asp-for="Email" class="form-control" /></div>
-                    <div class="mb-3"><label asp-for="Phone" class="form-label fw-semibold"></label><input asp-for="Phone" class="form-control" /></div>
+                    <input type="hidden" asp-for="RoleId" />        <!-- 🔥 thêm -->
+                    <input type="hidden" asp-for="DepartmentId" />  <!-- 🔥 thêm -->
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Username</label>
+                        <input value="@Model.Username" class="form-control" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label fw-semibold"></label>
+                        <input asp-for="FullName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label fw-semibold"></label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Phone" class="form-label fw-semibold"></label>
+                        <input asp-for="Phone" class="form-control" />
+                    </div>
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Department</label>
@@ -34,7 +53,9 @@
                         }
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm">Update Profile</button>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fas fa-save me-1"></i> Update Profile
+                    </button>
                 </form>
             </div>
         </div>
