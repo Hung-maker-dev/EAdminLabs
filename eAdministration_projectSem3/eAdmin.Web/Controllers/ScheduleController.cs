@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -23,50 +24,65 @@ namespace eAdmin.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var role   = User.FindFirst("Role")?.Value ?? "";
+            var role = User.FindFirst("Role")?.Value ?? "";
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
             var schedules = role == "Instructor"
                 ? await _scheduleService.GetScheduleByInstructorAsync(userId)
                 : await _uow.Schedules.GetAllAsync();
 
-            var labs  = await _uow.Labs.GetAllAsync();
+            var labs = await _uow.Labs.GetAllAsync();
             var users = await _uow.Users.GetAllAsync();
+            var today = DateTime.Today;
 
             var vm = schedules.Select(s => new ScheduleListItem
             {
-                ScheduleId     = s.ScheduleId,
-                SubjectName    = s.SubjectName,
-                DayOfWeek      = s.DayOfWeek,
-                StartTime      = s.StartTime,
-                EndTime        = s.EndTime,
-                EffectiveFrom  = s.EffectiveFrom,
-                EffectiveTo    = s.EffectiveTo,
-                IsActive       = s.IsActive,
-                LabName        = labs.FirstOrDefault(l => l.LabId == s.LabId)?.LabName ?? "",
+                ScheduleId = s.ScheduleId,
+                SubjectName = s.SubjectName,
+                DayOfWeek = s.DayOfWeek,
+                StartTime = s.StartTime,
+                EndTime = s.EndTime,
+                EffectiveFrom = s.EffectiveFrom,
+                EffectiveTo = s.EffectiveTo,
+                // IsActive = true trong DB  VÀ  hôm nay nằm trong khoảng hiệu lực
+                IsActive = s.IsActive
+                                 && s.EffectiveFrom.Date <= today
+                                 && (!s.EffectiveTo.HasValue || s.EffectiveTo.Value.Date >= today),
+                LabName = labs.FirstOrDefault(l => l.LabId == s.LabId)?.LabName ?? "",
                 InstructorName = users.FirstOrDefault(u => u.UserId == s.InstructorId)?.FullName ?? ""
             }).ToList();
+
+            if (role == "Admin") await PopulateDropdowns();
 
             return View(vm);
         }
 
-        [HttpGet][AuthorizeRoles("Admin")]
+        [HttpGet]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create()
         {
             await PopulateDropdowns();
-            return View(new ScheduleCreateViewModel { EffectiveFrom = System.DateTime.Today });
+            return View(new ScheduleCreateViewModel { EffectiveFrom = DateTime.Today });
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create(ScheduleCreateViewModel vm)
         {
             if (!ModelState.IsValid) { await PopulateDropdowns(); return View(vm); }
 
             var sched = new LabSchedule
             {
-                LabId = vm.LabId, InstructorId = vm.InstructorId, SubjectName = vm.SubjectName,
-                DayOfWeek = vm.DayOfWeek, StartTime = vm.StartTime, EndTime = vm.EndTime,
-                EffectiveFrom = vm.EffectiveFrom, EffectiveTo = vm.EffectiveTo, IsActive = true
+                LabId = vm.LabId,
+                InstructorId = vm.InstructorId,
+                SubjectName = vm.SubjectName,
+                DayOfWeek = vm.DayOfWeek,
+                StartTime = vm.StartTime,
+                EndTime = vm.EndTime,
+                EffectiveFrom = vm.EffectiveFrom,
+                EffectiveTo = vm.EffectiveTo,
+                IsActive = true
             };
 
             var (success, errors) = await _scheduleService.CreateScheduleAsync(sched);
@@ -85,7 +101,8 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet][AuthorizeRoles("Admin")]
+        [HttpGet]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var s = await _uow.Schedules.GetByIdAsync(id);
@@ -93,13 +110,21 @@ namespace eAdmin.Web.Controllers
             await PopulateDropdowns();
             return View(new ScheduleCreateViewModel
             {
-                ScheduleId = s.ScheduleId, LabId = s.LabId, InstructorId = s.InstructorId,
-                SubjectName = s.SubjectName, DayOfWeek = s.DayOfWeek, StartTime = s.StartTime,
-                EndTime = s.EndTime, EffectiveFrom = s.EffectiveFrom, EffectiveTo = s.EffectiveTo
+                ScheduleId = s.ScheduleId,
+                LabId = s.LabId,
+                InstructorId = s.InstructorId,
+                SubjectName = s.SubjectName,
+                DayOfWeek = s.DayOfWeek,
+                StartTime = s.StartTime,
+                EndTime = s.EndTime,
+                EffectiveFrom = s.EffectiveFrom,
+                EffectiveTo = s.EffectiveTo
             });
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(ScheduleCreateViewModel vm)
         {
             if (!ModelState.IsValid) { await PopulateDropdowns(); return View(vm); }
@@ -120,7 +145,9 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Deactivate(int id)
         {
             var s = await _uow.Schedules.GetByIdAsync(id);
@@ -147,15 +174,15 @@ namespace eAdmin.Web.Controllers
     // ── Lightweight list ViewModel (local) ───────────────────────────────────
     public class ScheduleListItem
     {
-        public int       ScheduleId     { get; set; }
-        public string    SubjectName    { get; set; } = string.Empty;
-        public int       DayOfWeek      { get; set; }
-        public System.TimeSpan StartTime { get; set; }
-        public System.TimeSpan EndTime   { get; set; }
-        public System.DateTime EffectiveFrom { get; set; }
-        public System.DateTime? EffectiveTo  { get; set; }
-        public bool      IsActive       { get; set; }
-        public string    LabName        { get; set; } = string.Empty;
-        public string    InstructorName { get; set; } = string.Empty;
+        public int ScheduleId { get; set; }
+        public string SubjectName { get; set; } = string.Empty;
+        public int DayOfWeek { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
+        public DateTime EffectiveFrom { get; set; }
+        public DateTime? EffectiveTo { get; set; }
+        public bool IsActive { get; set; }
+        public string LabName { get; set; } = string.Empty;
+        public string InstructorName { get; set; } = string.Empty;
     }
 }

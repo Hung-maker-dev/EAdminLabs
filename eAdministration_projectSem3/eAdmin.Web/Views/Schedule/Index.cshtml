@@ -1,42 +1,867 @@
 @model IEnumerable<eAdmin.Web.Controllers.ScheduleListItem>
+@using System.Text.Json
 @{
     ViewData["Title"] = "Lab Schedules";
     var role = User.FindFirst("Role")?.Value ?? "";
-    dynamic schedules = ViewBag.Schedules ?? Model;
-}
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4><i class="fas fa-calendar-alt me-2 text-primary"></i>Lab Schedules</h4>
-    @if(role == "Admin"){
-    <a href="/Schedule/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>New Schedule</a>}
-</div>
-@if(TempData["Success"] != null){<div class="alert alert-success">@TempData["Success"]</div>}
-@if(TempData["Error"] != null){<div class="alert alert-danger">@TempData["Error"]</div>}
+    var isAdmin = role == "Admin";
 
-<div class="table-responsive">
-<table class="table table-hover table-bordered align-middle">
-<thead class="table-dark">
-    <tr><th>ID</th><th>Subject</th><th>Lab</th><th>Instructor</th><th>Day</th><th>Time</th><th>Effective From</th><th>Effective To</th><th>Status</th>@if(role=="Admin"){<th>Actions</th>}</tr>
-</thead>
-<tbody>
-@foreach(var s in Model){
-    string[] days = {"","Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
-    <tr>
-    <td>@s.ScheduleId</td>
-    <td><strong>@s.SubjectName</strong></td>
-    <td>@s.LabName</td>
-    <td>@s.InstructorName</td>
-    <td>@(s.DayOfWeek >= 1 && s.DayOfWeek <= 7 ? days[s.DayOfWeek] : s.DayOfWeek.ToString())</td>
-    <td>@s.StartTime.ToString(@"hh\:mm") – @s.EndTime.ToString(@"hh\:mm")</td>
-    <td>@s.EffectiveFrom.ToString("dd/MM/yyyy")</td>
-    <td>@(s.EffectiveTo.HasValue ? s.EffectiveTo.Value.ToString("dd/MM/yyyy") : "–")</td>
-    <td><span class="badge @(s.IsActive ? "bg-success" : "bg-danger")">@(s.IsActive ? "Active" : "Inactive")</span></td>
-    @if(role == "Admin"){
-    <td>
-        <a href="/Schedule/Edit/@s.ScheduleId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-        <form method="post" action="/Schedule/Deactivate/@s.ScheduleId" class="d-inline">@Html.AntiForgeryToken()
-        <button class="btn btn-danger btn-sm" onclick="return confirm('Deactivate this schedule?')"><i class="fas fa-ban"></i></button></form>
-    </td>}
-    </tr>}
-</tbody>
-</table>
+    var scheduleList = Model?.Select(s => new
+    {
+        id = s.ScheduleId,
+        subject = s.SubjectName,
+        day = s.DayOfWeek,
+        start = s.StartTime.ToString(@"hh\:mm"),
+        end = s.EndTime.ToString(@"hh\:mm"),
+        lab = s.LabName,
+        instructor = s.InstructorName,
+        from = s.EffectiveFrom.ToString("yyyy-MM-dd"),
+        to = s.EffectiveTo.HasValue ? s.EffectiveTo.Value.ToString("yyyy-MM-dd") : "",
+        active = s.IsActive
+    }) ?? Enumerable.Empty<object>();
+
+    var schedulesJson = JsonSerializer.Serialize(scheduleList);
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<style>
+    .cal-wrap * {
+        box-sizing: border-box
+    }
+
+    .cal-wrap {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+        border: 1px solid #dadce0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+        color: #202124
+    }
+
+    .cal-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-bottom: 1px solid #dadce0;
+        background: #fff;
+        flex-wrap: wrap
+    }
+
+        .cal-toolbar h2 {
+            font-size: 18px;
+            font-weight: 400;
+            flex: 1;
+            color: #202124;
+            margin: 0;
+            min-width: 160px
+        }
+
+    .cal-btn {
+        padding: 6px 14px;
+        border-radius: 4px;
+        border: 1px solid #dadce0;
+        background: #fff;
+        cursor: pointer;
+        font-size: 13px;
+        color: #3c4043;
+        transition: background .15s
+    }
+
+        .cal-btn:hover {
+            background: #f1f3f4
+        }
+
+    .cal-btn-primary {
+        background: #1a73e8;
+        color: #fff;
+        border-color: #1a73e8
+    }
+
+        .cal-btn-primary:hover {
+            background: #1765cc
+        }
+
+    .cal-btn-icon {
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: 1px solid #dadce0;
+        background: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        color: #3c4043
+    }
+
+        .cal-btn-icon:hover {
+            background: #f1f3f4
+        }
+
+    .cal-legend {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center
+    }
+
+    .cal-leg-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        color: #5f6368
+    }
+
+    .cal-leg-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        flex-shrink: 0
+    }
+
+    .cal-grid-outer {
+        display: flex;
+        overflow: auto;
+        max-height: 640px
+    }
+
+    .cal-time-col {
+        width: 54px;
+        flex-shrink: 0;
+        padding-top: 41px;
+        border-right: 1px solid #dadce0
+    }
+
+    .cal-time-slot {
+        height: 48px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-right: 8px;
+        padding-top: 2px
+    }
+
+        .cal-time-slot span {
+            font-size: 10px;
+            color: #70757a
+        }
+
+    .cal-days-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 0
+    }
+
+    .cal-day-headers {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        border-bottom: 1px solid #dadce0;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 10
+    }
+
+    .cal-day-hdr {
+        text-align: center;
+        padding: 8px 4px;
+        border-left: 1px solid #dadce0
+    }
+
+    .cal-day-name {
+        font-size: 11px;
+        color: #70757a;
+        text-transform: uppercase;
+        letter-spacing: .6px
+    }
+
+    .cal-day-num {
+        font-size: 13px;
+        font-weight: 400;
+        color: #202124
+    }
+
+        .cal-day-num.today {
+            background: #1a73e8;
+            color: #fff;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500
+        }
+
+    .cal-time-grid {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        position: relative
+    }
+
+    .cal-day-col {
+        border-left: 1px solid #dadce0;
+        position: relative
+    }
+
+    .cal-hour-line {
+        height: 48px;
+        border-bottom: 1px solid #f1f3f4
+    }
+
+    .cal-event {
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        border-radius: 4px;
+        padding: 3px 6px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: filter .15s;
+        z-index: 5
+    }
+
+        .cal-event:hover {
+            filter: brightness(.92);
+            z-index: 6
+        }
+
+    .cal-event-title {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+    .cal-event-detail {
+        font-size: 10px;
+        line-height: 1.4;
+        opacity: .9
+    }
+
+    .cal-event.inactive {
+        opacity: .42
+    }
+    /* badge hiển thị trạng thái hiệu lực trên event */
+    .cal-event-badge {
+        display: inline-block;
+        font-size: 9px;
+        border-radius: 2px;
+        padding: 0 3px;
+        margin-left: 3px;
+        vertical-align: middle;
+        background: rgba(255,255,255,.25);
+        line-height: 14px
+    }
+
+    .cal-modal-bg {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.4);
+        z-index: 1050;
+        align-items: center;
+        justify-content: center
+    }
+
+        .cal-modal-bg.show {
+            display: flex
+        }
+
+    .cal-modal {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 8px 28px rgba(0,0,0,.28);
+        padding: 24px;
+        width: 480px;
+        max-width: 95vw;
+        position: relative
+    }
+
+        .cal-modal h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #202124;
+            margin: 0 0 18px
+        }
+
+    .cal-modal-close {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        color: #5f6368;
+        line-height: 1;
+        padding: 2px
+    }
+
+        .cal-modal-close:hover {
+            color: #202124
+        }
+
+    .cal-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 12px
+    }
+
+    .cal-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px
+    }
+
+        .cal-form-group label {
+            font-size: 11px;
+            font-weight: 500;
+            color: #5f6368;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .cal-form-group input, .cal-form-group select {
+            height: 36px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            padding: 0 10px;
+            font-size: 13px;
+            color: #202124;
+            background: #fff;
+            outline: none
+        }
+
+            .cal-form-group input:focus, .cal-form-group select:focus {
+                border-color: #1a73e8;
+                box-shadow: 0 0 0 2px rgba(26,115,232,.2)
+            }
+    /* hint ngày tương ứng với thứ đã chọn */
+    .cal-date-hint {
+        font-size: 11px;
+        color: #1a73e8;
+        margin-top: 2px;
+        min-height: 16px
+    }
+
+    .cal-modal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #dadce0
+    }
+
+    .cal-btn-danger {
+        background: #fce8e6;
+        color: #c5221f;
+        border: 1px solid #f5c6c6;
+        padding: 7px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px
+    }
+
+        .cal-btn-danger:hover {
+            background: #fad2cf
+        }
+
+    .cal-conflict {
+        background: #fef7e0;
+        border: 1px solid #fbbc04;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: #7a5900;
+        margin-bottom: 12px;
+        display: none
+    }
+    /* banner hiệu lực chưa bắt đầu / đã hết */
+    .cal-effective-info {
+        background: #e8f0fe;
+        border: 1px solid #c5d9f8;
+        border-radius: 4px;
+        padding: 7px 12px;
+        font-size: 12px;
+        color: #174ea6;
+        margin-bottom: 12px;
+        display: none
+    }
+
+    .cal-toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #202124;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 13px;
+        z-index: 2000;
+        animation: calToastIn .25s ease
+    }
+
+    @@keyframes calToastIn {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(8px)
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
+        }
+    }
+</style>
+
+<div class="cal-wrap">
+    <div class="cal-toolbar">
+        <button class="cal-btn-icon" onclick="calNavWeek(-1)">&#8249;</button>
+        <button class="cal-btn" onclick="calGoToday()">Hôm nay</button>
+        <button class="cal-btn-icon" onclick="calNavWeek(1)">&#8250;</button>
+        <h2 id="cal-week-label"></h2>
+        <div class="cal-legend" id="cal-legend"></div>
+        @if (isAdmin)
+        {
+            <button class="cal-btn cal-btn-primary" onclick="calOpenModal(null)">+ Thêm lịch</button>
+        }
+    </div>
+    <div class="cal-grid-outer">
+        <div class="cal-time-col" id="cal-time-col"></div>
+        <div class="cal-days-area">
+            <div class="cal-day-headers" id="cal-day-headers"></div>
+            <div class="cal-time-grid" id="cal-time-grid"></div>
+        </div>
+    </div>
 </div>
+
+@if (isAdmin)
+{
+    <div class="cal-modal-bg" id="cal-modal-bg">
+        <div class="cal-modal">
+            <button class="cal-modal-close" onclick="calCloseModal()">&#215;</button>
+            <h3 id="cal-modal-title">Thêm lịch học</h3>
+
+            <div class="cal-conflict" id="cal-conflict">
+                &#9888; Xung đột: Lab hoặc giảng viên đã có lịch trong khung giờ này.
+            </div>
+            <div class="cal-effective-info" id="cal-effective-info"></div>
+
+            <div class="cal-form-row" style="grid-template-columns:1fr">
+                <div class="cal-form-group">
+                    <label>Tên môn học</label>
+                    <input id="cal-f-subject" placeholder="e.g. Lập trình cơ bản" />
+                </div>
+            </div>
+            <div class="cal-form-row">
+                <div class="cal-form-group">
+                    <label>Lab</label>
+                    <select id="cal-f-lab" asp-items="ViewBag.Labs">
+                        <option value="">-- Chọn Lab --</option>
+                    </select>
+                </div>
+                <div class="cal-form-group">
+                    <label>Giảng viên</label>
+                    <select id="cal-f-instructor" asp-items="ViewBag.Instructors">
+                        <option value="">-- Chọn GV --</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cal-form-row">
+                <div class="cal-form-group">
+                    <label>Ngày trong tuần</label>
+                    <select id="cal-f-day" onchange="calSyncDayToDate()">
+                        <option value="1">Thứ Hai</option>
+                        <option value="2">Thứ Ba</option>
+                        <option value="3">Thứ Tư</option>
+                        <option value="4">Thứ Năm</option>
+                        <option value="5">Thứ Sáu</option>
+                        <option value="6">Thứ Bảy</option>
+                    </select>
+                    <div class="cal-date-hint" id="cal-day-hint"></div>
+                </div>
+                <div class="cal-form-group">
+                    <label>Giờ bắt đầu</label>
+                    <input id="cal-f-start" type="time" value="07:00" />
+                </div>
+            </div>
+            <div class="cal-form-row">
+                <div class="cal-form-group">
+                    <label>Giờ kết thúc</label>
+                    <input id="cal-f-end" type="time" value="09:30" />
+                </div>
+                <div class="cal-form-group">
+                    <label>Hiệu lực từ</label>
+                    <input id="cal-f-from" type="date" onchange="calSyncDateToDay('from')" />
+                    <div class="cal-date-hint" id="cal-from-hint"></div>
+                </div>
+            </div>
+            <div class="cal-form-row" style="grid-template-columns:1fr">
+                <div class="cal-form-group">
+                    <label>Hiệu lực đến <small style="text-transform:none;font-weight:400">(tuỳ chọn)</small></label>
+                    <input id="cal-f-to" type="date" onchange="calSyncDateToDay('to')" />
+                    <div class="cal-date-hint" id="cal-to-hint"></div>
+                </div>
+            </div>
+
+            <div class="cal-modal-footer">
+                <div>
+                    <button class="cal-btn-danger" id="cal-btn-deactivate" style="display:none" onclick="calDeactivate()">
+                        &#128683; Huỷ lịch &amp; Thông báo
+                    </button>
+                </div>
+                <div style="display:flex;gap:8px">
+                    <button class="cal-btn" onclick="calCloseModal()">Đóng</button>
+                    <button class="cal-btn cal-btn-primary" onclick="calSave()">Lưu &amp; Thông báo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="cal-csrf-form" style="display:none">
+        @Html.AntiForgeryToken()
+    </form>
+}
+
+@section Scripts {
+    <script>
+        (function () {
+            // ── Server data ───────────────────────────────────────────────────────────
+            var CAL_SCHEDULES = @Html.Raw(schedulesJson);
+            var CAL_IS_ADMIN  = @(isAdmin ? "true" : "false");
+            if (!Array.isArray(CAL_SCHEDULES)) CAL_SCHEDULES = [];
+
+            // ── Config ────────────────────────────────────────────────────────────────
+            var HOUR_START = 6, HOUR_END = 21;
+            var DAYS_SHORT = ['T2','T3','T4','T5','T6','T7'];
+            var DAY_NAMES  = ['','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+            var COLORS = [
+                {bg:'#1a73e8',fg:'#fff'},{bg:'#0b8043',fg:'#fff'},
+                {bg:'#c0392b',fg:'#fff'},{bg:'#7b1fa2',fg:'#fff'},
+                {bg:'#e65100',fg:'#fff'},{bg:'#00796b',fg:'#fff'},
+                {bg:'#6d4c41',fg:'#fff'},{bg:'#558b2f',fg:'#fff'},
+            ];
+            var weekOffset = 0, editingId = null;
+
+            // ── Helpers ───────────────────────────────────────────────────────────────
+            function timeToMin(t) { var p=t.split(':'); return +p[0]*60+ +p[1]; }
+            function minToY(m)    { return ((m-HOUR_START*60)/60)*48; }
+            function pad2(n)      { return n<10?'0'+n:String(n); }
+
+            function fmtDate(d) {
+                // d là Date → "dd/MM/yyyy"
+                return pad2(d.getDate())+'/'+pad2(d.getMonth()+1)+'/'+d.getFullYear();
+            }
+            function isoToDate(s) {
+                // "yyyy-MM-dd" → Date (local)
+                var p=s.split('-'); return new Date(+p[0],+p[1]-1,+p[2]);
+            }
+            function dateToIso(d) {
+                return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());
+            }
+
+            // ── Đồng bộ thứ → điều chỉnh ngày hiệu lực cho khớp thứ ─────────────────
+            // dayTarget: 1=T2 … 6=T7  (JS getDay: 0=CN,1=T2,...,6=T7)
+            function nearestDateForDay(dayTarget, fromIso) {
+                // Tìm ngày gần nhất (từ fromIso trở đi) khớp với thứ dayTarget
+                var base = fromIso ? isoToDate(fromIso) : new Date();
+                base.setHours(0,0,0,0);
+                // JS dayOfWeek: T2=1 T3=2 ... T7=6
+                var jsDay = dayTarget; // 1–6 trùng với JS (0=CN không dùng)
+                var diff  = (jsDay - base.getDay() + 7) % 7;
+                var result = new Date(base);
+                result.setDate(base.getDate() + diff);
+                return result;
+            }
+
+            // Khi đổi select Thứ → cập nhật EffectiveFrom về thứ đó gần nhất
+            window.calSyncDayToDate = function() {
+                var day  = +document.getElementById('cal-f-day').value;
+                var fromEl = document.getElementById('cal-f-from');
+                var d = nearestDateForDay(day, fromEl.value || null);
+                fromEl.value = dateToIso(d);
+                document.getElementById('cal-day-hint').textContent = DAY_NAMES[day];
+                updateFromHint();
+                updateEffectiveInfo();
+            };
+
+            // Khi đổi input ngày → cập nhật select Thứ theo ngày vừa chọn
+            window.calSyncDateToDay = function(which) {
+                if (which === 'from') {
+                    var val = document.getElementById('cal-f-from').value;
+                    if (!val) return;
+                    var d   = isoToDate(val);
+                    var jsD = d.getDay(); // 0=CN … 6=T7
+                    if (jsD >= 1 && jsD <= 6) {
+                        document.getElementById('cal-f-day').value = jsD;
+                        document.getElementById('cal-day-hint').textContent = DAY_NAMES[jsD];
+                    }
+                    updateFromHint();
+                }
+                if (which === 'to') updateToHint();
+                updateEffectiveInfo();
+            };
+
+            function updateFromHint() {
+                var val = document.getElementById('cal-f-from').value;
+                var el  = document.getElementById('cal-from-hint');
+                if (!val) { el.textContent=''; return; }
+                var d = isoToDate(val);
+                el.textContent = 'Từ ' + fmtDate(d) + ' (' + (DAY_NAMES[d.getDay()]||'CN') + ')';
+            }
+            function updateToHint() {
+                var val = document.getElementById('cal-f-to').value;
+                var el  = document.getElementById('cal-to-hint');
+                if (!val) { el.textContent='(không giới hạn)'; return; }
+                var d = isoToDate(val);
+                el.textContent = 'Đến ' + fmtDate(d) + ' (' + (DAY_NAMES[d.getDay()]||'CN') + ')';
+            }
+            function updateEffectiveInfo() {
+                var infoEl = document.getElementById('cal-effective-info');
+                if (!infoEl) return;
+                var fromVal = document.getElementById('cal-f-from').value;
+                var toVal   = document.getElementById('cal-f-to').value;
+                var today   = new Date(); today.setHours(0,0,0,0);
+                if (!fromVal) { infoEl.style.display='none'; return; }
+                var from = isoToDate(fromVal);
+                var to   = toVal ? isoToDate(toVal) : null;
+                var msg  = '';
+                if (from > today) {
+                    msg = '⏳ Lịch này chưa có hiệu lực — sẽ bắt đầu từ ' + fmtDate(from);
+                } else if (to && to < today) {
+                    msg = '⛔ Lịch này đã hết hiệu lực vào ' + fmtDate(to);
+                } else if (to) {
+                    msg = '✅ Đang hiệu lực đến ' + fmtDate(to);
+                } else {
+                    msg = '✅ Đang hiệu lực (không giới hạn ngày kết thúc)';
+                }
+                infoEl.textContent = msg;
+                infoEl.style.display = 'block';
+            }
+
+            function getInstructors() {
+                var seen={}, list=[];
+                CAL_SCHEDULES.forEach(function(s){
+                    if(!seen[s.instructor]){seen[s.instructor]=true;list.push(s.instructor);}
+                });
+                return list;
+            }
+            function getColor(name) {
+                var list=getInstructors(), idx=list.indexOf(name);
+                return COLORS[idx<0?0:idx%COLORS.length];
+            }
+            function getMonday(offset) {
+                var now=new Date(), day=now.getDay();
+                var mon=new Date(now);
+                mon.setDate(now.getDate()-day+(day===0?-6:1)+offset*7);
+                mon.setHours(0,0,0,0);
+                return mon;
+            }
+            function getCsrf() {
+                var el=document.querySelector('#cal-csrf-form input[name="__RequestVerificationToken"]');
+                return el?el.value:'';
+            }
+
+            // ── Render calendar ───────────────────────────────────────────────────────
+            function calRender() {
+                var mon=getMonday(weekOffset);
+                var sat=new Date(mon); sat.setDate(mon.getDate()+5);
+                document.getElementById('cal-week-label').textContent=
+                    mon.toLocaleDateString('vi-VN',{day:'2-digit',month:'long',year:'numeric'})
+                    +' \u2013 '+sat.toLocaleDateString('vi-VN',{day:'2-digit',month:'long'});
+
+                // Time column
+                var tc=document.getElementById('cal-time-col'); tc.innerHTML='';
+                for(var h=HOUR_START;h<HOUR_END;h++){
+                    var sl=document.createElement('div'); sl.className='cal-time-slot';
+                    sl.innerHTML='<span>'+h+':00</span>'; tc.appendChild(sl);
+                }
+
+                // Day headers
+                var dh=document.getElementById('cal-day-headers');
+                dh.innerHTML=DAYS_SHORT.map(function(d,i){
+                    var date=new Date(mon); date.setDate(mon.getDate()+i);
+                    var isToday=new Date().toDateString()===date.toDateString();
+                    var n=isToday?'<span class="cal-day-num today">'+date.getDate()+'</span>'
+                                 :'<span class="cal-day-num">'+date.getDate()+'</span>';
+                    return '<div class="cal-day-hdr"><div class="cal-day-name">'+d+'</div>'+n+'</div>';
+                }).join('');
+
+                // Grid
+                var grid=document.getElementById('cal-time-grid'); grid.innerHTML='';
+                var cols=[];
+                for(var i=0;i<6;i++){
+                    var col=document.createElement('div'); col.className='cal-day-col';
+                    for(var h2=HOUR_START;h2<HOUR_END;h2++){
+                        var hl=document.createElement('div'); hl.className='cal-hour-line'; col.appendChild(hl);
+                    }
+                    grid.appendChild(col); cols.push(col);
+                }
+
+                // Events — chỉ hiện lịch mà tuần hiện tại nằm trong khoảng hiệu lực
+                var monTime = mon.getTime();
+                var satTime = sat.getTime() + 86399999; // cuối ngày thứ 7
+
+                CAL_SCHEDULES.forEach(function(s){
+                    var ci=s.day-1; if(ci<0||ci>5) return;
+
+                    // Kiểm tra khoảng hiệu lực so với tuần đang xem
+                    var fromTime = s.from ? new Date(s.from).getTime() : 0;
+                    var toTime   = s.to   ? new Date(s.to).getTime()   : Infinity;
+                    var inRange  = fromTime <= satTime && toTime >= monTime;
+
+                    // Nếu ngoài khoảng hoàn toàn thì ẩn
+                    if (!inRange) return;
+
+                    var top=minToY(timeToMin(s.start));
+                    var height=Math.max(minToY(timeToMin(s.end))-top-2,22);
+                    var c=getColor(s.instructor);
+                    var ev=document.createElement('div');
+
+                    // active = từ server (đã tính ngày hiệu lực) — nếu false thì mờ
+                    ev.className='cal-event'+(s.active?'':' inactive');
+                    ev.style.cssText='top:'+top+'px;height:'+height+'px;background:'+c.bg+';color:'+c.fg;
+
+                    // Badge nếu chưa/đã hết hiệu lực trong tuần này
+                    var badge='';
+                    var today=new Date(); today.setHours(0,0,0,0);
+                    var fromD=new Date(s.from);
+                    var toD  =s.to?new Date(s.to):null;
+                    if(fromD>today) badge='<span class="cal-event-badge">Sắp</span>';
+                    else if(toD&&toD<today) badge='<span class="cal-event-badge">Hết HH</span>';
+
+                    ev.innerHTML='<div class="cal-event-title">'+s.subject+badge+(s.active?'':' \u2715')+'</div>'
+                        +'<div class="cal-event-detail">'+s.start+'\u2013'+s.end+'</div>'
+                        +'<div class="cal-event-detail">'+s.lab+'</div>';
+
+                    if(CAL_IS_ADMIN)(function(sid){ev.onclick=function(){calOpenModal(sid);};})(s.id);
+                    cols[ci].appendChild(ev);
+                });
+
+                // Legend
+                var lg=document.getElementById('cal-legend'); if(!lg) return;
+                lg.innerHTML=getInstructors().map(function(name){
+                    var c=getColor(name), short=name.split(' ').slice(-1)[0];
+                    return '<div class="cal-leg-item"><div class="cal-leg-dot" style="background:'+c.bg+'"></div>'+short+'</div>';
+                }).join('');
+            }
+
+            // ── Navigation ─────────────────────────────────────────────────────────────
+            window.calNavWeek=function(d){weekOffset+=d;calRender();};
+            window.calGoToday=function(){weekOffset=0;calRender();};
+
+            // ── Modal open ─────────────────────────────────────────────────────────────
+            window.calOpenModal=function(id){
+                if(!CAL_IS_ADMIN) return;
+                editingId=id;
+                var s=id?CAL_SCHEDULES.find(function(x){return x.id===id;}):null;
+                document.getElementById('cal-modal-title').textContent=id?'Chỉnh sửa lịch':'Thêm lịch học';
+                document.getElementById('cal-f-subject').value=s?s.subject:'';
+                document.getElementById('cal-f-day').value=s?s.day:1;
+                document.getElementById('cal-f-start').value=s?s.start:'07:00';
+                document.getElementById('cal-f-end').value=s?s.end:'09:30';
+                document.getElementById('cal-f-from').value=s?s.from:dateToIso(new Date());
+                document.getElementById('cal-f-to').value=s?s.to:'';
+
+                if(s){
+                    var ls=document.getElementById('cal-f-lab');
+                    var is=document.getElementById('cal-f-instructor');
+                    for(var i=0;i<ls.options.length;i++) if(ls.options[i].text===s.lab){ls.selectedIndex=i;break;}
+                    for(var j=0;j<is.options.length;j++) if(is.options[j].text===s.instructor){is.selectedIndex=j;break;}
+                }
+
+                // Khởi tạo hints & info
+                var day = +document.getElementById('cal-f-day').value;
+                document.getElementById('cal-day-hint').textContent = DAY_NAMES[day]||'';
+                updateFromHint();
+                updateToHint();
+                updateEffectiveInfo();
+
+                document.getElementById('cal-conflict').style.display='none';
+                var bd=document.getElementById('cal-btn-deactivate');
+                if(bd) bd.style.display=(id&&s&&s.active)?'block':'none';
+                document.getElementById('cal-modal-bg').classList.add('show');
+            };
+
+            window.calCloseModal=function(){
+                document.getElementById('cal-modal-bg').classList.remove('show');
+                editingId=null;
+            };
+
+            // ── Save ────────────────────────────────────────────────────────────────────
+            window.calSave=function(){
+                var subj=document.getElementById('cal-f-subject').value.trim();
+                var start=document.getElementById('cal-f-start').value;
+                var end=document.getElementById('cal-f-end').value;
+                var day=document.getElementById('cal-f-day').value;
+                var ls=document.getElementById('cal-f-lab');
+                var is=document.getElementById('cal-f-instructor');
+                var from=document.getElementById('cal-f-from').value;
+                var to=document.getElementById('cal-f-to').value;
+
+                if(!subj){alert('Vui lòng nhập tên môn học');return;}
+                if(!ls.value){alert('Vui lòng chọn Lab');return;}
+                if(!is.value){alert('Vui lòng chọn Giảng viên');return;}
+                if(start>=end){alert('Giờ kết thúc phải sau giờ bắt đầu');return;}
+                if(!from){alert('Vui lòng chọn ngày hiệu lực');return;}
+                if(to && to < from){alert('Ngày kết thúc phải sau ngày bắt đầu hiệu lực');return;}
+
+                var conflict=CAL_SCHEDULES.some(function(s){
+                    if(editingId&&s.id===editingId) return false;
+                    if(!s.active||s.day!==+day) return false;
+                    var ss=timeToMin(s.start),se=timeToMin(s.end),ns=timeToMin(start),ne=timeToMin(end);
+                    return ns<se&&ne>ss&&(s.lab===ls.options[ls.selectedIndex].text||s.instructor===is.options[is.selectedIndex].text);
+                });
+                if(conflict){document.getElementById('cal-conflict').style.display='block';return;}
+
+                var form=document.createElement('form');
+                form.method='post';
+                form.action=editingId?'/Schedule/Edit':'/Schedule/Create';
+                var fields={ScheduleId:editingId||0,SubjectName:subj,LabId:ls.value,InstructorId:is.value,
+                    DayOfWeek:day,StartTime:start,EndTime:end,EffectiveFrom:from,EffectiveTo:to,
+                    __RequestVerificationToken:getCsrf()};
+                Object.keys(fields).forEach(function(k){
+                    var inp=document.createElement('input');
+                    inp.type='hidden';inp.name=k;inp.value=fields[k];form.appendChild(inp);
+                });
+                document.body.appendChild(form); form.submit();
+            };
+
+            // ── Deactivate ──────────────────────────────────────────────────────────────
+            window.calDeactivate=function(){
+                if(!editingId||!confirm('Xác nhận huỷ lịch học này?')) return;
+                var form=document.createElement('form');
+                form.method='post'; form.action='/Schedule/Deactivate/'+editingId;
+                var inp=document.createElement('input');
+                inp.type='hidden';inp.name='__RequestVerificationToken';inp.value=getCsrf();
+                form.appendChild(inp); document.body.appendChild(form); form.submit();
+            };
+
+            // ── Init ────────────────────────────────────────────────────────────────────
+            document.addEventListener('DOMContentLoaded',function(){
+                var bg=document.getElementById('cal-modal-bg');
+                if(bg) bg.addEventListener('click',function(e){if(e.target===this)calCloseModal();});
+                calRender();
+            });
+        })();
+    </script>
+}

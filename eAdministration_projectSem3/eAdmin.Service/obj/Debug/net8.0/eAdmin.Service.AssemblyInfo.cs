@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eAdmin.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c622f4ca7c04be04b1bb713861446610a570e6ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bfffd11d7ddb7f4875c262eb53731ca387354fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("eAdmin.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eAdmin.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

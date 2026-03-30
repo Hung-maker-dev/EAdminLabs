@@ -1,25 +1,454 @@
-@model IEnumerable<eAdmin.Web.ViewModels.NotificationViewModel>
-@{ ViewData["Title"] = "Notifications"; }
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4><i class="fas fa-bell me-2 text-warning"></i>Notifications</h4>
-    <form method="post" action="/Notification/MarkAllRead">@Html.AntiForgeryToken()
-    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-check-double me-1"></i>Mark All Read</button></form>
+﻿@model IEnumerable<eAdmin.Web.ViewModels.NotificationViewModel>
+@{
+    ViewData["Title"] = "Notifications";
+
+    // ── Phân trang ─────────────────────────────────────────────────────────
+    int pageSize = 10;
+    int page = int.TryParse(Context.Request.Query["page"], out var p) && p > 0 ? p : 1;
+    int totalItems = Model.Count();
+    int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+    page = Math.Clamp(page, 1, Math.Max(1, totalPages));
+
+    var pagedModel = Model.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+    int unreadCount = Model.Count(n => !n.IsRead);
+}
+
+<style>
+    /* ── Variables ── */
+    :root {
+        --notif-unread-bg    : #fffbeb;
+        --notif-unread-border: #fbbf24;
+        --notif-read-bg      : #ffffff;
+        --notif-read-border  : #e5e7eb;
+        --radius             : 10px;
+        --shadow-sm          : 0 1px 3px rgba(0,0,0,.07);
+        --shadow-md          : 0 4px 12px rgba(0,0,0,.10);
+        --transition         : .18s ease;
+    }
+
+    /* ── Header bar ── */
+    .notif-header {
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        flex-wrap      : wrap;
+        gap            : .5rem;
+        margin-bottom  : 1.25rem;
+    }
+    .notif-title { font-size:1.3rem; font-weight:700; margin:0; }
+    .notif-badge-count {
+        background   : #f59e0b;
+        color        : #fff;
+        font-size    : .7rem;
+        font-weight  : 700;
+        padding      : 2px 7px;
+        border-radius: 999px;
+        vertical-align: middle;
+    }
+    .notif-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+
+    /* ── Filter tabs ── */
+    .notif-tabs { display:flex; gap:.4rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .notif-tab {
+        padding      : 4px 14px;
+        border-radius: 999px;
+        font-size    : .82rem;
+        font-weight  : 500;
+        cursor       : pointer;
+        border       : 1.5px solid #d1d5db;
+        background   : transparent;
+        color        : #6b7280;
+        transition   : var(--transition);
+    }
+    .notif-tab:hover, .notif-tab.active {
+        background: #1d4ed8;
+        border-color:#1d4ed8;
+        color:#fff;
+    }
+
+    /* ── Notification item ── */
+    .notif-item {
+        background   : var(--notif-read-bg);
+        border       : 1.5px solid var(--notif-read-border);
+        border-radius: var(--radius);
+        padding      : .85rem 1rem;
+        margin-bottom: .55rem;
+        box-shadow   : var(--shadow-sm);
+        transition   : box-shadow var(--transition), opacity var(--transition), transform var(--transition);
+        position     : relative;
+    }
+    .notif-item.unread {
+        background  : var(--notif-unread-bg);
+        border-color: var(--notif-unread-border);
+    }
+    .notif-item:hover { box-shadow: var(--shadow-md); }
+
+    /* unread left accent */
+    .notif-item.unread::before {
+        content     : '';
+        position    : absolute;
+        left        : 0; top: 0; bottom:0;
+        width       : 4px;
+        border-radius: var(--radius) 0 0 var(--radius);
+        background  : #f59e0b;
+    }
+
+    .notif-item-top {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : flex-start;
+        gap            : .5rem;
+    }
+    .notif-left  { display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; min-width:0; }
+    .notif-right { display:flex; align-items:center; gap:.4rem; flex-shrink:0; }
+
+    .notif-subject {
+        font-weight: 600;
+        font-size  : .92rem;
+        white-space: nowrap;
+        overflow   : hidden;
+        text-overflow: ellipsis;
+        max-width  : 420px;
+    }
+    .notif-msg {
+        font-size  : .82rem;
+        color      : #6b7280;
+        margin-top : .35rem;
+        line-height: 1.5;
+        /* Collapsed by default — expand on click */
+        max-height : 2.8em;
+        overflow   : hidden;
+        transition : max-height .25s ease;
+        cursor     : pointer;
+    }
+    .notif-msg.expanded { max-height: 200px; }
+    .notif-msg-toggle {
+        font-size  : .75rem;
+        color      : #1d4ed8;
+        cursor     : pointer;
+        background : none;
+        border     : none;
+        padding    : 0;
+        margin-top : .2rem;
+        display    : none; /* shown by JS when text overflows */
+    }
+
+    /* ── Btn micro ── */
+    .btn-icon {
+        display        : inline-flex;
+        align-items    : center;
+        justify-content: center;
+        width          : 28px;
+        height         : 28px;
+        border-radius  : 6px;
+        border         : 1.5px solid transparent;
+        background     : transparent;
+        font-size      : .8rem;
+        cursor         : pointer;
+        transition     : var(--transition);
+        flex-shrink    : 0;
+    }
+    .btn-icon-read  { color:#1d4ed8; border-color:#bfdbfe; }
+    .btn-icon-read:hover  { background:#dbeafe; }
+    .btn-icon-del   { color:#dc2626; border-color:#fecaca; }
+    .btn-icon-del:hover   { background:#fee2e2; }
+
+    /* ── Slide-out animation on delete ── */
+    .notif-item.removing {
+        opacity  : 0;
+        transform: translateX(40px);
+        pointer-events: none;
+    }
+
+    /* ── Empty state ── */
+    .notif-empty {
+        text-align : center;
+        padding    : 3rem 1rem;
+        color      : #9ca3af;
+    }
+    .notif-empty i { font-size:2.5rem; margin-bottom:.75rem; display:block; }
+
+    /* ── Pagination ── */
+    .notif-pagination {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        gap            : .4rem;
+        margin-top     : 1.25rem;
+        flex-wrap      : wrap;
+    }
+    .page-btn {
+        padding      : 5px 12px;
+        border-radius: 7px;
+        border       : 1.5px solid #d1d5db;
+        background   : #fff;
+        font-size    : .84rem;
+        color        : #374151;
+        cursor       : pointer;
+        transition   : var(--transition);
+        text-decoration: none;
+    }
+    .page-btn:hover  { border-color:#1d4ed8; color:#1d4ed8; }
+    .page-btn.active { background:#1d4ed8; border-color:#1d4ed8; color:#fff; font-weight:700; }
+    .page-btn:disabled, .page-btn.disabled { opacity:.4; pointer-events:none; }
+
+    /* ── Info bar ── */
+    .notif-info-bar {
+        font-size  : .8rem;
+        color      : #9ca3af;
+        text-align : center;
+        margin-top : .6rem;
+    }
+</style>
+
+<!-- ── Header ───────────────────────────────────────────────────── -->
+<div class="notif-header">
+    <h4 class="notif-title">
+        <i class="fas fa-bell me-2 text-warning"></i>Notifications
+        @if (unreadCount > 0)
+        {
+            <span class="notif-badge-count">@unreadCount chưa đọc</span>
+        }
+    </h4>
+
+    <div class="notif-actions">
+        @if (unreadCount > 0)
+        {
+            <form method="post" action="/Notification/MarkAllRead">
+                @Html.AntiForgeryToken()
+                <button class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-check-double me-1"></i>Đánh dấu tất cả đã đọc
+                </button>
+            </form>
+        }
+        @if (Model.Any())
+        {
+            <form method="post" action="/Notification/DeleteAll" id="formDeleteAll"
+                  onsubmit="return confirm('Xóa tất cả thông báo? Hành động này không thể hoàn tác.')">
+                @Html.AntiForgeryToken()
+                <button class="btn btn-outline-danger btn-sm">
+                    <i class="fas fa-trash me-1"></i>Xóa tất cả
+                </button>
+            </form>
+        }
+    </div>
 </div>
-@if(!Model.Any()){<div class="alert alert-info">No notifications.</div>}
-<div class="list-group">
-@foreach(var n in Model){
-<div class="list-group-item list-group-item-action @(!n.IsRead?"list-group-item-light fw-bold":"")">
-<div class="d-flex justify-content-between align-items-start">
-<div>
-<span class="badge @(n.NotificationType=="SMS"?"bg-success":"bg-primary") me-2">@n.NotificationType</span>
-<span>@n.Subject</span>
+
+<!-- ── Filter tabs ───────────────────────────────────────────────── -->
+<div class="notif-tabs" id="filterTabs">
+    <button class="notif-tab active" data-filter="all">Tất cả (@totalItems)</button>
+    <button class="notif-tab" data-filter="unread">Chưa đọc (@unreadCount)</button>
+    <button class="notif-tab" data-filter="read">Đã đọc (@(totalItems - unreadCount))</button>
 </div>
-<div class="d-flex gap-2 align-items-center">
-<small class="text-muted">@n.CreatedAt.ToString("dd/MM HH:mm")</small>
-@if(!n.IsRead){<form method="post" action="/Notification/MarkRead/@n.NotificationId">@Html.AntiForgeryToken()
-<button class="btn btn-sm btn-outline-primary py-0 px-1"><i class="fas fa-check"></i></button></form>}
-</div>
-</div>
-<p class="mb-0 small text-muted mt-1">@n.Message</p>
-</div>}
-</div>
+
+<!-- ── List ─────────────────────────────────────────────────────── -->
+@if (!Model.Any())
+{
+    <div class="notif-empty">
+        <i class="fas fa-bell-slash"></i>
+        Không có thông báo nào.
+    </div>
+}
+else
+{
+    <div id="notifList">
+        @foreach (var n in pagedModel)
+        {
+            <div class="notif-item @(!n.IsRead ? "unread" : "")"
+                 id="notif-@n.NotificationId"
+                 data-read="@n.IsRead.ToString().ToLower()">
+
+                <div class="notif-item-top">
+                    <!-- Left: badge + subject -->
+                    <div class="notif-left">
+                        <span class="badge @(n.NotificationType == "SMS" ? "bg-success" : "bg-primary") me-1">
+                            @n.NotificationType
+                        </span>
+                        <span class="notif-subject" title="@n.Subject">@n.Subject</span>
+                    </div>
+
+                    <!-- Right: time + actions -->
+                    <div class="notif-right">
+                        <small class="text-muted" style="white-space:nowrap">
+                            @n.CreatedAt.ToString("dd/MM HH:mm")
+                        </small>
+
+                        @* Mark Read button — chỉ hiện khi chưa đọc *@
+                        @if (!n.IsRead)
+                        {
+                            <form method="post" action="/Notification/MarkRead/@n.NotificationId"
+                                  class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button class="btn-icon btn-icon-read" title="Đánh dấu đã đọc">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </form>
+                        }
+
+                        @* Delete button — không có confirm popup, xóa mượt qua AJAX *@
+                        <button class="btn-icon btn-icon-del"
+                                title="Xóa thông báo"
+                                onclick="deleteNotif(@n.NotificationId, this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Message — collapsible -->
+                <p class="notif-msg mb-0 mt-1" id="msg-@n.NotificationId">@n.Message</p>
+                <button class="notif-msg-toggle" id="toggle-@n.NotificationId"
+                        onclick="toggleMsg(@n.NotificationId)">
+                    Xem thêm ▾
+                </button>
+            </div>
+        }
+    </div>
+
+    <!-- ── Pagination ──────────────────────────────────────────────── -->
+    @if (totalPages > 1)
+    {
+        <nav class="notif-pagination" aria-label="Phân trang thông báo">
+            <a class="page-btn @(page <= 1 ? "disabled" : "")"
+               href="?page=@(page - 1)" aria-label="Trang trước">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                @* Hiện trang đầu, cuối, và xung quanh trang hiện tại *@
+                if (i == 1 || i == totalPages || (i >= page - 1 && i <= page + 1))
+                {
+                    <a class="page-btn @(i == page ? "active" : "")" href="?page=@i">@i</a>
+                }
+                else if (i == page - 2 || i == page + 2)
+                {
+                    <span class="page-btn disabled">…</span>
+                }
+            }
+
+            <a class="page-btn @(page >= totalPages ? "disabled" : "")"
+               href="?page=@(page + 1)" aria-label="Trang sau">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </nav>
+
+        <p class="notif-info-bar">
+            Hiển thị @((page - 1) * pageSize + 1)–@(Math.Min(page * pageSize, totalItems))
+            trong tổng số @totalItems thông báo
+        </p>
+    }
+}
+
+@* ── Hidden form dùng cho AJAX delete ─────────────────────────── *@
+<form id="formDeleteOne" method="post" style="display:none">
+    @Html.AntiForgeryToken()
+</form>
+
+<script>
+    // ── Delete một notification (không confirm popup, mượt) ───────────
+    async function deleteNotif(id, btn) {
+        const item = document.getElementById('notif-' + id);
+        const form = document.getElementById('formDeleteOne');
+        const token = form.querySelector('[name="__RequestVerificationToken"]').value;
+
+        // Slide-out ngay lập tức để UX nhanh
+        item.classList.add('removing');
+
+        try {
+            const res = await fetch('/Notification/Delete/' + id, {
+                method : 'POST',
+                headers: {
+                    'RequestVerificationToken': token,
+                    'Content-Type'            : 'application/x-www-form-urlencoded'
+                },
+                body: '__RequestVerificationToken=' + encodeURIComponent(token)
+            });
+
+            if (res.ok) {
+                // Xóa hẳn khỏi DOM sau animation
+                setTimeout(() => {
+                    item.remove();
+                    updateEmptyState();
+                    updateUnreadBadge();
+                }, 200);
+            } else {
+                // Rollback nếu lỗi
+                item.classList.remove('removing');
+                showToast('Không thể xóa thông báo. Vui lòng thử lại.', 'danger');
+            }
+        } catch {
+            item.classList.remove('removing');
+            showToast('Lỗi kết nối.', 'danger');
+        }
+    }
+
+    // ── Hiện thông báo rỗng khi xóa hết ─────────────────────────────
+    function updateEmptyState() {
+        const list  = document.getElementById('notifList');
+        if (!list) return;
+        const items = list.querySelectorAll('.notif-item');
+        if (items.length === 0) {
+            list.innerHTML = `
+                <div class="notif-empty">
+                    <i class="fas fa-bell-slash"></i>
+                    Không có thông báo nào.
+                </div>`;
+        }
+    }
+
+    // ── Cập nhật badge unread ─────────────────────────────────────────
+    function updateUnreadBadge() {
+        const unread = document.querySelectorAll('.notif-item.unread').length;
+        const badge  = document.querySelector('.notif-badge-count');
+        if (badge) badge.textContent = unread + ' chưa đọc';
+        if (unread === 0 && badge) badge.remove();
+    }
+
+    // ── Filter tabs (client-side, không reload) ───────────────────────
+    document.querySelectorAll('.notif-tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            document.querySelectorAll('.notif-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            document.querySelectorAll('#notifList .notif-item').forEach(item => {
+                if (filter === 'all') {
+                    item.style.display = '';
+                } else if (filter === 'unread') {
+                    item.style.display = item.dataset.read === 'false' ? '' : 'none';
+                } else {
+                    item.style.display = item.dataset.read === 'true'  ? '' : 'none';
+                }
+            });
+        });
+    });
+
+    // ── Expand/collapse message dài ───────────────────────────────────
+    function toggleMsg(id) {
+        const msg    = document.getElementById('msg-' + id);
+        const toggle = document.getElementById('toggle-' + id);
+        const isExpanded = msg.classList.contains('expanded');
+        msg.classList.toggle('expanded');
+        toggle.textContent = isExpanded ? 'Xem thêm ▾' : 'Thu gọn ▴';
+    }
+
+    // Tự hiện nút toggle khi nội dung bị cắt
+    document.querySelectorAll('.notif-msg').forEach(el => {
+        if (el.scrollHeight > el.clientHeight + 2) {
+            const id = el.id.replace('msg-', '');
+            const btn = document.getElementById('toggle-' + id);
+            if (btn) btn.style.display = 'inline';
+        }
+    });
+
+    // ── Toast nhỏ hiện lỗi ───────────────────────────────────────────
+    function showToast(msg, type='secondary') {
+        const t = document.createElement('div');
+        t.className = `alert alert-${type} alert-dismissible position-fixed bottom-0 end-0 m-3`;
+        t.style.cssText = 'z-index:9999;min-width:220px;font-size:.85rem';
+        t.innerHTML = msg + `<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 3500);
+    }
+</script>
+@* fix 30/3 *@

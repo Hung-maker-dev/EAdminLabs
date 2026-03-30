@@ -1,61 +1,69 @@
 @model eAdmin.Web.ViewModels.ScheduleCreateViewModel
-@{ ViewData["Title"] = "Create Schedule"; }
+@{
+    ViewData["Title"] = "Create Schedule";
+}
 <h4><i class="fas fa-calendar-plus me-2 text-primary"></i>Create Schedule</h4>
-<div class="card shadow-sm"><div class="card-body">
-<form asp-action="Create" method="post">@Html.AntiForgeryToken()
-<div asp-validation-summary="All" class="alert alert-danger" style="display:@(ViewData.ModelState.IsValid?"none":"block")"></div>
-<div class="row g-3">
-<div class="col-md-6">
-    <label asp-for="LabId" class="form-label fw-semibold">Lab</label>
-    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select">
-        <option value="">-- Select Lab --</option>
-    </select>
-    <span asp-validation-for="LabId" class="text-danger small"></span>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="All" class="alert alert-danger" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="LabId" class="form-label fw-semibold">Lab</label>
+                    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select">
+                        <option value="">-- Select Lab --</option>
+                    </select>
+                    <span asp-validation-for="LabId" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="InstructorId" class="form-label fw-semibold">Instructor</label>
+                    <select asp-for="InstructorId" asp-items="ViewBag.Instructors" class="form-select">
+                        <option value="">-- Select Instructor --</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="SubjectName" class="form-label fw-semibold">Subject</label>
+                    <input asp-for="SubjectName" class="form-control" placeholder="e.g. Introduction to Programming" />
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="DayOfWeek" class="form-label fw-semibold">Day of Week</label>
+                    <select asp-for="DayOfWeek" class="form-select">
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="StartTime" class="form-label fw-semibold">Start Time</label>
+                    <input asp-for="StartTime" type="time" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="EndTime" class="form-label fw-semibold">End Time</label>
+                    <input asp-for="EndTime" type="time" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="EffectiveFrom" class="form-label fw-semibold">Effective From</label>
+                    <input asp-for="EffectiveFrom" type="date" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="EffectiveTo" class="form-label fw-semibold">Effective To <small class="text-muted">(optional)</small></label>
+                    <input asp-for="EffectiveTo" type="date" class="form-control" />
+                </div>
+            </div>
+            <div class="alert alert-info mt-3 small">
+                <i class="fas fa-info-circle me-1"></i>
+                The system will automatically check for lab and instructor conflicts before saving.
+                The assigned instructor will be notified via InApp and SMS.
+            </div>
+            <div class="d-flex gap-2 justify-content-end mt-2">
+                <a href="/Schedule/Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save me-1"></i>Create & Notify</button>
+            </div>
+        </form>
+    </div>
 </div>
-<div class="col-md-6">
-    <label asp-for="InstructorId" class="form-label fw-semibold">Instructor</label>
-    <select asp-for="InstructorId" asp-items="ViewBag.Instructors" class="form-select">
-        <option value="">-- Select Instructor --</option>
-    </select>
-</div>
-<div class="col-md-6">
-    <label asp-for="SubjectName" class="form-label fw-semibold">Subject</label>
-    <input asp-for="SubjectName" class="form-control" placeholder="e.g. Introduction to Programming"/>
-</div>
-<div class="col-md-2">
-    <label asp-for="DayOfWeek" class="form-label fw-semibold">Day of Week</label>
-    <select asp-for="DayOfWeek" class="form-select">
-        <option value="1">Monday</option><option value="2">Tuesday</option>
-        <option value="3">Wednesday</option><option value="4">Thursday</option>
-        <option value="5">Friday</option><option value="6">Saturday</option>
-        <option value="7">Sunday</option>
-    </select>
-</div>
-<div class="col-md-2">
-    <label asp-for="StartTime" class="form-label fw-semibold">Start Time</label>
-    <input asp-for="StartTime" type="time" class="form-control"/>
-</div>
-<div class="col-md-2">
-    <label asp-for="EndTime" class="form-label fw-semibold">End Time</label>
-    <input asp-for="EndTime" type="time" class="form-control"/>
-</div>
-<div class="col-md-4">
-    <label asp-for="EffectiveFrom" class="form-label fw-semibold">Effective From</label>
-    <input asp-for="EffectiveFrom" type="date" class="form-control"/>
-</div>
-<div class="col-md-4">
-    <label asp-for="EffectiveTo" class="form-label fw-semibold">Effective To <small class="text-muted">(optional)</small></label>
-    <input asp-for="EffectiveTo" type="date" class="form-control"/>
-</div>
-</div>
-<div class="alert alert-info mt-3 small">
-    <i class="fas fa-info-circle me-1"></i>
-    The system will automatically check for lab and instructor conflicts before saving.
-    The assigned instructor will be notified via InApp and SMS.
-</div>
-<div class="d-flex gap-2 justify-content-end mt-2">
-    <a href="/Schedule/Index" class="btn btn-secondary">Cancel</a>
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save me-1"></i>Create & Notify</button>
-</div>
-</form>
-</div></div>
