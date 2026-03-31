@@ -188,15 +188,45 @@ namespace eAdmin.Web.Controllers
         [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
         public async Task<IActionResult> ToggleActive(int id)
         {
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            // ❌ Không cho deactivate chính mình
+            if (id == currentUserId)
+            {
+                TempData["Error"] = "You cannot deactivate your own account.";
+                return RedirectToAction(nameof(Index));
+            }
+
             var user = await _uow.Users.GetByIdAsync(id);
             if (user == null) return NotFound();
+
             user.IsActive = !user.IsActive;
+
             _uow.Users.Update(user);
-            await WriteAuditAsync(user.IsActive ? "ActivateUser" : "DeactivateUser", "User", user.UserId, "");
+
+            await WriteAuditAsync(
+                user.IsActive ? "ActivateUser" : "DeactivateUser",
+                "User",
+                user.UserId,
+                ""
+            );
+
             await _uow.SaveChangesAsync();
+
             TempData["Success"] = $"User {(user.IsActive ? "activated" : "deactivated")}.";
             return RedirectToAction(nameof(Index));
         }
+        //public async Task<IActionResult> ToggleActive(int id)
+        //{
+        //    var user = await _uow.Users.GetByIdAsync(id);
+        //    if (user == null) return NotFound();
+        //    user.IsActive = !user.IsActive;
+        //    _uow.Users.Update(user);
+        //    await WriteAuditAsync(user.IsActive ? "ActivateUser" : "DeactivateUser", "User", user.UserId, "");
+        //    await _uow.SaveChangesAsync();
+        //    TempData["Success"] = $"User {(user.IsActive ? "activated" : "deactivated")}.";
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         // Profile & Change Password for current user
         [HttpGet]

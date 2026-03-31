@@ -4807,23 +4807,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Users\\NGUYEN NHUT QUANG\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
+      "projectUniqueName": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
       "projectName": "eAdmin.Web",
-      "projectPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\obj\\",
+      "projectPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
+      "packagesPath": "C:\\Users\\NGUYEN NHUT QUANG\\.nuget\\packages\\",
+      "outputPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NGUYEN NHUT QUANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4838,14 +4838,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
-              "projectPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj"
+            "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj": {
+              "projectPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj"
             },
-            "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {
-              "projectPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj"
+            "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj": {
+              "projectPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj"
             },
-            "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj": {
-              "projectPath": "F:\\e project fix\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj"
+            "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj": {
+              "projectPath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj"
             }
           }
         }
@@ -4859,8 +4859,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4898,7 +4897,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.419/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
