@@ -87,3 +87,39 @@ F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug
 F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\refint\eAdmin.Service.dll
 F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.pdb
 F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\ref\eAdmin.Service.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.deps.json
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.pdb
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Domain.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Repository.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Domain.pdb
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Repository.pdb
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.csproj.AssemblyReference.cache
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.AssemblyInfoInputs.cache
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.AssemblyInfo.cs
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.csproj.CoreCompileInputs.cache
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.sourcelink.json
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.S.12802E64.Up2Date
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\refint\eAdmin.Service.dll
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.pdb
+D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\ref\eAdmin.Service.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.deps.json
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Service.pdb
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Domain.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Repository.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Domain.pdb
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\bin\Debug\net8.0\eAdmin.Repository.pdb
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.csproj.AssemblyReference.cache
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.AssemblyInfoInputs.cache
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.AssemblyInfo.cs
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.csproj.CoreCompileInputs.cache
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.sourcelink.json
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.S.12802E64.Up2Date
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\refint\eAdmin.Service.dll
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\eAdmin.Service.pdb
+D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Service\obj\Debug\net8.0\ref\eAdmin.Service.dll

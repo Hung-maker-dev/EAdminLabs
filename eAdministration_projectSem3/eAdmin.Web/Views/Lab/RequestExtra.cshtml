@@ -1,15 +1,319 @@
-@model eAdmin.Domain.Entities.ExtraLabRequest
-@{ ViewData["Title"] = "Request Extra Lab"; }
-<h4><i class="fas fa-calendar-plus me-2 text-info"></i>Request Extra Lab</h4>
-<div class="card shadow-sm" style="max-width:520px"><div class="card-body">
-<form asp-action="RequestExtra" method="post">@Html.AntiForgeryToken()
-<div class="mb-3"><label asp-for="LabId" class="form-label fw-semibold">Lab</label>
-<select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select"><option value="">-- Select Lab --</option></select></div>
-<div class="mb-3"><label asp-for="RequestDate" class="form-label fw-semibold">Date</label><input asp-for="RequestDate" type="date" class="form-control"/></div>
-<div class="row g-2 mb-3">
-<div class="col"><label asp-for="StartTime" class="form-label fw-semibold">Start</label><input asp-for="StartTime" type="time" class="form-control"/></div>
-<div class="col"><label asp-for="EndTime" class="form-label fw-semibold">End</label><input asp-for="EndTime" type="time" class="form-control"/></div>
+﻿@model eAdmin.Domain.Entities.ExtraLabRequest
+@{
+    ViewData["Title"] = "Request Extra Lab";
+}
+
+<style>
+    .req-wrap {
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .req-card {
+        width: 100%;
+        max-width: 560px;
+        background: var(--bs-body-bg);
+        border: 1px solid var(--bs-border-color);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,.07);
+        overflow: hidden;
+    }
+
+    .req-card-header {
+        padding: 1.25rem 1.5rem 1rem;
+        border-bottom: 1px solid var(--bs-border-color);
+        background: rgba(13,202,240,.05);
+    }
+
+        .req-card-header h4 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: var(--bs-body-color);
+        }
+
+            .req-card-header h4 i {
+                color: #0dcaf0;
+            }
+
+        .req-card-header p {
+            margin: .25rem 0 0;
+            font-size: .82rem;
+            color: var(--bs-secondary-color);
+        }
+
+    .req-card-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+    }
+
+    .form-label {
+        font-size: .82rem;
+        font-weight: 600;
+        color: var(--bs-secondary-color);
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        margin-bottom: .4rem;
+    }
+
+    .slot-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+    }
+
+    .slot-option {
+        display: none;
+    }
+
+    .slot-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: .65rem .5rem;
+        border-radius: 10px;
+        border: 1.5px solid var(--bs-border-color);
+        cursor: pointer;
+        text-align: center;
+        transition: all .18s;
+        background: var(--bs-body-bg);
+        user-select: none;
+    }
+
+        .slot-label .slot-time {
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--bs-body-color);
+        }
+
+        .slot-label .slot-period {
+            font-size: .72rem;
+            color: var(--bs-secondary-color);
+            margin-top: .1rem;
+        }
+
+        .slot-label:hover {
+            border-color: #0dcaf0;
+            background: rgba(13,202,240,.05);
+        }
+
+    .slot-option:checked + .slot-label {
+        border-color: #0dcaf0;
+        background: rgba(13,202,240,.1);
+    }
+
+        .slot-option:checked + .slot-label .slot-time {
+            color: #087990;
+        }
+
+    [data-bs-theme="dark"] .slot-option:checked + .slot-label .slot-time {
+        color: #0dcaf0;
+    }
+
+    .req-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--bs-border-color);
+        display: flex;
+        justify-content: flex-end;
+        gap: .6rem;
+        background: rgba(0,0,0,.02);
+    }
+
+    .btn-cancel {
+        font-size: .875rem;
+        padding: .5rem 1.1rem;
+        border-radius: 10px;
+        background: transparent;
+        border: 1px solid var(--bs-border-color);
+        color: var(--bs-body-color);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        transition: all .15s;
+    }
+
+        .btn-cancel:hover {
+            background: var(--bs-secondary-bg);
+        }
+
+    .btn-submit {
+        font-size: .875rem;
+        padding: .5rem 1.4rem;
+        border-radius: 10px;
+        background: #0dcaf0;
+        border: none;
+        color: #000;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        transition: all .15s;
+        cursor: pointer;
+    }
+
+        .btn-submit:hover {
+            background: #0aa8cc;
+            transform: translateY(-1px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+    .error-msg {
+        font-size: .78rem;
+        color: #dc3545;
+        margin-top: .25rem;
+    }
+
+    .slot-error {
+        display: none;
+        font-size: .78rem;
+        color: #dc3545;
+        margin-top: .3rem;
+    }
+
+    input[type="date"].form-control {
+        font-size: .9rem;
+    }
+
+    textarea.form-control {
+        font-size: .9rem;
+        resize: none;
+    }
+</style>
+
+<div class="req-wrap">
+    <div class="req-card">
+        <div class="req-card-header">
+            <h4><i class="fas fa-calendar-plus"></i> Request Extra Lab Session</h4>
+            <p>Submit a request for an additional lab booking outside regular schedule.</p>
+        </div>
+
+        <form asp-action="RequestExtra" method="post" id="reqForm">
+            @Html.AntiForgeryToken()
+
+            @* Hidden fields for StartTime / EndTime *@
+            <input type="hidden" name="StartTimeStr" id="hiddenStart" />
+            <input type="hidden" name="EndTimeStr" id="hiddenEnd" />
+
+            <div class="req-card-body">
+
+                @* Lab Select *@
+                <div>
+                    <label asp-for="LabId" class="form-label">Lab</label>
+                    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select" style="border-radius:10px; font-size:.9rem;">
+                        <option value="">— Select a lab —</option>
+                    </select>
+                    <span asp-validation-for="LabId" class="error-msg"></span>
+                </div>
+
+                @* Date — dùng name thủ công tránh DateTime.MinValue từ model *@
+                <div>
+                    <label class="form-label" for="requestDate">Date</label>
+                    <input type="date" name="RequestDate" id="requestDate" class="form-control" style="border-radius:10px;" />
+                    <span asp-validation-for="RequestDate" class="error-msg"></span>
+                </div>
+
+                @* Time Slot *@
+                <div>
+                    <label class="form-label">Time Slot</label>
+                    <div class="slot-grid">
+                        <div>
+                            <input type="radio" name="timeSlot" id="slot1" value="07:00|09:00" class="slot-option" />
+                            <label for="slot1" class="slot-label">
+                                <span class="slot-time">07:00 – 09:00</span>
+                                <span class="slot-period">Morning</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="timeSlot" id="slot2" value="09:00|11:00" class="slot-option" />
+                            <label for="slot2" class="slot-label">
+                                <span class="slot-time">09:00 – 11:00</span>
+                                <span class="slot-period">Late Morning</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="timeSlot" id="slot3" value="13:00|15:00" class="slot-option" />
+                            <label for="slot3" class="slot-label">
+                                <span class="slot-time">13:00 – 15:00</span>
+                                <span class="slot-period">Afternoon</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="timeSlot" id="slot4" value="15:00|17:00" class="slot-option" />
+                            <label for="slot4" class="slot-label">
+                                <span class="slot-time">15:00 – 17:00</span>
+                                <span class="slot-period">Late Afternoon</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="timeSlot" id="slot5" value="17:00|19:00" class="slot-option" />
+                            <label for="slot5" class="slot-label">
+                                <span class="slot-time">17:00 – 19:00</span>
+                                <span class="slot-period">Evening</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="slot-error" id="slotError">Please select a time slot.</div>
+                </div>
+
+                @* Purpose *@
+                <div>
+                    <label asp-for="Purpose" class="form-label">Purpose</label>
+                    <textarea asp-for="Purpose" class="form-control" rows="3"
+                              placeholder="Briefly describe the reason for this extra session..."
+                              style="border-radius:10px;"></textarea>
+                    <span asp-validation-for="Purpose" class="error-msg"></span>
+                </div>
+            </div>
+
+            <div class="req-footer">
+                <a href="/Dashboard/Index" class="btn-cancel">
+                    <i class="fas fa-arrow-left" style="font-size:.8rem"></i> Cancel
+                </a>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane" style="font-size:.8rem"></i> Submit Request
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
-<div class="mb-3"><label asp-for="Purpose" class="form-label fw-semibold">Purpose</label><textarea asp-for="Purpose" class="form-control" rows="3"></textarea></div>
-<div class="d-flex gap-2 justify-content-end"><a href="/Dashboard/Index" class="btn btn-secondary">Cancel</a><button class="btn btn-info">Submit Request</button></div>
-</form></div></div>
+
+<script>
+    // Default date = today (luôn set, không phụ thuộc model)
+    (function () {
+        var d = new Date();
+        var yyyy = d.getFullYear();
+        var mm = String(d.getMonth() + 1).padStart(2, '0');
+        var dd = String(d.getDate()).padStart(2, '0');
+        document.getElementById('requestDate').value = yyyy + '-' + mm + '-' + dd;
+    })();
+
+    // Map selected slot → hidden StartTime / EndTime (TimeSpan format hh:mm:ss)
+    document.querySelectorAll('input[name="timeSlot"]').forEach(function (r) {
+        r.addEventListener('change', function () {
+            var parts = this.value.split('|');
+            document.getElementById('hiddenStart').value = parts[0] + ':00';
+            document.getElementById('hiddenEnd').value   = parts[1] + ':00';
+            document.getElementById('slotError').style.display = 'none';
+        });
+    });
+
+    // Validate slot on submit
+    document.getElementById('reqForm').addEventListener('submit', function (e) {
+        var checked = document.querySelector('input[name="timeSlot"]:checked');
+        if (!checked) {
+            e.preventDefault();
+            document.getElementById('slotError').style.display = 'block';
+        }
+    });
+</script>

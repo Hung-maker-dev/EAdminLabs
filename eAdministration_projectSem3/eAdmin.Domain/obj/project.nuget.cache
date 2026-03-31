@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "FYS18lUrItY=",
   "success": true,
   "projectFilePath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+=======
+  "dgSpecHash": "G67ytOZAZZ8=",
+  "success": true,
+  "projectFilePath": "D:\\aProjectSem3Fix31_3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+>>>>>>> 28cf6ed7a260f3e3a5c77339ce199ac629e26ae4
   "expectedPackageFiles": [],
   "logs": []
 }

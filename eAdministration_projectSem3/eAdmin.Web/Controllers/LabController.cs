@@ -18,10 +18,13 @@ namespace eAdmin.Web.Controllers
 
         public async Task<IActionResult> Index() => View(await _uow.Labs.GetAllAsync());
 
-        [HttpGet][AuthorizeRoles("Admin")]
+        [HttpGet]
+        [AuthorizeRoles("Admin")]
         public IActionResult Create() => View(new Lab());
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create(Lab lab)
         {
             if (!ModelState.IsValid) return View(lab);
@@ -31,7 +34,8 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet][AuthorizeRoles("Admin")]
+        [HttpGet]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var lab = await _uow.Labs.GetByIdAsync(id);
@@ -39,7 +43,9 @@ namespace eAdmin.Web.Controllers
             return View(lab);
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(Lab lab)
         {
             if (!ModelState.IsValid) return View(lab);
@@ -49,7 +55,9 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> ToggleActive(int id)
         {
             var lab = await _uow.Labs.GetByIdAsync(id);
@@ -58,14 +66,17 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet][AuthorizeRoles("HOD")]
+        [HttpGet]
+        [AuthorizeRoles("HOD")]
         public async Task<IActionResult> RequestExtra()
         {
             ViewBag.Labs = new SelectList(await _uow.Labs.FindAsync(l => l.IsActive), "LabId", "LabName");
             return View(new ExtraLabRequest());
         }
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("HOD")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("HOD")]
         public async Task<IActionResult> RequestExtra(ExtraLabRequest request)
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
@@ -86,7 +97,9 @@ namespace eAdmin.Web.Controllers
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> ExtraRequests() => View(await _uow.ExtraLabRequests.GetAllAsync());
 
-        [HttpPost][ValidateAntiForgeryToken][AuthorizeRoles("Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
         public async Task<IActionResult> ReplyRequest(int id, string status, string? reply)
         {
             var req = await _uow.ExtraLabRequests.GetByIdAsync(id);

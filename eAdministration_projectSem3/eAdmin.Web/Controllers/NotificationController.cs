@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using eAdmin.Domain.Interfaces;
@@ -73,6 +73,40 @@ namespace eAdmin.Web.Controllers
                 n.RelatedEntityType, n.RelatedEntityId
             });
             return Json(vm);
+        }
+
+        // Xóa MỘT notification (AJAX, không confirm)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var n = await _uow.Notifications.GetByIdAsync(id);
+
+            if (n == null || n.RecipientUserId != uid)
+                return Forbid();   // Trả 403, AJAX sẽ xử lý rollback
+
+            _uow.Notifications.Remove(n);
+            await _uow.SaveChangesAsync();
+
+            return Ok();  // AJAX nhận 200 → xóa DOM
+        }
+
+        // Xóa TẤT CẢ notification của user
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAll()
+        {
+            var uid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var notifs = await _uow.Notifications.FindAsync(n => n.RecipientUserId == uid);
+
+            foreach (var n in notifs)
+                _uow.Notifications.Remove(n);
+
+            await _uow.SaveChangesAsync();
+
+            TempData["Success"] = "Đã xóa tất cả thông báo.";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
