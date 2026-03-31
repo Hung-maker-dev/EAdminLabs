@@ -44,10 +44,9 @@ namespace eAdmin.Web.Controllers
                 EndTime = s.EndTime,
                 EffectiveFrom = s.EffectiveFrom,
                 EffectiveTo = s.EffectiveTo,
-                // IsActive = true trong DB  VÀ  hôm nay nằm trong khoảng hiệu lực
                 IsActive = s.IsActive
-                                 && s.EffectiveFrom.Date <= today
-                                 && (!s.EffectiveTo.HasValue || s.EffectiveTo.Value.Date >= today),
+                         && s.EffectiveFrom.Date <= today
+                         && (!s.EffectiveTo.HasValue || s.EffectiveTo.Value.Date >= today),
                 LabName = labs.FirstOrDefault(l => l.LabId == s.LabId)?.LabName ?? "",
                 InstructorName = users.FirstOrDefault(u => u.UserId == s.InstructorId)?.FullName ?? ""
             }).ToList();
@@ -57,6 +56,7 @@ namespace eAdmin.Web.Controllers
             return View(vm);
         }
 
+        // ── Create (single day) ───────────────────────────────────────────────────
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create()
@@ -77,7 +77,7 @@ namespace eAdmin.Web.Controllers
                 LabId = vm.LabId,
                 InstructorId = vm.InstructorId,
                 SubjectName = vm.SubjectName,
-                DayOfWeek = vm.DayOfWeek,
+                DayOfWeek = vm.DayOfWeek,        // 1–6, đã được validate bởi [Range(1,6)]
                 StartTime = vm.StartTime,
                 EndTime = vm.EndTime,
                 EffectiveFrom = vm.EffectiveFrom,
@@ -101,6 +101,42 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // ── Create — được gọi nhiều lần liên tiếp qua fetch khi chọn "Tất cả" ───
+        // Trả về JSON thay vì redirect để frontend fetch tuần tự không bị reload
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthorizeRoles("Admin")]
+        public async Task<IActionResult> CreateSilent(ScheduleCreateViewModel vm)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(string.Join("; ", ModelState.Values
+                    .SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
+
+            var sched = new LabSchedule
+            {
+                LabId = vm.LabId,
+                InstructorId = vm.InstructorId,
+                SubjectName = vm.SubjectName,
+                DayOfWeek = vm.DayOfWeek,
+                StartTime = vm.StartTime,
+                EndTime = vm.EndTime,
+                EffectiveFrom = vm.EffectiveFrom,
+                EffectiveTo = vm.EffectiveTo,
+                IsActive = true
+            };
+
+            var (success, errors) = await _scheduleService.CreateScheduleAsync(sched);
+            if (!success) return BadRequest(string.Join("; ", errors));
+
+            await _notify.SendAsync(vm.InstructorId, "InApp", "New Schedule Assigned",
+                $"You have been assigned to teach {vm.SubjectName} on day {vm.DayOfWeek}.", "LabSchedule", sched.ScheduleId);
+            await _notify.SendAsync(vm.InstructorId, "SMS", "New Schedule",
+                $"New: {vm.SubjectName} Day {vm.DayOfWeek} {vm.StartTime:hh\\:mm}-{vm.EndTime:hh\\:mm}", "LabSchedule", sched.ScheduleId);
+
+            return Ok(new { sched.ScheduleId });
+        }
+
+        // ── Edit ──────────────────────────────────────────────────────────────────
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
@@ -130,9 +166,16 @@ namespace eAdmin.Web.Controllers
             if (!ModelState.IsValid) { await PopulateDropdowns(); return View(vm); }
             var s = await _uow.Schedules.GetByIdAsync(vm.ScheduleId);
             if (s == null) return NotFound();
-            s.LabId = vm.LabId; s.InstructorId = vm.InstructorId; s.SubjectName = vm.SubjectName;
-            s.DayOfWeek = vm.DayOfWeek; s.StartTime = vm.StartTime; s.EndTime = vm.EndTime;
-            s.EffectiveFrom = vm.EffectiveFrom; s.EffectiveTo = vm.EffectiveTo;
+
+            s.LabId = vm.LabId;
+            s.InstructorId = vm.InstructorId;
+            s.SubjectName = vm.SubjectName;
+            s.DayOfWeek = vm.DayOfWeek;
+            s.StartTime = vm.StartTime;
+            s.EndTime = vm.EndTime;
+            s.EffectiveFrom = vm.EffectiveFrom;
+            s.EffectiveTo = vm.EffectiveTo;
+
             _uow.Schedules.Update(s);
             await _uow.SaveChangesAsync();
 
@@ -145,6 +188,7 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // ── Deactivate ────────────────────────────────────────────────────────────
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin")]

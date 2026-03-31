@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eAdmin.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bfffd11d7ddb7f4875c262eb53731ca387354fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbee774b18b14551b560bfa24d3eabfbb57d033b")]
 [assembly: System.Reflection.AssemblyProductAttribute("eAdmin.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eAdmin.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
