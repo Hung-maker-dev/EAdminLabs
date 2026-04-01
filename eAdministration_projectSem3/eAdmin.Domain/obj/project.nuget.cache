@@ -1,8 +1,24 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "FYS18lUrItY=",
   "success": true,
   "projectFilePath": "D:\\EAdmin_Sem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+=======
+  "dgSpecHash": "lmfg+D6NuXI=",
+  "success": true,
+  "projectFilePath": "D:\\aCodeProjectSem3_31_3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+>>>>>>> 7dd304a9419cd251e057bfda124ba00ac331866c
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file D:\\aCodeProjectSem3_31_3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "D:\\aCodeProjectSem3_31_3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\aCodeProjectSem3_31_3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

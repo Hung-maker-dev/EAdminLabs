@@ -81,3 +81,15 @@ D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\
 D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\refint\eAdmin.Domain.dll
 D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.pdb
 D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\ref\eAdmin.Domain.dll
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.deps.json
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.dll
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.pdb
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.AssemblyInfoInputs.cache
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.AssemblyInfo.cs
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.csproj.CoreCompileInputs.cache
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.sourcelink.json
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.dll
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\refint\eAdmin.Domain.dll
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.pdb
+D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\ref\eAdmin.Domain.dll
