@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using eAdmin.Domain.Entities;
@@ -16,18 +16,51 @@ namespace eAdmin.Web.Controllers
         private readonly IUnitOfWork _uow;
         public RoleController(IUnitOfWork uow) => _uow = uow;
 
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    var roles = await _uow.Roles.GetAllAsync();
+        //    var users = await _uow.Users.GetAllAsync();
+        //    var vm = roles.Select(r => new RoleViewModel
+        //    {
+        //        RoleId = r.RoleId, RoleName = r.RoleName, Description = r.Description,
+        //        UserCount = users.Count(u => u.RoleId == r.RoleId)
+        //    }).ToList();
+        //    return View(vm);
+        //}
+        public async Task<IActionResult> Index(string name, string description)
         {
             var roles = await _uow.Roles.GetAllAsync();
             var users = await _uow.Users.GetAllAsync();
-            var vm = roles.Select(r => new RoleViewModel
-            {
-                RoleId = r.RoleId, RoleName = r.RoleName, Description = r.Description,
-                UserCount = users.Count(u => u.RoleId == r.RoleId)
-            }).ToList();
-            return View(vm);
-        }
 
+            var query = roles.Select(r => new RoleViewModel
+            {
+                RoleId = r.RoleId,
+                RoleName = r.RoleName,
+                Description = r.Description,
+                UserCount = users.Count(u => u.RoleId == r.RoleId)
+            }).AsQueryable();
+
+            // 🔍 Search theo Role Name
+            if (!string.IsNullOrEmpty(name))
+            {
+                name = name.ToLower().Trim();
+                query = query.Where(r =>
+                    (r.RoleName ?? "").ToLower().Contains(name));
+            }
+
+            // 🔍 Search theo Description
+            if (!string.IsNullOrEmpty(description))
+            {
+                description = description.ToLower().Trim();
+                query = query.Where(r =>
+                    (r.Description ?? "").ToLower().Contains(description));
+            }
+
+            ViewBag.Name = name;
+            ViewBag.Description = description;
+
+            return View(query.ToList());
+        }
         [HttpGet] public IActionResult Create() => View(new RoleViewModel());
 
         [HttpPost][ValidateAntiForgeryToken]

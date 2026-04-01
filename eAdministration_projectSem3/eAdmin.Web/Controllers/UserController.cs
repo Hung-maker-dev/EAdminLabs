@@ -19,43 +19,7 @@ namespace eAdmin.Web.Controllers
         private readonly IUnitOfWork _uow;
         public UserController(IUnitOfWork uow) => _uow = uow;
 
-        //[AuthorizeRoles("Admin")]
-        //public async Task<IActionResult> Index(string? role, int? deptId)
-        //{
-        //    var users = await _uow.Users.GetAllAsync();
-        //    var roles = await _uow.Roles.GetAllAsync();
-        //    var depts = await _uow.Departments.GetAllAsync();
-
-        //    var vm = users.Select(u => new UserViewModel
-        //    {
-        //        UserId = u.UserId,
-        //        Username = u.Username,
-        //        FullName = u.FullName,
-        //        Email = u.Email,
-        //        Phone = u.Phone,
-        //        RoleId = u.RoleId,
-        //        DepartmentId = u.DepartmentId,
-        //        IsActive = u.IsActive,
-
-        //        // 🔥 map thủ công (QUAN TRỌNG)
-        //        RoleName = roles.FirstOrDefault(r => r.RoleId == u.RoleId)?.RoleName ?? "",
-        //        DeptName = depts.FirstOrDefault(d => d.DepartmentId == u.DepartmentId)?.DepartmentName ?? ""
-        //    });
-
-        //    // 🔥 FILTER SAU KHI MAP
-        //    if (!string.IsNullOrEmpty(role))
-        //        vm = vm.Where(u => u.RoleName == role);
-
-        //    if (deptId.HasValue)
-        //        vm = vm.Where(u => u.DepartmentId == deptId);
-
-        //    ViewBag.Roles = roles;
-        //    ViewBag.Departments = depts;
-        //    ViewBag.FilterRole = role;
-        //    ViewBag.FilterDept = deptId;
-
-        //    return View(vm.ToList());
-        //}
+    
 
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Index(string? role, int? deptId, string? search)
@@ -216,20 +180,35 @@ namespace eAdmin.Web.Controllers
             TempData["Success"] = $"User {(user.IsActive ? "activated" : "deactivated")}.";
             return RedirectToAction(nameof(Index));
         }
-        //public async Task<IActionResult> ToggleActive(int id)
-        //{
-        //    var user = await _uow.Users.GetByIdAsync(id);
-        //    if (user == null) return NotFound();
-        //    user.IsActive = !user.IsActive;
-        //    _uow.Users.Update(user);
-        //    await WriteAuditAsync(user.IsActive ? "ActivateUser" : "DeactivateUser", "User", user.UserId, "");
-        //    await _uow.SaveChangesAsync();
-        //    TempData["Success"] = $"User {(user.IsActive ? "activated" : "deactivated")}.";
-        //    return RedirectToAction(nameof(Index));
-        //}
+
 
         // Profile & Change Password for current user
-        [HttpGet]
+        //[HttpGet]
+        //public async Task<IActionResult> Profile()
+        //{
+        //    var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        //    var user = await _uow.Users.GetByIdAsync(userId);
+        //    var roles = await _uow.Roles.GetAllAsync();
+        //    var depts = await _uow.Departments.GetAllAsync();
+
+        //    if (user == null) return NotFound();
+
+        //    return View(new UserViewModel
+        //    {
+        //        UserId = user.UserId,
+        //        Username = user.Username,
+        //        FullName = user.FullName,
+        //        Email = user.Email,
+        //        Phone = user.Phone,
+        //        RoleId = user.RoleId,
+        //        DepartmentId = user.DepartmentId,
+
+        //        // 🔥 map thủ công (giống Index)
+        //        RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "",
+        //        DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? ""
+        //    });
+        //}
         public async Task<IActionResult> Profile()
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
@@ -240,47 +219,66 @@ namespace eAdmin.Web.Controllers
 
             if (user == null) return NotFound();
 
-            return View(new UserViewModel
+            return View(new ProfileViewModel
             {
                 UserId = user.UserId,
                 Username = user.Username,
                 FullName = user.FullName,
                 Email = user.Email,
                 Phone = user.Phone,
-                RoleId = user.RoleId,
-                DepartmentId = user.DepartmentId,
-
-                // 🔥 map thủ công (giống Index)
                 RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "",
                 DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? ""
             });
         }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Profile(UserViewModel vm)
+        //{
+        //    // bỏ validation không cần
+        //    ModelState.Remove("Password");
+        //    ModelState.Remove("RoleId");
+
+        //    var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+        //    var user = await _uow.Users.GetByIdAsync(userId);
+
+        //    if (user == null) return NotFound();
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        // 🔥 load lại Role + Department để không mất dữ liệu
+        //        var roles = await _uow.Roles.GetAllAsync();
+        //        var depts = await _uow.Departments.GetAllAsync();
+
+        //        vm.RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "";
+        //        vm.DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? "";
+
+        //        return View(vm);
+        //    }
+
+        //    // 🔥 update
+        //    user.FullName = vm.FullName;
+        //    user.Email = vm.Email;
+        //    user.Phone = vm.Phone;
+
+        //    _uow.Users.Update(user);
+        //    await _uow.SaveChangesAsync();
+
+        //    TempData["Success"] = "Profile updated successfully.";
+
+        //    return RedirectToAction(nameof(Profile));
+        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Profile(UserViewModel vm)
+        public async Task<IActionResult> Profile(ProfileViewModel vm)
         {
-            // bỏ validation không cần
-            ModelState.Remove("Password");
-            ModelState.Remove("RoleId");
+            if (!ModelState.IsValid)
+                return View(vm);
 
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             var user = await _uow.Users.GetByIdAsync(userId);
 
             if (user == null) return NotFound();
-
-            if (!ModelState.IsValid)
-            {
-                // 🔥 load lại Role + Department để không mất dữ liệu
-                var roles = await _uow.Roles.GetAllAsync();
-                var depts = await _uow.Departments.GetAllAsync();
-
-                vm.RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "";
-                vm.DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? "";
-
-                return View(vm);
-            }
-
-            // 🔥 update
+            user.Username = vm.Username;
             user.FullName = vm.FullName;
             user.Email = vm.Email;
             user.Phone = vm.Phone;
@@ -292,30 +290,81 @@ namespace eAdmin.Web.Controllers
 
             return RedirectToAction(nameof(Profile));
         }
-
         [HttpGet]
         public IActionResult ChangePassword() => View(new ChangePasswordViewModel());
 
-        [HttpPost][ValidateAntiForgeryToken]
+        //[HttpPost][ValidateAntiForgeryToken]
+        //public async Task<IActionResult> ChangePassword(ChangePasswordViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return View(vm);
+        //    var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+        //    var user = await _uow.Users.GetByIdAsync(userId);
+        //    if (user == null) return NotFound();
+        //    if (!PasswordHelper.VerifyPassword(vm.CurrentPassword, user.PasswordHash))
+        //    {
+        //        ModelState.AddModelError("CurrentPassword", "Current password is incorrect.");
+        //        return View(vm);
+        //    }
+        //    user.PasswordHash = PasswordHelper.HashPassword(vm.NewPassword);
+        //    _uow.Users.Update(user);
+        //    await WriteAuditAsync("ChangePassword", "User", userId, "");
+        //    await _uow.SaveChangesAsync();
+        //    TempData["Success"] = "Password changed successfully.";
+        //    return RedirectToAction(nameof(Profile));
+        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel vm)
         {
-            if (!ModelState.IsValid) return View(vm);
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-            var user = await _uow.Users.GetByIdAsync(userId);
-            if (user == null) return NotFound();
-            if (!PasswordHelper.VerifyPassword(vm.CurrentPassword, user.PasswordHash))
+            if (!ModelState.IsValid)
+            {
+                // ❗ load lại profile để render lại view
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+                var user = await _uow.Users.GetByIdAsync(userId);
+                var roles = await _uow.Roles.GetAllAsync();
+                var depts = await _uow.Departments.GetAllAsync();
+
+                var profileVm = new ProfileViewModel
+                {
+                    UserId = user.UserId,
+                    Username = user.Username,
+                    FullName = user.FullName,
+                    Email = user.Email,
+                    Phone = user.Phone,
+                    RoleName = roles.FirstOrDefault(r => r.RoleId == user.RoleId)?.RoleName ?? "",
+                    DeptName = depts.FirstOrDefault(d => d.DepartmentId == user.DepartmentId)?.DepartmentName ?? ""
+                };
+
+                // ❗ giữ lỗi và trả lại view Profile
+                return View("Profile", profileVm);
+            }
+
+            var userId2 = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var user2 = await _uow.Users.GetByIdAsync(userId2);
+
+            if (!PasswordHelper.VerifyPassword(vm.CurrentPassword, user2.PasswordHash))
             {
                 ModelState.AddModelError("CurrentPassword", "Current password is incorrect.");
-                return View(vm);
+
+                var profileVm = new ProfileViewModel
+                {
+                    UserId = user2.UserId,
+                    Username = user2.Username,
+                    FullName = user2.FullName,
+                    Email = user2.Email,
+                    Phone = user2.Phone
+                };
+
+                return View("Profile", profileVm);
             }
-            user.PasswordHash = PasswordHelper.HashPassword(vm.NewPassword);
-            _uow.Users.Update(user);
-            await WriteAuditAsync("ChangePassword", "User", userId, "");
+
+            user2.PasswordHash = PasswordHelper.HashPassword(vm.NewPassword);
+            _uow.Users.Update(user2);
             await _uow.SaveChangesAsync();
+
             TempData["Success"] = "Password changed successfully.";
             return RedirectToAction(nameof(Profile));
         }
-
         private async Task PopulateDropdowns()
         {
             ViewBag.Roles = new SelectList(await _uow.Roles.GetAllAsync(), "RoleId", "RoleName");

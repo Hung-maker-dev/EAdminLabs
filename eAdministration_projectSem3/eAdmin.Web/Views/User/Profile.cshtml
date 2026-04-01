@@ -1,77 +1,125 @@
-﻿@model eAdmin.Web.ViewModels.UserViewModel
+﻿@model eAdmin.Web.ViewModels.ProfileViewModel
 @{
     ViewData["Title"] = "My Profile";
 }
-<h4><i class="fas fa-user-circle me-2 text-primary"></i>My Profile</h4>
-<div class="row g-3">
-    <div class="col-md-6">
-        <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">Profile Info</div>
-            <div class="card-body">
-                <form asp-action="Profile" method="post">
-                    @Html.AntiForgeryToken()
+<div class="container-fluid">
+    <h4 class="mb-4">
+        <i class="fas fa-user-circle me-2 text-primary"></i>My Profile
+    </h4>
 
-                    <input type="hidden" asp-for="UserId" />
-                    <input type="hidden" asp-for="RoleId" />        <!-- 🔥 thêm -->
-                    <input type="hidden" asp-for="DepartmentId" />  <!-- 🔥 thêm -->
+    <div class="row g-4">
 
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Username</label>
-                        <input value="@Model.Username" class="form-control" readonly />
-                    </div>
+        <!-- PROFILE -->
+        <div class="col-lg-6">
+            <div class="card shadow border-0 rounded-3">
+                <div class="card-header bg-primary text-white fw-semibold">
+                    Profile Information
+                </div>
 
-                    <div class="mb-3">
-                        <label asp-for="FullName" class="form-label fw-semibold"></label>
-                        <input asp-for="FullName" class="form-control" />
-                    </div>
+                <div class="card-body">
+                    <form asp-action="Profile" method="post">
+                        @Html.AntiForgeryToken()
 
-                    <div class="mb-3">
-                        <label asp-for="Email" class="form-label fw-semibold"></label>
-                        <input asp-for="Email" class="form-control" />
-                    </div>
+                        <input type="hidden" asp-for="UserId" />
 
-                    <div class="mb-3">
-                        <label asp-for="Phone" class="form-label fw-semibold"></label>
-                        <input asp-for="Phone" class="form-control" />
-                    </div>
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Department</label>
-                        <input value="@(string.IsNullOrEmpty(Model.DeptName) ? "Not assigned" : Model.DeptName)"
-                               class="form-control" readonly />
-                    </div>
+                        <!-- FullName -->
+                        <div class="mb-3">
+                            <label asp-for="FullName"></label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
 
-                    <div class="mb-3 d-flex gap-2 align-items-center">
-                        <span class="badge bg-secondary fs-6 px-3 py-2">
-                            <i class="fas fa-shield-alt me-1"></i>@Model.RoleName
-                        </span>
-                        @if (!string.IsNullOrEmpty(Model.DeptName))
-                        {
-                            <span class="badge bg-info fs-6 px-3 py-2">
-                                <i class="fas fa-building me-1"></i>@Model.DeptName
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <label asp-for="Phone"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <!-- Department -->
+                        <div class="mb-3">
+                            <label>Department</label>
+                            <input asp-for="DeptName" class="form-control bg-light" readonly />
+                        </div>
+
+                        <!-- Role -->
+                        <div class="mb-3">
+                            <label>Role</label>
+                            <input asp-for="RoleName" class="form-control bg-light" readonly />
+                        </div>
+
+                        <div class="text-end">
+                            <button class="btn btn-primary">
+                                Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PASSWORD CARD -->
+        <div class="col-lg-6">
+            <div class="card shadow border-0 rounded-3">
+                <div class="card-header bg-warning fw-semibold">
+                    <i class="fas fa-lock me-2"></i>Change Password
+                </div>
+
+                <div class="card-body">
+                    <form asp-controller="User" asp-action="ChangePassword" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <!-- Current Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Current Password</label>
+                            <input name="CurrentPassword" type="password" class="form-control" />
+                            <span class="text-danger">
+                                @Html.ValidationMessage("CurrentPassword")
                             </span>
-                        }
-                    </div>
+                        </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        <i class="fas fa-save me-1"></i> Update Profile
-                    </button>
-                </form>
+                        <!-- New Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">New Password</label>
+                            <input name="NewPassword" type="password" class="form-control" />
+                            <span class="text-danger">
+                                @Html.ValidationMessage("NewPassword")
+                            </span>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            <input name="ConfirmPassword" type="password" class="form-control" />
+                            <span class="text-danger">
+                                @Html.ValidationMessage("ConfirmPassword")
+                            </span>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-warning px-4">
+                                Change Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card shadow-sm">
-            <div class="card-header bg-warning">Change Password</div>
-            <div class="card-body">
-                <form asp-controller="User" asp-action="ChangePassword" method="post">
-                    @Html.AntiForgeryToken()
-                    <div class="mb-3"><label class="form-label fw-semibold">Current Password</label><input name="CurrentPassword" type="password" class="form-control" /></div>
-                    <div class="mb-3"><label class="form-label fw-semibold">New Password</label><input name="NewPassword" type="password" class="form-control" /></div>
-                    <div class="mb-3"><label class="form-label fw-semibold">Confirm Password</label><input name="ConfirmPassword" type="password" class="form-control" /></div>
-                    <button type="submit" class="btn btn-warning btn-sm">Change Password</button>
-                </form>
-            </div>
-        </div>
+
     </div>
 </div>
