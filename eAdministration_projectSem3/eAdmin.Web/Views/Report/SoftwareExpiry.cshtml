@@ -1,19 +1,74 @@
 @model IEnumerable<eAdmin.Web.ViewModels.SoftwareViewModel>
-@{ ViewData["Title"] = "Software Expiry Report"; }
+@{
+    ViewData["Title"] = "Software Expiry Report";
+}
+<form method="get" class="row g-2 mb-3 align-items-end">
+
+    <div class="col-md-4">
+        <label class="form-label small fw-semibold">Search</label>
+        <input name="keyword" value="@ViewBag.Keyword"
+               placeholder="Software name, version..."
+               class="form-control form-control-sm" />
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label small fw-semibold">Lab</label>
+        <select name="labId" asp-items="ViewBag.Labs"
+                class="form-select form-select-sm">
+            <option value="">All Labs</option>
+        </select>
+    </div>
+
+    <div class="col-md-3 d-flex gap-1">
+        <button class="btn btn-primary btn-sm w-50">
+            <i class="fas fa-search"></i>
+        </button>
+
+        <a href="/Report/SoftwareExpiry" class="btn btn-secondary btn-sm w-50">
+            Reset
+        </a>
+    </div>
+
+</form>
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4><i class="fas fa-clock me-2 text-warning"></i>Software Expiry Report <small class="text-muted fs-6">(next 60 days)</small></h4>
     <button onclick="window.print()" class="btn btn-outline-secondary btn-sm"><i class="fas fa-print me-1"></i>Print</button>
 </div>
-@if(!Model.Any()){<div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>No software expiring in the next 60 days.</div>}
-else{
-<table class="table table-bordered table-hover">
-<thead class="table-dark"><tr><th>Software</th><th>Version</th><th>Lab</th><th>Expiry Date</th><th>Days Left</th><th>Alert Sent</th></tr></thead>
-<tbody>@foreach(var s in Model){
-var rc = s.IsExpired?"table-danger":s.IsExpiringSoon?"table-warning":"";
-<tr class="@rc">
-<td><strong>@s.SoftwareName</strong></td><td>@s.Version</td><td>@s.LabName</td>
-<td>@(s.LicenseExpiry?.ToString("dd/MM/yyyy")??"-")</td>
-<td>@if(s.IsExpired){<span class="badge bg-danger">EXPIRED</span>}else{<span>@s.DaysUntilExpiry days</span>}</td>
-<td>@if(s.IsNotificationSent){<span class="badge bg-success"><i class="fas fa-check"></i> Sent</span>}else{<span class="badge bg-secondary">Pending</span>}</td>
-</tr>}
-</tbody></table>}
+@if (!Model.Any())
+{
+    <div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>No software expiring in the next 60 days.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark"><tr><th>Software</th><th>Version</th><th>Lab</th><th>Expiry Date</th><th>Days Left</th><th>Alert Sent</th></tr></thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+                var rc = s.IsExpired ? "table-danger" : s.IsExpiringSoon ? "table-warning" : "";
+                <tr class="@rc">
+                    <td><strong>@s.SoftwareName</strong></td>
+                    <td>@s.Version</td>
+                    <td>@s.LabName</td>
+                    <td>@(s.LicenseExpiry?.ToString("dd/MM/yyyy") ?? "-")</td>
+                    <td>@if(s.IsExpired){
+                    <span class="badge bg-danger">EXPIRED</span>
+                }else
+                {
+
+                    <span>@s.DaysUntilExpiry days</span>
+                }
+    </td>
+                <td>@if(s.IsNotificationSent){
+                <span class="badge bg-success"><i class="fas fa-check"></i> Sent</span>
+            }else
+            {
+
+                <span class="badge bg-secondary">Pending</span>
+            }
+</td>
+        </tr>
+                }
+    </tbody>
+</table>
+}

@@ -83,6 +83,21 @@ namespace eAdmin.Web.Controllers
                 };
             }).ToList();
 
+            // 🔥 Chart - Action stats
+            ViewBag.ActionStats = logs
+                .GroupBy(l => l.Action)
+                .Select(g => new {
+                    Action = g.Key,
+                    Count = g.Count()
+                }).ToList();
+
+            // 🔥 Chart - Entity stats
+            ViewBag.EntityStats = logs
+                .GroupBy(l => l.EntityType)
+                .Select(g => new {
+                    Entity = g.Key,
+                    Count = g.Count()
+                }).ToList();
             return View(filter);
         }
     }

@@ -1,665 +1,95 @@
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets\msbuild.eAdmin.Web.Microsoft.AspNetCore.StaticWebAssets.props
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets\msbuild.build.eAdmin.Web.props
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.eAdmin.Web.props
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.eAdmin.Web.props
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.pack.json
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\EAdmin_Sem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-<<<<<<< HEAD
-=======
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\aSourceCodeEProjectSem3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\projectSem3Nhap\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-F:\e project fix\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\aProjectSem3Fix30_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\aProjectSem3Fix31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
-D:\aCodeProjectSem3_31_3\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll
->>>>>>> 7dd304a9419cd251e057bfda124ba00ac331866c
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.Development.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\appsettings.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.runtime.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.staticwebassets.endpoints.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.exe
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.deps.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.runtimeconfig.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Web.pdb
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Core.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Azure.Identity.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.ClientModel.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Memory.Data.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\Twilio.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Domain.pdb
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Repository.pdb
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\bin\Debug\net8.0\eAdmin.Service.pdb
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.AssemblyReference.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfoInputs.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.AssemblyInfo.cs
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.CoreCompileInputs.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.RazorAssemblyInfo.cs
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.sourcelink.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\scopedcss\bundle\eAdmin.Web.styles.css
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.development.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.csproj.Up2Date
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\refint\eAdmin.Web.dll
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.pdb
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\eAdmin.Web.genruntimeconfig.cache
+D:\aProjectSem3Fix2_4\EAdminLabs\eAdministration_projectSem3\eAdmin.Web\obj\Debug\net8.0\ref\eAdmin.Web.dll

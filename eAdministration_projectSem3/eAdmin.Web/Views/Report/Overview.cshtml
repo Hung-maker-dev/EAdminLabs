@@ -1,32 +1,94 @@
-@{ ViewData["Title"] = "System Overview Report"; }
+@{
+    ViewData["Title"] = "System Overview Report";
+}
+
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4><i class="fas fa-tachometer-alt me-2 text-primary"></i>System Overview Report</h4>
     <button onclick="window.print()" class="btn btn-outline-secondary btn-sm"><i class="fas fa-print me-1"></i>Print</button>
 </div>
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3">
+        <select name="labId" class="form-select">
+            <option value="">-- All Labs --</option>
+            @foreach (var lab in ViewBag.Labs)
+            {
+                <option value="@lab.Value" selected="@(lab.Value == ViewBag.FilterLab?.ToString())">
+                    @lab.Text
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <input type="date" name="from" value="@ViewBag.From" class="form-control" />
+    </div>
+
+    <div class="col-md-3">
+        <input type="date" name="to" value="@ViewBag.To" class="form-control" />
+    </div>
+
+    <div class="col-md-3 d-flex">
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="fas fa-filter me-1"></i>Filter
+        </button>
+    </div>
+</form>
 <div class="row g-3">
-<div class="col-md-4"><div class="card border-primary shadow-sm"><div class="card-header bg-primary text-white fw-bold"><i class="fas fa-building me-2"></i>Labs</div>
-<div class="card-body"><div class="d-flex justify-content-between"><span>Total Labs</span><strong>@ViewBag.TotalLabs</strong></div><hr class="my-2"/>
-<div class="d-flex justify-content-between"><span>Active Labs</span><strong class="text-success">@ViewBag.ActiveLabs</strong></div>
-<div class="d-flex justify-content-between"><span>Active Schedules</span><strong>@ViewBag.TotalSchedules</strong></div></div></div></div>
+    <div class="col-md-4">
+        <div class="card border-primary shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold"><i class="fas fa-building me-2"></i>Labs</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between"><span>Total Labs</span><strong>@ViewBag.TotalLabs</strong></div><hr class="my-2" />
+                <div class="d-flex justify-content-between"><span>Active Labs</span><strong class="text-success">@ViewBag.ActiveLabs</strong></div>
+                <div class="d-flex justify-content-between"><span>Active Schedules</span><strong>@ViewBag.TotalSchedules</strong></div>
+            </div>
+        </div>
+    </div>
 
-<div class="col-md-4"><div class="card border-success shadow-sm"><div class="card-header bg-success text-white fw-bold"><i class="fas fa-desktop me-2"></i>Equipment</div>
-<div class="card-body"><div class="d-flex justify-content-between"><span>Total Equipment</span><strong>@ViewBag.TotalEquipment</strong></div><hr class="my-2"/>
-<div class="d-flex justify-content-between"><span>Good Condition</span><strong class="text-success">@ViewBag.EquipmentGood</strong></div>
-<div class="d-flex justify-content-between"><span>Poor / Out of Service</span><strong class="text-danger">@ViewBag.EquipmentPoor</strong></div></div></div></div>
+    <div class="col-md-4">
+        <div class="card border-success shadow-sm">
+            <div class="card-header bg-success text-white fw-bold"><i class="fas fa-desktop me-2"></i>Equipment</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between"><span>Total Equipment</span><strong>@ViewBag.TotalEquipment</strong></div><hr class="my-2" />
+                <div class="d-flex justify-content-between"><span>Good Condition</span><strong class="text-success">@ViewBag.EquipmentGood</strong></div>
+                <div class="d-flex justify-content-between"><span>Poor / Out of Service</span><strong class="text-danger">@ViewBag.EquipmentPoor</strong></div>
+            </div>
+        </div>
+    </div>
 
-<div class="col-md-4"><div class="card border-danger shadow-sm"><div class="card-header bg-danger text-white fw-bold"><i class="fas fa-exclamation-triangle me-2"></i>Complaints</div>
-<div class="card-body"><div class="d-flex justify-content-between"><span>Total</span><strong>@ViewBag.TotalComplaints</strong></div><hr class="my-2"/>
-<div class="d-flex justify-content-between"><span>Open (unresolved)</span><strong class="text-danger">@ViewBag.OpenComplaints</strong></div></div></div></div>
+    <div class="col-md-4">
+        <div class="card border-danger shadow-sm">
+            <div class="card-header bg-danger text-white fw-bold"><i class="fas fa-exclamation-triangle me-2"></i>Complaints</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between"><span>Total</span><strong>@ViewBag.TotalComplaints</strong></div><hr class="my-2" />
+                <div class="d-flex justify-content-between"><span>Open (unresolved)</span><strong class="text-danger">@ViewBag.OpenComplaints</strong></div>
+            </div>
+        </div>
+    </div>
 
-<div class="col-md-4"><div class="card border-secondary shadow-sm"><div class="card-header bg-secondary text-white fw-bold"><i class="fas fa-users me-2"></i>Users</div>
-<div class="card-body"><div class="d-flex justify-content-between"><span>Total Users</span><strong>@ViewBag.TotalUsers</strong></div><hr class="my-2"/>
-<div class="d-flex justify-content-between"><span>Active Users</span><strong class="text-success">@ViewBag.ActiveUsers</strong></div></div></div></div>
+    <div class="col-md-4">
+        <div class="card border-secondary shadow-sm">
+            <div class="card-header bg-secondary text-white fw-bold"><i class="fas fa-users me-2"></i>Users</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between"><span>Total Users</span><strong>@ViewBag.TotalUsers</strong></div><hr class="my-2" />
+                <div class="d-flex justify-content-between"><span>Active Users</span><strong class="text-success">@ViewBag.ActiveUsers</strong></div>
+            </div>
+        </div>
+    </div>
 
-<div class="col-md-4"><div class="card border-warning shadow-sm"><div class="card-header bg-warning fw-bold"><i class="fas fa-clock me-2"></i>Software Licenses</div>
-<div class="card-body"><div class="d-flex justify-content-between"><span>Expiring ≤ 30 days</span><strong class="text-danger">@ViewBag.ExpiringSW</strong></div>
-<hr class="my-2"/><a href="/Report/SoftwareExpiry" class="btn btn-sm btn-outline-warning w-100">View Full Report</a></div></div></div>
+    <div class="col-md-4">
+        <div class="card border-warning shadow-sm">
+            <div class="card-header bg-warning fw-bold"><i class="fas fa-clock me-2"></i>Software Licenses</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between"><span>Expiring ≤ 30 days</span><strong class="text-danger">@ViewBag.ExpiringSW</strong></div>
+                <hr class="my-2" /><a href="/Report/SoftwareExpiry" class="btn btn-sm btn-outline-warning w-100">View Full Report</a>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <div class="row g-3 mt-2">
     <!-- Equipment Condition Donut -->
