@@ -83,15 +83,33 @@ namespace eAdmin.Web.Controllers
             return View(new RoleViewModel { RoleId = r.RoleId, RoleName = r.RoleName, Description = r.Description });
         }
 
-        [HttpPost][ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(RoleViewModel vm)
         {
             if (!ModelState.IsValid) return View(vm);
+
             var r = await _uow.Roles.GetByIdAsync(vm.RoleId);
             if (r == null) return NotFound();
-            r.RoleName = vm.RoleName; r.Description = vm.Description;
+
+            // 🔥 CHECK TRÙNG (quan trọng)
+            var exists = await _uow.Roles.FindAsync(x =>
+                x.RoleName.ToLower().Trim() == vm.RoleName.ToLower().Trim()
+                && x.RoleId != vm.RoleId);
+
+            if (exists.Any())
+            {
+                ModelState.AddModelError("RoleName", "Role name already exists.");
+                return View(vm);
+            }
+
+            // ✅ Update
+            r.RoleName = vm.RoleName;
+            r.Description = vm.Description;
+
             _uow.Roles.Update(r);
             await _uow.SaveChangesAsync();
+
             TempData["Success"] = "Role updated.";
             return RedirectToAction(nameof(Index));
         }

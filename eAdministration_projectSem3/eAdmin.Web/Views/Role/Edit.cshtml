@@ -1,10 +1,31 @@
-@model eAdmin.Web.ViewModels.RoleViewModel
+﻿@model eAdmin.Web.ViewModels.RoleViewModel
 @{ ViewData["Title"] = "Edit Role"; }
 <h4><i class="fas fa-edit me-2 text-warning"></i>Edit Role</h4>
 <div class="card shadow-sm" style="max-width:500px"><div class="card-body">
-<form asp-action="Edit" method="post">@Html.AntiForgeryToken()
-<input type="hidden" asp-for="RoleId"/>
-<div class="mb-3"><label asp-for="RoleName" class="form-label fw-semibold"></label><input asp-for="RoleName" class="form-control"/></div>
-<div class="mb-3"><label asp-for="Description" class="form-label fw-semibold"></label><input asp-for="Description" class="form-control"/></div>
-<div class="d-flex gap-2 justify-content-end"><a href="/Role/Index" class="btn btn-secondary">Cancel</a><button class="btn btn-warning">Save</button></div>
-</form></div></div>
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+          
+
+            <input type="hidden" asp-for="RoleId" />
+
+            <div class="mb-3">
+                <label asp-for="RoleName" class="form-label fw-semibold"></label>
+                <input asp-for="RoleName" class="form-control" />
+                <!-- 🔥 Hiển thị lỗi riêng field -->
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label fw-semibold"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+                <a href="/Role/Index" class="btn btn-secondary">Cancel</a>
+                <button class="btn btn-warning">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
