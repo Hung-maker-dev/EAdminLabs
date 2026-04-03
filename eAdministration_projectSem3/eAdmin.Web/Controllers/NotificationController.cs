@@ -105,7 +105,7 @@ namespace eAdmin.Web.Controllers
 
             await _uow.SaveChangesAsync();
 
-            TempData["Success"] = "Đã xóa tất cả thông báo.";
+            TempData["Success"] = "All notifications have been deleted.";
             return RedirectToAction(nameof(Index));
         }
     }
