@@ -44,7 +44,7 @@ namespace eAdmin.Web.Controllers
 
             if (user == null || !PasswordHelper.VerifyPassword(model.Password, user.PasswordHash))
             {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
+                ModelState.AddModelError("", "Incorrect username or password.");
                 return View(model);
             }
 
