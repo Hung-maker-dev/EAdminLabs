@@ -168,8 +168,8 @@ namespace eAdmin.Web.Controllers
             if (selfDuplicates.Any())
             {
                 ModelState.AddModelError("Title",
-                    $"Bạn đã tạo tài liệu '{vm.MaterialType}' với tiêu đề '{vm.Title}' cho khoa này rồi. " +
-                    $"Vui lòng dùng tiêu đề khác.");
+                    $"You have already created a document '{vm.MaterialType}' with the title '{vm.Title}' for this department. " +
+                    $"Please use a different title.");
             }
 
             if (!ModelState.IsValid)
@@ -230,8 +230,8 @@ namespace eAdmin.Web.Controllers
             }
 
             if (hasCrossUserWarning)
-                TempData["Warning"] = $"Tài liệu '{vm.Title}' đã được tạo thành công, nhưng lưu ý: " +
-                                      $"đã có giảng viên khác tạo tài liệu tương tự (cùng tiêu đề, loại và khoa).";
+                TempData["Warning"] = $"The document '{vm.Title}' was successfully created, but note: " +
+                                      $"another practitioner has already created a similar document (same title, type, and department).";
             else
                 TempData["Success"] = $"Material '{vm.Title}' uploaded successfully.";
 
@@ -320,7 +320,7 @@ namespace eAdmin.Web.Controllers
 
             if (selfDuplicates.Any())
                 ModelState.AddModelError("Title",
-                    $"Bạn đã có tài liệu '{vm.MaterialType}' với tiêu đề '{vm.Title}' trong khoa này rồi.");
+                    $"You already have the document '{vm.MaterialType}' with the title '{vm.Title}' in this department.");
 
             // Admin: also block if exact duplicate exists from any owner (optional stricter rule for admin edits)
             // Keeping consistent: Admin edits also only blocked if same-owner duplicate
@@ -369,8 +369,8 @@ namespace eAdmin.Web.Controllers
             await _uow.SaveChangesAsync();
 
             if (hasCrossUserWarning)
-                TempData["Warning"] = $"Tài liệu '{vm.Title}' đã được cập nhật, nhưng lưu ý: " +
-                                      $"đã có giảng viên khác tạo tài liệu tương tự (cùng tiêu đề, loại và khoa).";
+                TempData["Warning"] = $"The document '{vm.Title}' has been updated, but note: " +
+                                      $"another instructor has created a similar document (same title, type, and department).";
             else
                 TempData["Success"] = $"Material '{vm.Title}' updated.";
 
