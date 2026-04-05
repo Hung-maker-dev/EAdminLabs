@@ -1,387 +1,242 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\",
+  "WorkspaceRootPath": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-=======
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\lab\\requestextra.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\lab\\requestextra.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\lab\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\lab\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\lab\\extrarequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\lab\\extrarequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\lab\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\lab\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\lab\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\lab\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\schedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\schedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\labcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\labcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\learningmaterialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\learningmaterialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\learningmaterialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\overview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\overview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\overview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-=======
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\softwareexpiry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\softwareexpiry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\softwareexpiry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\equipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\equipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\equipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\complaints.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\complaints.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\complaints.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\overview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\overview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\equipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\equipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\report\\complaints.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\report\\complaints.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\auditlog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\auditlog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\auditlog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complainttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\complainttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complaintcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\complaintcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\eadmin.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\eadmin.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\eadmin.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\eadmin.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\eadmin.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|solutionrelative:eadmin.repository\\eadmin.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55425E8D-1114-4D81-B143-0ADC3696616B}|eAdmin.Service\\eAdmin.Service.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.service\\eadmin.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{55425E8D-1114-4D81-B143-0ADC3696616B}|eAdmin.Service\\eAdmin.Service.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.service\\eadmin.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{55425E8D-1114-4D81-B143-0ADC3696616B}|eAdmin.Service\\eAdmin.Service.csproj|solutionrelative:eadmin.service\\eadmin.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\eadmin.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\eadmin.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\eadmin.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\softwarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|solutionrelative:eadmin.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|solutionrelative:eadmin.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|solutionrelative:eadmin.repository\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.repository\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EE8C34-AC07-4BDB-B011-DF0966AE98BA}|eAdmin.Repository\\eAdmin.Repository.csproj|solutionrelative:eadmin.repository\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-=======
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EF63D14-8301-428F-BF15-291AF034A893}|eAdmin.Domain\\eAdmin.Domain.csproj|solutionrelative:eadmin.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\asourcecodeeprojectsem3\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complainttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complainttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\complainttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\learningmaterial\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\learningmaterial\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\Complaint_Create (1).cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complaintcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\controllers\\complaintcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\controllers\\complaintcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complaint\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complaint\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\Complaint_Create (1).cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\Complaint_Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -394,19 +249,15 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\ComplaintType_Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\complainttype\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\complainttype\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\ComplaintType_Edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\eadminfinal\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|d:\\ace-cantho-1_cp2596g07_group2\\eproject-eadminlabs\\eadminlabs\\eadministration_projectsem3\\eadmin.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0912F257-485E-4B40-BCCA-E6E1FC308626}|eAdmin.Web\\eAdmin.Web.csproj|solutionrelative:eadmin.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\ComplaintType_Edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
     }
   ],
   "DocumentGroupContainers": [
@@ -416,593 +267,249 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
           "SelectedChildIndex": 0,
-=======
-          "SelectedChildIndex": 8,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Create.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Create.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "Title": "RequestExtra.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\RequestExtra.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Lab\\RequestExtra.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\RequestExtra.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Lab\\RequestExtra.cshtml",
+              "ViewState": "AgIAANABAAAAAAAAAAAowOQBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T17:04:34.8Z",
-=======
-              "DocumentIndex": 7,
-              "Title": "SoftwareExpiry.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:35:46.568Z",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "WhenOpened": "2026-04-05T14:50:48.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAADgvzkAAAAeAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Lab\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Lab\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T08:46:05.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Equipment.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAAwJEAAAAJAAAAAAAAAA==",
-=======
-              "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Create.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 11,
-              "Title": "Complaints.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJAAAAAJAAAAAAAAAA==",
-=======
-              "DocumentIndex": 5,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADYAAAASAAAAAAAAAA==",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 12,
-              "Title": "ReportController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ReportController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\ReportController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:34:26.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "ViewState": "AgIAANgAAAAAAAAAAAAAwOkAAAAJAAAAAAAAAA==",
-=======
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAABoAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:26.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Notification\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Notification\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Notification\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Notification\\Index.cshtml",
-              "ViewState": "AgIAAFwBAAAAAAAAAAAowO8BAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T16:34:11.799Z",
+              "WhenOpened": "2026-04-05T14:50:39.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.847Z",
+              "Title": "ExtraRequests.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\ExtraRequests.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Lab\\ExtraRequests.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\ExtraRequests.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Lab\\ExtraRequests.cshtml",
+              "ViewState": "AgIAAP0BAAAAAAAAAAAowBECAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:50:31.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Edit.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Lab\\Edit.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Edit.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Lab\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:50:23.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Lab\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Lab\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Lab\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:50:03.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Schedule\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Schedule\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Schedule\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Schedule\\Index.cshtml",
+              "ViewState": "AgIAALwGAAAAAAAAAAAowMsGAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:49:18.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "LearningMaterialController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LearningMaterialController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\LearningMaterialController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LearningMaterialController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\LearningMaterialController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAYwAoAAAAjAAAAAAAAAA==",
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ScheduleController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ScheduleController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\ScheduleController.cs",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAIwOcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.878Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAAALoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.894Z",
+              "WhenOpened": "2026-04-05T14:48:14.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-=======
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "DocumentIndex": 8,
-              "Title": "Overview.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Overview.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Overview.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Overview.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Overview.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAJ4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:35:12.984Z"
+              "DocumentIndex": 7,
+              "Title": "LabController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LabController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\LabController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LabController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\LabController.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAowCoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:47:46.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 15,
-=======
               "DocumentIndex": 9,
-              "Title": "Equipment.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAwJEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:34:56.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "ViewState": "AgIAALcAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAAAE4AAAAaAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Create.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAADkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T08:46:05.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.874Z",
+              "WhenOpened": "2026-04-05T14:44:22.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Title": "Equipment.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Equipment.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Equipment.cshtml",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAAwJEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-05T14:44:22.428Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAeAAAAAAAAAA==",
+              "Title": "Complaints.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-05T14:44:22.43Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.885Z",
-              "EditorCaption": ""
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ReportController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.433Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Details.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Details.cshtml",
-              "ViewState": "AgIAABcBAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAwOkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-05T14:44:22.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Complaints.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Complaints.cshtml",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAwJAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:34:47.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.854Z",
-              "EditorCaption": ""
+              "DocumentIndex": 14,
+              "Title": "LearningMaterialController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LearningMaterialController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\LearningMaterialController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\LearningMaterialController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\LearningMaterialController.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAUwG0BAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.435Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAALoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.894Z",
+              "WhenOpened": "2026-04-05T14:44:22.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "eAdmin.Web\\appsettings.json",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\appsettings.json",
+              "RelativeToolTip": "eAdmin.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-05T14:44:22.489Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAADgvzkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Overview.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Overview.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\Overview.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\Overview.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Report\\Overview.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAAAJ4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.438Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\AuditLog\\Index.cshtml",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAAAOkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:31:08.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Account\\Profile.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowIkAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AccessDenied.cshtml",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IInterfaces.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "RelativeDocumentMoniker": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "RelativeToolTip": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAA2wA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ViewModels.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "RelativeToolTip": "eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAzwAwBAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAH0BAAAAAAAAAAAAAGkBAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SoftwareController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAADwvxAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "RoleController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\RoleController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\RoleController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAwwDgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ReportController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ReportController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ReportController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\ReportController.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:34:26.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\NotificationController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\NotificationController.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAADwv3AAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T16:24:26.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "DepartmentController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAswGAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ComplaintTypeController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAwwCoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ComplaintController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ComplaintController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\ComplaintController.cs",
-              "ViewState": "AgIAACQBAAAAAAAAAADwv8oAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "AuditLogController.cs",
-              "DocumentMoniker": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "ToolTip": "D:\\aSourceCodeEProjectSem3\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -1012,475 +519,403 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 4,
-=======
-              "DocumentIndex": 38,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\appsettings.json",
-              "RelativeDocumentMoniker": "eAdmin.Web\\appsettings.json",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\appsettings.json",
-              "RelativeToolTip": "eAdmin.Web\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-02T06:04:25.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "SoftwareExpiry.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Report\\SoftwareExpiry.cshtml",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAEkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:35:46.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-=======
-              "DocumentIndex": 40,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "eAdmin.Domain.csproj",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
-              "RelativeDocumentMoniker": "eAdmin.Domain\\eAdmin.Domain.csproj",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
-              "RelativeToolTip": "eAdmin.Domain\\eAdmin.Domain.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-02T06:06:12.823Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 38,
-=======
-              "DocumentIndex": 50,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "Department.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\Department.cs",
-              "RelativeDocumentMoniker": "eAdmin.Domain\\Entities\\Department.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\Department.cs",
-              "RelativeToolTip": "eAdmin.Domain\\Entities\\Department.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.835Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-=======
-              "DocumentIndex": 49,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "eAdmin.Domain\\Entities\\User.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "eAdmin.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.838Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 14,
-              "Title": "AuditLogController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\AuditLogController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAAwGcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-=======
-              "DocumentIndex": 41,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "eAdmin.Repository.csproj",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
-              "RelativeDocumentMoniker": "eAdmin.Repository\\eAdmin.Repository.csproj",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
-              "RelativeToolTip": "eAdmin.Repository\\eAdmin.Repository.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-02T06:13:30.908Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 18,
-=======
-              "DocumentIndex": 42,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "eAdmin.Service.csproj",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj",
-              "RelativeDocumentMoniker": "eAdmin.Service\\eAdmin.Service.csproj",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj",
-              "RelativeToolTip": "eAdmin.Service\\eAdmin.Service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-02T06:17:31.521Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 37,
-              "Title": "DepartmentController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\DepartmentController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwGAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-=======
-              "DocumentIndex": 43,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "eAdmin.Web.csproj",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
-              "RelativeDocumentMoniker": "eAdmin.Web\\eAdmin.Web.csproj",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
-              "RelativeToolTip": "eAdmin.Web\\eAdmin.Web.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-02T06:04:25.903Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 33,
-=======
-              "DocumentIndex": 47,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "eAdmin.Repository\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "eAdmin.Repository\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.834Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 20,
-=======
-              "DocumentIndex": 44,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Program.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Program.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Program.cs",
-              "RelativeToolTip": "eAdmin.Web\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.893Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 31,
-=======
-              "DocumentIndex": 46,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "eAdmin.Repository\\Repositories\\GenericRepository.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "eAdmin.Repository\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwCAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.832Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 34,
-=======
-              "DocumentIndex": 48,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "eAdmin.Repository\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "eAdmin.Repository\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA2wCMAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.831Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 25,
-              "Title": "ViewModels.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "RelativeToolTip": "eAdmin.Web\\ViewModels\\ViewModels.cs",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAxwAwBAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Profile.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAmwBoAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:26.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "IInterfaces.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "RelativeDocumentMoniker": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "RelativeToolTip": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RoleController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\RoleController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\RoleController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAowG4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-05T14:44:22.492Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "SoftwareController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\SoftwareController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwBAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Create.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAwBAAAAAAAAAADwv2kBAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowHwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-=======
-              "DocumentIndex": 51,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "site.js",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "eAdmin.Web\\wwwroot\\js\\site.js",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "eAdmin.Web\\wwwroot\\js\\site.js",
+              "Title": "eAdmin.Domain.csproj",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+              "RelativeDocumentMoniker": "eAdmin.Domain\\eAdmin.Domain.csproj",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\eAdmin.Domain.csproj",
+              "RelativeToolTip": "eAdmin.Domain\\eAdmin.Domain.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-02T06:04:25.849Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 41,
-=======
-              "DocumentIndex": 52,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "eAdmin.Web\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "eAdmin.Web\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-04-02T06:04:25.85Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 39,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.851Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAuwKYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.854Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "ComplaintTypeController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "RelativeToolTip": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwCoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.856Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-05T14:44:22.497Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 46,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "eAdmin.Domain\\Entities\\Department.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\Department.cs",
+              "RelativeToolTip": "eAdmin.Domain\\Entities\\Department.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Edit.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.857Z"
+              "WhenOpened": "2026-04-05T14:44:22.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "eAdmin.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "eAdmin.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuditLogController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AuditLogController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AuditLogController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\AuditLogController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAAwGcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "eAdmin.Repository.csproj",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
+              "RelativeDocumentMoniker": "eAdmin.Repository\\eAdmin.Repository.csproj",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\eAdmin.Repository.csproj",
+              "RelativeToolTip": "eAdmin.Repository\\eAdmin.Repository.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-05T14:44:22.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "eAdmin.Service.csproj",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj",
+              "RelativeDocumentMoniker": "eAdmin.Service\\eAdmin.Service.csproj",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Service\\eAdmin.Service.csproj",
+              "RelativeToolTip": "eAdmin.Service\\eAdmin.Service.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-05T14:44:22.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\DepartmentController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwGAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "eAdmin.Web.csproj",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
+              "RelativeDocumentMoniker": "eAdmin.Web\\eAdmin.Web.csproj",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\eAdmin.Web.csproj",
+              "RelativeToolTip": "eAdmin.Web\\eAdmin.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-05T14:44:22.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "eAdmin.Repository\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "eAdmin.Repository\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Program.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Program.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Program.cs",
+              "RelativeToolTip": "eAdmin.Web\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "eAdmin.Repository\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "eAdmin.Repository\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "eAdmin.Repository\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Repository\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "eAdmin.Repository\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA2wCMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ViewModels.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\ViewModels\\ViewModels.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\ViewModels\\ViewModels.cs",
+              "RelativeToolTip": "eAdmin.Web\\ViewModels\\ViewModels.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAxwAwBAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Profile.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Profile.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Profile.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAmwBoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "IInterfaces.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
+              "RelativeDocumentMoniker": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Domain\\Interfaces\\IInterfaces.cs",
+              "RelativeToolTip": "eAdmin.Domain\\Interfaces\\IInterfaces.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAowG4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SoftwareController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\SoftwareController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Edit.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Edit.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\UserController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAADwv2kBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Role\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Role\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Role\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\User\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "eAdmin.Web\\wwwroot\\js\\site.js",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "eAdmin.Web\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-05T14:44:22.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "eAdmin.Web\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "eAdmin.Web\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-05T14:44:22.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.753Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 52,
-=======
-              "DocumentIndex": 55,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Create.cshtml",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAuwKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ComplaintTypeController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
+              "RelativeToolTip": "eAdmin.Web\\Controllers\\ComplaintTypeController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T14:44:22.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Create.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
+              "RelativeDocumentMoniker": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
+              "RelativeToolTip": "eAdmin.Web\\Views\\LearningMaterial\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T14:44:22.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
               "Title": "Complaint_Create.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\Complaint_Create.cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\Complaint_Create.cshtml",
@@ -1490,23 +925,19 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Index.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.874Z"
+              "WhenOpened": "2026-04-05T14:44:22.763Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-=======
-              "DocumentIndex": 56,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 61,
               "Title": "ComplaintType_Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\ComplaintType_Index.cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\ComplaintType_Index.cshtml",
@@ -1516,23 +947,19 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Details.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Details.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.88Z"
+              "WhenOpened": "2026-04-05T14:44:22.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-=======
-              "DocumentIndex": 53,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 55,
               "Title": "Complaint_Create (1).cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\Complaint_Create (1).cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\Complaint_Create (1).cshtml",
@@ -1542,11 +969,7 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 51,
-=======
-              "DocumentIndex": 54,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 59,
               "Title": "Complaint_Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\Complaint_Index.cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\Complaint_Index.cshtml",
@@ -1556,35 +979,31 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "ComplaintController.cs",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
               "RelativeDocumentMoniker": "eAdmin.Web\\Controllers\\ComplaintController.cs",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Controllers\\ComplaintController.cs",
               "RelativeToolTip": "eAdmin.Web\\Controllers\\ComplaintController.cs",
               "ViewState": "AgIAAMAAAAAAAAAAAAAAAMoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T06:04:25.884Z"
+              "WhenOpened": "2026-04-05T14:44:22.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Complaint\\Index.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Complaint\\Index.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Complaint\\Index.cshtml",
               "ViewState": "AgIAAIYAAAAAAAAAAAAUwJEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.885Z"
+              "WhenOpened": "2026-04-05T14:44:22.772Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
-=======
-              "DocumentIndex": 57,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 62,
               "Title": "ComplaintType_Create.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\ComplaintType_Create.cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\ComplaintType_Create.cshtml",
@@ -1594,23 +1013,19 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 55,
+              "DocumentIndex": 63,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\ComplaintType\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.888Z"
+              "WhenOpened": "2026-04-05T14:44:22.775Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
-=======
-              "DocumentIndex": 58,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 64,
               "Title": "ComplaintType_Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\ComplaintType_Edit.cshtml",
               "ToolTip": "C:\\Users\\User\\Downloads\\ComplaintType_Edit.cshtml",
@@ -1620,43 +1035,39 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 57,
+              "DocumentIndex": 65,
               "Title": "AccessDenied.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Account\\AccessDenied.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.891Z"
+              "WhenOpened": "2026-04-05T14:44:22.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Account\\Profile.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Account\\Profile.cshtml",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.896Z"
+              "WhenOpened": "2026-04-05T14:44:22.779Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-=======
-              "DocumentIndex": 45,
->>>>>>> 169760c3090da921dcff323046d6348d6b76592c
+              "DocumentIndex": 35,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\EAdminFinal\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ACE-CANTHO-1_CP2596G07_Group2\\eproject-eAdminLabs\\EAdminLabs\\eAdministration_projectSem3\\eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "eAdmin.Web\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T06:04:25.899Z"
+              "WhenOpened": "2026-04-05T14:44:22.78Z"
             }
           ]
         }

@@ -243,14 +243,167 @@
         font-size: .75rem;
         font-weight: 600;
     }
+
+    .status-expired {
+        background: rgba(108,117,125,.12);
+        color: #495057;
+    }
+
+    [data-bs-theme="dark"] .status-expired {
+        color: #adb5bd;
+        background: rgba(108,117,125,.25);
+    }
+
+    .expired-note {
+        font-size: .75rem;
+        color: var(--bs-secondary-color);
+        font-style: italic;
+    }
+
+    /* ── Conflict warning card ── */
+    .conflict-card {
+        border: 1.5px solid #ffc107;
+        border-radius: 14px;
+        background: #fffdf0;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.25rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        box-shadow: 0 2px 10px rgba(255,193,7,.15);
+    }
+
+    [data-bs-theme="dark"] .conflict-card {
+        background: rgba(255,193,7,.07);
+        border-color: rgba(255,193,7,.4);
+    }
+
+    .conflict-icon {
+        font-size: 1.5rem;
+        color: #f59e0b;
+        flex-shrink: 0;
+        margin-top: .1rem;
+    }
+
+    .conflict-body {
+        flex: 1;
+    }
+
+    .conflict-title {
+        font-size: .95rem;
+        font-weight: 600;
+        color: #7a5900;
+        margin-bottom: .3rem;
+    }
+
+    [data-bs-theme="dark"] .conflict-title {
+        color: #ffd55a;
+    }
+
+    .conflict-desc {
+        font-size: .85rem;
+        color: #5f6368;
+        margin-bottom: .85rem;
+        line-height: 1.5;
+    }
+
+    .conflict-actions {
+        display: flex;
+        gap: .6rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-force-approve {
+        font-size: .82rem;
+        padding: .4rem 1rem;
+        border-radius: 8px;
+        background: #f59e0b;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .15s;
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+    }
+
+        .btn-force-approve:hover {
+            background: #d97706;
+            transform: translateY(-1px);
+        }
+
+    .btn-cancel-conflict {
+        font-size: .82rem;
+        padding: .4rem 1rem;
+        border-radius: 8px;
+        background: transparent;
+        border: 1px solid var(--bs-border-color);
+        color: var(--bs-secondary-color);
+        cursor: pointer;
+        transition: all .15s;
+    }
+
+        .btn-cancel-conflict:hover {
+            background: var(--bs-secondary-bg);
+        }
 </style>
 
+@* ── Thông báo thành công ── *@
 @if (TempData["Success"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2 mb-3" role="alert">
         <i class="fas fa-check-circle"></i>
         <span>@TempData["Success"]</span>
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@* ── Thông báo lỗi ── *@
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center gap-2 mb-3" role="alert">
+        <i class="fas fa-times-circle"></i>
+        <span>@TempData["Error"]</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@* ── Cảnh báo xung đột lịch ── *@
+@if (TempData["ConflictRequestId"] != null)
+{
+    var conflictId = TempData["ConflictRequestId"]!.ToString();
+    var conflictReply = TempData["ConflictReply"]?.ToString() ?? "";
+    var conflictStatus = TempData["ConflictStatus"]?.ToString() ?? "Approved";
+
+    <div class="conflict-card" id="conflictCard">
+        <div class="conflict-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="conflict-body">
+            <div class="conflict-title">Phát hiện xung đột lịch học!</div>
+            <div class="conflict-desc">
+                Phòng lab này đã có <strong>lịch học cố định</strong> trùng với khung giờ được yêu cầu.
+                Nếu tiếp tục chấp nhận, lịch học đó sẽ bị <strong>huỷ</strong> và
+                giảng viên liên quan sẽ nhận được thông báo tự động.
+            </div>
+            <div class="conflict-actions">
+                <form method="post" action="/Lab/ReplyRequest/@conflictId" style="display:inline">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" value="@conflictId" />
+                    <input type="hidden" name="status" value="@conflictStatus" />
+                    <input type="hidden" name="reply" value="@conflictReply" />
+                    <input type="hidden" name="forceApprove" value="true" />
+                    <button type="submit" class="btn-force-approve">
+                        <i class="fas fa-check-double"></i>
+                        Vẫn chấp nhận &amp; Huỷ lịch cũ
+                    </button>
+                </form>
+                <button class="btn-cancel-conflict" onclick="document.getElementById('conflictCard').remove()">
+                    <i class="fas fa-times me-1"></i>Huỷ bỏ
+                </button>
+            </div>
+        </div>
     </div>
 }
 
@@ -289,6 +442,8 @@
                 <tbody>
                     @foreach (var r in Model)
                     {
+                        var isExpired = r.Status == "Pending" &&
+                        DateTime.Now > r.RequestDate.Date.Add(r.EndTime);
                         <tr>
                             <td><span class="req-id">#@r.RequestId</span></td>
                             <td>
@@ -306,26 +461,41 @@
                             </td>
                             <td><div class="purpose-text">@r.Purpose</div></td>
                             <td>
-                                <span class="status-badge status-@r.Status.ToLower()">
-                                    @if (r.Status == "Approved")
-                                    {
-                                        <text><i class="fas fa-check me-1" style="font-size:.65rem"></i></text>
-                                    }
-                                    else if (r.Status == "Rejected")
-                                    {
-
-                                        <text><i class="fas fa-times me-1" style="font-size:.65rem"></i></text>
-                                    }
-                                    else
-                                    {
-
-                                        <text><i class="fas fa-clock me-1" style="font-size:.65rem"></i></text>
-                                    }
-                                    @r.Status
-                                </span>
+                                @if (isExpired)
+                                {
+                                    <span class="status-badge status-expired">
+                                        <i class="fas fa-ban me-1" style="font-size:.65rem"></i>
+                                        Hết hạn
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="status-badge status-@r.Status.ToLower()">
+                                        @if (r.Status == "Approved")
+                                        {
+                                            <text><i class="fas fa-check me-1" style="font-size:.65rem"></i></text>
+                                        }
+                                        else if (r.Status == "Rejected")
+                                        {
+                                            <text><i class="fas fa-times me-1" style="font-size:.65rem"></i></text>
+                                        }
+                                        else
+                                        {
+                                            <text><i class="fas fa-clock me-1" style="font-size:.65rem"></i></text>
+                                        }
+                                        @r.Status
+                                    </span>
+                                }
                             </td>
                             <td>
-                                @if (r.Status == "Pending")
+                                @if (isExpired)
+                                {
+                                    <span class="expired-note">
+                                        <i class="fas fa-history me-1" style="font-size:.7rem"></i>
+                                        Đã hết hạn xử lý
+                                    </span>
+                                }
+                                else if (r.Status == "Pending")
                                 {
                                     <form method="post" action="/Lab/ReplyRequest/@r.RequestId" class="inline-form">
                                         @Html.AntiForgeryToken()
@@ -349,7 +519,6 @@
                                         }
                                         else
                                         {
-
                                             <text>—</text>
                                         }
                                     </span>

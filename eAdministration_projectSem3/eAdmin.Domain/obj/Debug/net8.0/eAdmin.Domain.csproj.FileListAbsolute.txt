@@ -34,3 +34,15 @@ D:\EAdminFinal\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\ne
 D:\EAdminFinal\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\refint\eAdmin.Domain.dll
 D:\EAdminFinal\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.pdb
 D:\EAdminFinal\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\ref\eAdmin.Domain.dll
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.deps.json
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.dll
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\bin\Debug\net8.0\eAdmin.Domain.pdb
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.AssemblyInfoInputs.cache
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.AssemblyInfo.cs
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.csproj.CoreCompileInputs.cache
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.sourcelink.json
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.dll
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\refint\eAdmin.Domain.dll
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\eAdmin.Domain.pdb
+D:\ACE-CANTHO-1_CP2596G07_Group2\eproject-eAdminLabs\EAdminLabs\eAdministration_projectSem3\eAdmin.Domain\obj\Debug\net8.0\ref\eAdmin.Domain.dll

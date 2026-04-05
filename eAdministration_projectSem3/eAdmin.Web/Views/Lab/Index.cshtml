@@ -1,18 +1,36 @@
 @model IEnumerable<eAdmin.Domain.Entities.Lab>
-@{ ViewData["Title"] = "Manage Labs"; }
+@{
+    ViewData["Title"] = "Manage Labs";
+}
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4><i class="fas fa-door-open me-2 text-primary"></i>Manage Labs</h4>
     <a href="/Lab/Create" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>New Lab</a>
 </div>
-@if(TempData["Success"]!=null){<div class="alert alert-success">@TempData["Success"]</div>}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
 <table class="table table-hover table-bordered">
-<thead class="table-dark"><tr><th>#</th><th>Lab Name</th><th>Location</th><th>Capacity</th><th>Status</th><th>Actions</th></tr></thead>
-<tbody>@foreach(var l in Model){<tr>
-<td>@l.LabId</td><td><strong>@l.LabName</strong></td><td>@l.Location</td><td>@l.Capacity</td>
-<td><span class="badge @(l.IsActive?"bg-success":"bg-danger")">@(l.IsActive?"Active":"Inactive")</span></td>
-<td>
-<a href="/Lab/Edit/@l.LabId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-<form method="post" action="/Lab/ToggleActive/@l.LabId" class="d-inline">@Html.AntiForgeryToken()
-<button class="btn btn-sm @(l.IsActive?"btn-outline-danger":"btn-outline-success")" onclick="return confirm('Toggle status?')">
-<i class="fas fa-@(l.IsActive?"ban":"check")"></i></button></form>
-</td></tr>}</tbody></table>
+    <thead class="table-dark"><tr><th>#</th><th>Lab Name</th><th>Location</th><th>Capacity</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+        @foreach (var l in Model)
+        {
+            <tr>
+                <td>@l.LabId</td>
+                <td><strong>@l.LabName</strong></td>
+                <td>@l.Location</td>
+                <td>@l.Capacity</td>
+                <td><span class="badge @(l.IsActive ? "bg-success" : "bg-danger")">@(l.IsActive ? "Active" : "Inactive")</span></td>
+                <td>
+                    <a href="/Lab/Edit/@l.LabId" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                    <form method="post" action="/Lab/ToggleActive/@l.LabId" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm @(l.IsActive ? "btn-outline-danger" : "btn-outline-success")" onclick="return confirm('Toggle status?')">
+                            <i class="fas fa-@(l.IsActive ? "ban" : "check")"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

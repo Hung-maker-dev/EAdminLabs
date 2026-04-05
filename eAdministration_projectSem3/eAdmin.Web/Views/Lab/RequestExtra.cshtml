@@ -85,6 +85,7 @@
         transition: all .18s;
         background: var(--bs-body-bg);
         user-select: none;
+        position: relative;
     }
 
         .slot-label .slot-time {
@@ -104,6 +105,16 @@
             background: rgba(13,202,240,.05);
         }
 
+        /* Checkmark badge góc trên phải */
+        .slot-label .slot-check {
+            display: none;
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: .65rem;
+            color: #087990;
+        }
+
     .slot-option:checked + .slot-label {
         border-color: #0dcaf0;
         background: rgba(13,202,240,.1);
@@ -113,8 +124,46 @@
             color: #087990;
         }
 
-    [data-bs-theme="dark"] .slot-option:checked + .slot-label .slot-time {
+        .slot-option:checked + .slot-label .slot-check {
+            display: inline;
+        }
+
+    [data-bs-theme="dark"] .slot-option:checked + .slot-label .slot-time,
+    [data-bs-theme="dark"] .slot-option:checked + .slot-label .slot-check {
         color: #0dcaf0;
+    }
+
+    .slot-wrapper.slot-past {
+        display: none;
+    }
+
+    .slot-no-available {
+        display: none;
+        font-size: .82rem;
+        color: #dc3545;
+        padding: .5rem .75rem;
+        background: rgba(220,53,69,.06);
+        border-radius: 8px;
+        border: 1px solid rgba(220,53,69,.15);
+    }
+
+    /* Hiển thị các slot đã chọn */
+    .selected-slots-preview {
+        display: none;
+        margin-top: .5rem;
+        font-size: .78rem;
+        color: #087990;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .3rem;
+    }
+
+    .selected-slot-badge {
+        background: rgba(13,202,240,.15);
+        border: 1px solid rgba(13,202,240,.3);
+        border-radius: 6px;
+        padding: .15rem .5rem;
+        font-weight: 600;
     }
 
     .req-footer {
@@ -191,6 +240,7 @@
     }
 </style>
 
+
 <div class="req-wrap">
     <div class="req-card">
         <div class="req-card-header">
@@ -201,87 +251,113 @@
         <form asp-action="RequestExtra" method="post" id="reqForm">
             @Html.AntiForgeryToken()
 
-            @* Hidden fields for StartTime / EndTime *@
-            <input type="hidden" name="StartTimeStr" id="hiddenStart" />
-            <input type="hidden" name="EndTimeStr" id="hiddenEnd" />
+            <div asp-validation-summary="All" class="error-msg px-4 pt-3"></div>
+
+            <div id="hiddenSlotsContainer"></div>
 
             <div class="req-card-body">
 
-                @* Lab Select *@
+                <!-- Lab -->
                 <div>
                     <label asp-for="LabId" class="form-label">Lab</label>
-                    <select asp-for="LabId" asp-items="ViewBag.Labs" class="form-select" style="border-radius:10px; font-size:.9rem;">
+                    <select asp-for="LabId" asp-items="ViewBag.Labs"
+                            class="form-select" style="border-radius:10px;" required>
                         <option value="">— Select a lab —</option>
                     </select>
                     <span asp-validation-for="LabId" class="error-msg"></span>
                 </div>
 
-                @* Date — dùng name thủ công tránh DateTime.MinValue từ model *@
+                <!-- Date -->
                 <div>
                     <label class="form-label" for="requestDate">Date</label>
-                    <input type="date" name="RequestDate" id="requestDate" class="form-control" style="border-radius:10px;" />
+                    <input type="date" asp-for="RequestDate" id="requestDate"
+                           class="form-control" style="border-radius:10px;" required />
                     <span asp-validation-for="RequestDate" class="error-msg"></span>
                 </div>
 
-                @* Time Slot *@
+                <!-- Time Slots (multi-select via checkbox) -->
                 <div>
-                    <label class="form-label">Time Slot</label>
-                    <div class="slot-grid">
-                        <div>
-                            <input type="radio" name="timeSlot" id="slot1" value="07:00|09:00" class="slot-option" />
+                    <label class="form-label">
+                        Time Slot
+                        <span style="font-size:.72rem;font-weight:400;color:var(--bs-secondary-color);text-transform:none;letter-spacing:0;margin-left:.4rem;">
+                            (you may select multiple)
+                        </span>
+                    </label>
+
+                    <div class="slot-grid" id="slotGrid">
+
+                        <div class="slot-wrapper" data-start="07:00" data-end="09:00">
+                            <input type="checkbox" name="slot" value="07:00|09:00" class="slot-option" id="slot1" />
                             <label for="slot1" class="slot-label">
+                                <i class="fas fa-check slot-check"></i>
                                 <span class="slot-time">07:00 – 09:00</span>
                                 <span class="slot-period">Morning</span>
                             </label>
                         </div>
-                        <div>
-                            <input type="radio" name="timeSlot" id="slot2" value="09:00|11:00" class="slot-option" />
+
+                        <div class="slot-wrapper" data-start="09:00" data-end="11:00">
+                            <input type="checkbox" name="slot" value="09:00|11:00" class="slot-option" id="slot2" />
                             <label for="slot2" class="slot-label">
+                                <i class="fas fa-check slot-check"></i>
                                 <span class="slot-time">09:00 – 11:00</span>
                                 <span class="slot-period">Late Morning</span>
                             </label>
                         </div>
-                        <div>
-                            <input type="radio" name="timeSlot" id="slot3" value="13:00|15:00" class="slot-option" />
+
+                        <div class="slot-wrapper" data-start="13:00" data-end="15:00">
+                            <input type="checkbox" name="slot" value="13:00|15:00" class="slot-option" id="slot3" />
                             <label for="slot3" class="slot-label">
+                                <i class="fas fa-check slot-check"></i>
                                 <span class="slot-time">13:00 – 15:00</span>
                                 <span class="slot-period">Afternoon</span>
                             </label>
                         </div>
-                        <div>
-                            <input type="radio" name="timeSlot" id="slot4" value="15:00|17:00" class="slot-option" />
+
+                        <div class="slot-wrapper" data-start="15:00" data-end="17:00">
+                            <input type="checkbox" name="slot" value="15:00|17:00" class="slot-option" id="slot4" />
                             <label for="slot4" class="slot-label">
+                                <i class="fas fa-check slot-check"></i>
                                 <span class="slot-time">15:00 – 17:00</span>
                                 <span class="slot-period">Late Afternoon</span>
                             </label>
                         </div>
-                        <div>
-                            <input type="radio" name="timeSlot" id="slot5" value="17:00|19:00" class="slot-option" />
+
+                        <div class="slot-wrapper" data-start="17:00" data-end="19:00">
+                            <input type="checkbox" name="slot" value="17:00|19:00" class="slot-option" id="slot5" />
                             <label for="slot5" class="slot-label">
+                                <i class="fas fa-check slot-check"></i>
                                 <span class="slot-time">17:00 – 19:00</span>
                                 <span class="slot-period">Evening</span>
                             </label>
                         </div>
+
                     </div>
-                    <div class="slot-error" id="slotError">Please select a time slot.</div>
+
+                    <!-- Preview các slot đã chọn -->
+                    <div class="selected-slots-preview" id="selectedPreview"></div>
+
+                    <div class="slot-no-available" id="slotNoAvailable">
+                        <i class="fas fa-clock me-1"></i>
+                        No available time slots for today. Please select a future date.
+                    </div>
+                    <div class="slot-error" id="slotError">Please select at least one time slot.</div>
                 </div>
 
-                @* Purpose *@
+                <!-- Purpose -->
                 <div>
                     <label asp-for="Purpose" class="form-label">Purpose</label>
-                    <textarea asp-for="Purpose" class="form-control" rows="3"
-                              placeholder="Briefly describe the reason for this extra session..."
+                    <textarea asp-for="Purpose" class="form-control"
+                              rows="3" minlength="5" required
                               style="border-radius:10px;"></textarea>
                     <span asp-validation-for="Purpose" class="error-msg"></span>
                 </div>
+
             </div>
 
             <div class="req-footer">
-                <a href="/Dashboard/Index" class="btn-cancel">
-                    <i class="fas fa-arrow-left" style="font-size:.8rem"></i> Cancel
-                </a>
-                <button type="submit" class="btn-submit">
-                    <i class="fas fa-paper-plane" style="font-size:.8rem"></i> Submit Request
+                <a href="/Dashboard/Index" class="btn-cancel">Cancel</a>
+                <button type="submit" class="btn-submit" id="btnSubmit">
+                    <i class="fas fa-paper-plane"></i> Submit
                 </button>
             </div>
         </form>
@@ -289,31 +365,125 @@
 </div>
 
 <script>
-    // Default date = today (luôn set, không phụ thuộc model)
+    // ── Lọc slot theo ngày (ẩn slot đã qua nếu là hôm nay) ──
+    function filterSlotsByDate() {
+        var dateInput    = document.getElementById('requestDate');
+        var selectedDate = dateInput.value;
+        var today        = new Date();
+        var todayIso     = today.toISOString().split('T')[0];
+        var isToday      = (selectedDate === todayIso);
+
+        var currentTotal = today.getHours() * 60 + today.getMinutes();
+        var wrappers     = document.querySelectorAll('.slot-wrapper');
+        var anyVisible   = false;
+
+        wrappers.forEach(function (wrapper) {
+            var parts         = wrapper.getAttribute('data-start').split(':');
+            var slotStart     = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+            var isPast        = isToday && slotStart <= currentTotal;
+
+            if (isPast) {
+                wrapper.classList.add('slot-past');
+                var cb = wrapper.querySelector('input[type="checkbox"]');
+                if (cb) cb.checked = false;
+            } else {
+                wrapper.classList.remove('slot-past');
+                anyVisible = true;
+            }
+        });
+
+        updatePreview();
+
+        var noAvailEl = document.getElementById('slotNoAvailable');
+        var submitBtn = document.getElementById('btnSubmit');
+        if (!anyVisible) {
+            noAvailEl.style.display = 'block';
+            submitBtn.disabled      = true;
+            submitBtn.style.opacity = '.5';
+            submitBtn.style.cursor  = 'not-allowed';
+        } else {
+            noAvailEl.style.display = 'none';
+            submitBtn.disabled      = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor  = 'pointer';
+        }
+    }
+
+    // ── Cập nhật preview badge các slot đã chọn ──
+    function updatePreview() {
+        var preview  = document.getElementById('selectedPreview');
+        var checked  = document.querySelectorAll('input[name="slot"]:checked');
+        preview.innerHTML = '';
+
+        if (checked.length === 0) {
+            preview.style.display = 'none';
+            return;
+        }
+
+        preview.style.display = 'flex';
+        checked.forEach(function (cb) {
+            var parts = cb.value.split('|');
+            var badge = document.createElement('span');
+            badge.className   = 'selected-slot-badge';
+            badge.textContent = parts[0] + ' – ' + parts[1];
+            preview.appendChild(badge);
+        });
+    }
+
+    // ── Khởi tạo ──
     (function () {
-        var d = new Date();
-        var yyyy = d.getFullYear();
-        var mm = String(d.getMonth() + 1).padStart(2, '0');
-        var dd = String(d.getDate()).padStart(2, '0');
-        document.getElementById('requestDate').value = yyyy + '-' + mm + '-' + dd;
+        var d     = new Date();
+        var today = d.toISOString().split('T')[0];
+        var input = document.getElementById('requestDate');
+        input.value = today;
+        input.min   = today;
+        filterSlotsByDate();
     })();
 
-    // Map selected slot → hidden StartTime / EndTime (TimeSpan format hh:mm:ss)
-    document.querySelectorAll('input[name="timeSlot"]').forEach(function (r) {
-        r.addEventListener('change', function () {
-            var parts = this.value.split('|');
-            document.getElementById('hiddenStart').value = parts[0] + ':00';
-            document.getElementById('hiddenEnd').value   = parts[1] + ':00';
+    // ── Sự kiện đổi ngày ──
+    document.getElementById('requestDate').addEventListener('change', function () {
+        filterSlotsByDate();
+        document.getElementById('slotError').style.display = 'none';
+    });
+
+    // ── Sự kiện tick checkbox → cập nhật preview + ẩn lỗi ──
+    document.querySelectorAll('input[name="slot"]').forEach(function (cb) {
+        cb.addEventListener('change', function () {
+            updatePreview();
             document.getElementById('slotError').style.display = 'none';
         });
     });
 
-    // Validate slot on submit
+    // ── Submit: validate + tạo hidden inputs cho từng slot đã chọn ──
     document.getElementById('reqForm').addEventListener('submit', function (e) {
-        var checked = document.querySelector('input[name="timeSlot"]:checked');
-        if (!checked) {
+        var checked = document.querySelectorAll('input[name="slot"]:checked');
+
+        if (checked.length === 0) {
             e.preventDefault();
             document.getElementById('slotError').style.display = 'block';
+            return;
         }
+
+        // Xoá hidden cũ (nếu submit lại)
+        var container = document.getElementById('hiddenSlotsContainer');
+        container.innerHTML = '';
+
+        // Tạo hidden field cho mỗi slot: StartTimes[0], EndTimes[0], v.v.
+        checked.forEach(function (cb, idx) {
+            var parts = cb.value.split('|');
+
+            var hStart = document.createElement('input');
+            hStart.type  = 'hidden';
+            hStart.name  = 'StartTimes[' + idx + ']';
+            hStart.value = parts[0] + ':00';
+
+            var hEnd = document.createElement('input');
+            hEnd.type  = 'hidden';
+            hEnd.name  = 'EndTimes[' + idx + ']';
+            hEnd.value = parts[1] + ':00';
+
+            container.appendChild(hStart);
+            container.appendChild(hEnd);
+        });
     });
 </script>
