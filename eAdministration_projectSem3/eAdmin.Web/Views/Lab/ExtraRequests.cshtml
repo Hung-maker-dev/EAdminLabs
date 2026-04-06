@@ -260,7 +260,7 @@
         font-style: italic;
     }
 
-    /* ── Conflict warning card ── */
+    /* Conflict warning card */
     .conflict-card {
         border: 1.5px solid #ffc107;
         border-radius: 14px;
@@ -349,7 +349,7 @@
         }
 </style>
 
-@* ── Thông báo thành công ── *@
+@* Success alert *@
 @if (TempData["Success"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2 mb-3" role="alert">
@@ -359,7 +359,7 @@
     </div>
 }
 
-@* ── Thông báo lỗi ── *@
+@* Error alert *@
 @if (TempData["Error"] != null)
 {
     <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center gap-2 mb-3" role="alert">
@@ -369,7 +369,7 @@
     </div>
 }
 
-@* ── Cảnh báo xung đột lịch ── *@
+@* Schedule conflict warning *@
 @if (TempData["ConflictRequestId"] != null)
 {
     var conflictId = TempData["ConflictRequestId"]!.ToString();
@@ -381,11 +381,11 @@
             <i class="fas fa-exclamation-triangle"></i>
         </div>
         <div class="conflict-body">
-            <div class="conflict-title">Phát hiện xung đột lịch học!</div>
+            <div class="conflict-title">Schedule conflict detected!</div>
             <div class="conflict-desc">
-                Phòng lab này đã có <strong>lịch học cố định</strong> trùng với khung giờ được yêu cầu.
-                Nếu tiếp tục chấp nhận, lịch học đó sẽ bị <strong>huỷ</strong> và
-                giảng viên liên quan sẽ nhận được thông báo tự động.
+                This lab already has a <strong>regular schedule</strong> that overlaps with the requested time slot.
+                If you proceed with approval, that schedule will be <strong>cancelled</strong> and
+                the affected instructor will receive an automatic notification.
             </div>
             <div class="conflict-actions">
                 <form method="post" action="/Lab/ReplyRequest/@conflictId" style="display:inline">
@@ -396,11 +396,11 @@
                     <input type="hidden" name="forceApprove" value="true" />
                     <button type="submit" class="btn-force-approve">
                         <i class="fas fa-check-double"></i>
-                        Vẫn chấp nhận &amp; Huỷ lịch cũ
+                        Approve anyway &amp; Cancel old schedule
                     </button>
                 </form>
                 <button class="btn-cancel-conflict" onclick="document.getElementById('conflictCard').remove()">
-                    <i class="fas fa-times me-1"></i>Huỷ bỏ
+                    <i class="fas fa-times me-1"></i>Dismiss
                 </button>
             </div>
         </div>
@@ -465,7 +465,7 @@
                                 {
                                     <span class="status-badge status-expired">
                                         <i class="fas fa-ban me-1" style="font-size:.65rem"></i>
-                                        Hết hạn
+                                        Expired
                                     </span>
                                 }
                                 else
@@ -492,7 +492,7 @@
                                 {
                                     <span class="expired-note">
                                         <i class="fas fa-history me-1" style="font-size:.7rem"></i>
-                                        Đã hết hạn xử lý
+                                        Expired — no action available
                                     </span>
                                 }
                                 else if (r.Status == "Pending")

@@ -105,7 +105,7 @@
             background: rgba(13,202,240,.05);
         }
 
-        /* Checkmark badge góc trên phải */
+        /* Checkmark badge top-right corner */
         .slot-label .slot-check {
             display: none;
             position: absolute;
@@ -147,7 +147,7 @@
         border: 1px solid rgba(220,53,69,.15);
     }
 
-    /* Hiển thị các slot đã chọn */
+    /* Preview of selected slots */
     .selected-slots-preview {
         display: none;
         margin-top: .5rem;
@@ -333,7 +333,7 @@
 
                     </div>
 
-                    <!-- Preview các slot đã chọn -->
+                    <!-- Preview of selected slots -->
                     <div class="selected-slots-preview" id="selectedPreview"></div>
 
                     <div class="slot-no-available" id="slotNoAvailable">
@@ -365,7 +365,7 @@
 </div>
 
 <script>
-    // ── Lọc slot theo ngày (ẩn slot đã qua nếu là hôm nay) ──
+    // Hide past time slots when the selected date is today
     function filterSlotsByDate() {
         var dateInput    = document.getElementById('requestDate');
         var selectedDate = dateInput.value;
@@ -378,9 +378,9 @@
         var anyVisible   = false;
 
         wrappers.forEach(function (wrapper) {
-            var parts         = wrapper.getAttribute('data-start').split(':');
-            var slotStart     = parseInt(parts[0]) * 60 + parseInt(parts[1]);
-            var isPast        = isToday && slotStart <= currentTotal;
+            var parts     = wrapper.getAttribute('data-start').split(':');
+            var slotStart = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+            var isPast    = isToday && slotStart <= currentTotal;
 
             if (isPast) {
                 wrapper.classList.add('slot-past');
@@ -409,10 +409,10 @@
         }
     }
 
-    // ── Cập nhật preview badge các slot đã chọn ──
+    // Update selected-slot preview badges
     function updatePreview() {
-        var preview  = document.getElementById('selectedPreview');
-        var checked  = document.querySelectorAll('input[name="slot"]:checked');
+        var preview = document.getElementById('selectedPreview');
+        var checked = document.querySelectorAll('input[name="slot"]:checked');
         preview.innerHTML = '';
 
         if (checked.length === 0) {
@@ -430,7 +430,7 @@
         });
     }
 
-    // ── Khởi tạo ──
+    // Initialise: set today as default date and filter slots
     (function () {
         var d     = new Date();
         var today = d.toISOString().split('T')[0];
@@ -440,13 +440,13 @@
         filterSlotsByDate();
     })();
 
-    // ── Sự kiện đổi ngày ──
+    // Re-filter slots on date change
     document.getElementById('requestDate').addEventListener('change', function () {
         filterSlotsByDate();
         document.getElementById('slotError').style.display = 'none';
     });
 
-    // ── Sự kiện tick checkbox → cập nhật preview + ẩn lỗi ──
+    // Update preview and hide error on checkbox change
     document.querySelectorAll('input[name="slot"]').forEach(function (cb) {
         cb.addEventListener('change', function () {
             updatePreview();
@@ -454,7 +454,7 @@
         });
     });
 
-    // ── Submit: validate + tạo hidden inputs cho từng slot đã chọn ──
+    // Submit: validate slots then build hidden inputs for each selected slot
     document.getElementById('reqForm').addEventListener('submit', function (e) {
         var checked = document.querySelectorAll('input[name="slot"]:checked');
 
@@ -464,11 +464,11 @@
             return;
         }
 
-        // Xoá hidden cũ (nếu submit lại)
+        // Clear previous hidden inputs (in case of re-submit)
         var container = document.getElementById('hiddenSlotsContainer');
         container.innerHTML = '';
 
-        // Tạo hidden field cho mỗi slot: StartTimes[0], EndTimes[0], v.v.
+        // Build StartTimes[i] / EndTimes[i] hidden fields for each selected slot
         checked.forEach(function (cb, idx) {
             var parts = cb.value.split('|');
 

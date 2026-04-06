@@ -56,7 +56,7 @@ namespace eAdmin.Web.Controllers
             return View(vm);
         }
 
-        // ── Create (single day) ───────────────────────────────────────────────────
+        // Create a single-day schedule
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Create()
@@ -77,7 +77,7 @@ namespace eAdmin.Web.Controllers
                 LabId = vm.LabId,
                 InstructorId = vm.InstructorId,
                 SubjectName = vm.SubjectName,
-                DayOfWeek = vm.DayOfWeek,        // 1–6, đã được validate bởi [Range(1,6)]
+                DayOfWeek = vm.DayOfWeek,        // 1–6, validated by [Range(1,6)]
                 StartTime = vm.StartTime,
                 EndTime = vm.EndTime,
                 EffectiveFrom = vm.EffectiveFrom,
@@ -101,8 +101,8 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ── Create — được gọi nhiều lần liên tiếp qua fetch khi chọn "Tất cả" ───
-        // Trả về JSON thay vì redirect để frontend fetch tuần tự không bị reload
+        // Silent create — called repeatedly via fetch when the "All days" option is selected.
+        // Returns JSON instead of redirecting so the frontend can submit days sequentially without page reload.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin")]
@@ -136,7 +136,7 @@ namespace eAdmin.Web.Controllers
             return Ok(new { sched.ScheduleId });
         }
 
-        // ── Edit ──────────────────────────────────────────────────────────────────
+        // Edit an existing schedule
         [HttpGet]
         [AuthorizeRoles("Admin")]
         public async Task<IActionResult> Edit(int id)
@@ -188,7 +188,7 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ── Deactivate ────────────────────────────────────────────────────────────
+        // Deactivate (soft-delete) a schedule and notify the instructor
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("Admin")]
@@ -207,6 +207,7 @@ namespace eAdmin.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Populate Lab and Instructor dropdowns for create/edit views
         private async Task PopulateDropdowns()
         {
             var instructors = await _uow.Users.FindAsync(u => u.Role.RoleName == "Instructor" && u.IsActive);
@@ -215,7 +216,7 @@ namespace eAdmin.Web.Controllers
         }
     }
 
-    // ── Lightweight list ViewModel (local) ───────────────────────────────────
+    // Lightweight list ViewModel (used only within this controller)
     public class ScheduleListItem
     {
         public int ScheduleId { get; set; }

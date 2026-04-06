@@ -51,7 +51,7 @@
         color: #202124
     }
 
-    /* ── Toolbar ── */
+    /* Toolbar */
     .cal-toolbar {
         display: flex;
         align-items: center;
@@ -110,7 +110,7 @@
             background: #f1f3f4
         }
 
-    /* ── View toggle ── */
+    /* Week / Month view toggle */
     .cal-view-toggle {
         display: flex;
         border: 1px solid #dadce0;
@@ -141,7 +141,7 @@
                 background: #f1f3f4
             }
 
-    /* ── Legend ── */
+    /* Instructor color legend */
     .cal-legend {
         display: flex;
         gap: 10px;
@@ -164,7 +164,7 @@
         flex-shrink: 0
     }
 
-    /* ── Filter Panel ── */
+    /* Schedule filter panel */
     .cal-filter-panel {
         border-bottom: 1px solid #dadce0;
         background: #fff;
@@ -335,6 +335,7 @@
         flex-shrink: 0;
     }
 
+    /* Instructor autocomplete dropdown */
     .cal-suggest-wrap {
         position: relative;
     }
@@ -386,6 +387,7 @@
             transform: translateY(-50%);
         }
 
+    /* Filtered schedule count stats */
     .cal-filter-stat {
         display: flex;
         align-items: center;
@@ -421,7 +423,7 @@
         font-size: 14px;
     }
 
-    /* ── Week view ── */
+    /* Week grid */
     .cal-grid-outer {
         display: flex;
         overflow: auto;
@@ -513,7 +515,7 @@
         border-bottom: 1px solid #f1f3f4
     }
 
-    /* ── Events ── */
+    /* Schedule event block */
     .cal-event {
         position: absolute;
         left: 2px;
@@ -571,7 +573,7 @@
         line-height: 14px
     }
 
-    /* ── Month view ── */
+    /* Month grid */
     .cal-month-wrap {
         padding: 0
     }
@@ -714,7 +716,7 @@
         padding-top: 6px;
     }
 
-    /* ── Day popup ── */
+    /* Day schedule popup (month view) */
     .cal-day-popup-overlay {
         position: fixed;
         inset: 0;
@@ -816,7 +818,7 @@
             background: #f1f3f4;
         }
 
-    /* ── Create/Edit Modal ── */
+    /* Create / edit schedule modal */
     .cal-modal-bg {
         display: none;
         position: fixed;
@@ -902,7 +904,7 @@
                 box-shadow: 0 0 0 2px rgba(26,115,232,.2)
             }
 
-    /* ── Time slot cards ── */
+    /* Time slot selector cards */
     .cal-slot-label {
         font-size: 11px;
         font-weight: 500;
@@ -982,6 +984,7 @@
             background: #fad2cf
         }
 
+    /* Schedule conflict warning */
     .cal-conflict {
         background: #fef7e0;
         border: 1px solid #fbbc04;
@@ -993,6 +996,7 @@
         display: none
     }
 
+    /* Schedule effective date info */
     .cal-effective-info {
         background: #e8f0fe;
         border: 1px solid #c5d9f8;
@@ -1004,6 +1008,7 @@
         display: none
     }
 
+    /* Quick toast notification */
     .cal-toast {
         position: fixed;
         bottom: 24px;
@@ -1030,7 +1035,7 @@
         }
     }
 
-    /* ── No slot message ── */
+    /* No available time slot message */
     .cal-no-slot-msg {
         display: none;
         font-size: 12px;
@@ -1044,38 +1049,38 @@
 </style>
 
 <div class="cal-wrap">
-    <!-- ── Toolbar ── -->
+    <!-- Toolbar: week/month navigation, view toggle, legend, add button -->
     <div class="cal-toolbar">
         <button class="cal-btn-icon" onclick="calNavWeek(-1)">&#8249;</button>
-        <button class="cal-btn" onclick="calGoToday()">Hôm nay</button>
+        <button class="cal-btn" onclick="calGoToday()">Today</button>
         <button class="cal-btn-icon" onclick="calNavWeek(1)">&#8250;</button>
         <h2 id="cal-week-label"></h2>
 
         <div class="cal-view-toggle">
-            <button id="btn-view-week" class="active" onclick="calSetView('week')">Tuần</button>
-            <button id="btn-view-month" onclick="calSetView('month')">Tháng</button>
+            <button id="btn-view-week" class="active" onclick="calSetView('week')">Week</button>
+            <button id="btn-view-month" onclick="calSetView('month')">Month</button>
         </div>
 
         <div class="cal-legend" id="cal-legend"></div>
         @if (isAdmin)
         {
-            <button class="cal-btn cal-btn-primary" onclick="calOpenModal(null)">+ Thêm lịch</button>
+            <button class="cal-btn cal-btn-primary" onclick="calOpenModal(null)">+ Add Schedule</button>
         }
     </div>
 
-    <!-- ── Filter Panel ── -->
+    <!-- Filter panel: by date range and instructor -->
     <div class="cal-filter-panel">
         <div class="cal-filter-header" id="cal-filter-header">
-            <span class="cal-filter-header-label">Lọc</span>
+            <span class="cal-filter-header-label">Filter</span>
             <div class="cal-filter-chips" id="cal-filter-chips">
-                <span style="font-size:11px;color:#bdc1c6;font-style:italic">Chưa có bộ lọc nào được áp dụng</span>
+                <span style="font-size:11px;color:#bdc1c6;font-style:italic">No filters applied</span>
             </div>
-            <button class="cal-filter-clear-all" id="cal-filter-clear-all" onclick="calClearFilter()">&#215; Xoá tất cả</button>
+            <button class="cal-filter-clear-all" id="cal-filter-clear-all" onclick="calClearFilter()">&#215; Clear all</button>
         </div>
 
         <div class="cal-filter-body">
             <div class="cal-filter-group">
-                <label>Từ ngày</label>
+                <label>From</label>
                 <div class="cal-filter-input-wrap">
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                         <rect x="1" y="3" width="14" height="12" rx="2" stroke="#9aa0a6" stroke-width="1.2" />
@@ -1086,7 +1091,7 @@
             </div>
             <span class="cal-date-sep" style="padding-bottom:6px">&#8594;</span>
             <div class="cal-filter-group">
-                <label>Đến ngày</label>
+                <label>To</label>
                 <div class="cal-filter-input-wrap">
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                         <rect x="1" y="3" width="14" height="12" rx="2" stroke="#9aa0a6" stroke-width="1.2" />
@@ -1097,7 +1102,7 @@
             </div>
 
             <div class="cal-filter-group">
-                <label>Giảng viên</label>
+                <label>Instructor</label>
                 <div class="cal-suggest-wrap">
                     <div class="cal-filter-input-wrap">
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -1106,7 +1111,7 @@
                         </svg>
                         <input type="text" id="cal-filter-instructor"
                                class="cal-filter-input has-icon"
-                               placeholder="Tìm giảng viên..."
+                               placeholder="Search instructor..."
                                oninput="calSearchInstructor(this.value)"
                                onfocus="calShowSuggestions()"
                                autocomplete="off"
@@ -1120,7 +1125,7 @@
         <div class="cal-filter-stat" id="cal-filter-stat"></div>
     </div>
 
-    <!-- ── Week view ── -->
+    <!-- Week view -->
     <div id="cal-view-week">
         <div class="cal-grid-outer">
             <div class="cal-time-col" id="cal-time-col"></div>
@@ -1131,7 +1136,7 @@
         </div>
     </div>
 
-    <!-- ── Month view ── -->
+    <!-- Month view -->
     <div id="cal-view-month" style="display:none">
         <div class="cal-month-wrap">
             <div class="cal-month-header" id="cal-month-header"></div>
@@ -1140,24 +1145,26 @@
     </div>
 </div>
 
+<!-- Day schedule popup (dynamically rendered) -->
 <div id="cal-day-popup-container"></div>
 
 @if (isAdmin)
 {
+    <!-- Create / edit schedule modal -->
     <div class="cal-modal-bg" id="cal-modal-bg">
         <div class="cal-modal">
             <button class="cal-modal-close" onclick="calCloseModal()">&#215;</button>
-            <h3 id="cal-modal-title">Thêm lịch học</h3>
+            <h3 id="cal-modal-title">Add Schedule</h3>
 
             <div class="cal-conflict" id="cal-conflict">
-                &#9888; Xung đột: Lab hoặc giảng viên đã có lịch trong khung giờ này.
+                &#9888; Conflict: Lab or instructor already has a schedule in this time slot.
             </div>
             <div class="cal-effective-info" id="cal-effective-info"></div>
 
             <div class="cal-form-row" style="grid-template-columns:1fr">
                 <div class="cal-form-group">
-                    <label>Tên môn học</label>
-                    <input id="cal-f-subject" placeholder="e.g. Lập trình cơ bản" />
+                    <label>Subject Name</label>
+                    <input id="cal-f-subject" placeholder="e.g. Introduction to Programming" />
                 </div>
             </div>
 
@@ -1165,33 +1172,33 @@
                 <div class="cal-form-group">
                     <label>Lab</label>
                     <select id="cal-f-lab" asp-items="ViewBag.Labs">
-                        <option value="">-- Chọn Lab --</option>
+                        <option value="">-- Select Lab --</option>
                     </select>
                 </div>
                 <div class="cal-form-group">
-                    <label>Giảng viên</label>
+                    <label>Instructor</label>
                     <select id="cal-f-instructor" asp-items="ViewBag.Instructors">
-                        <option value="">-- Chọn GV --</option>
+                        <option value="">-- Select Instructor --</option>
                     </select>
                 </div>
             </div>
 
             <div class="cal-form-row">
                 <div class="cal-form-group">
-                    <label>Ngày trong tuần</label>
+                    <label>Day of Week</label>
                     <select id="cal-f-day" onchange="calSyncDayToDate()">
-                        <option value="0">📅 Tất cả (T2 → T7)</option>
-                        <option value="1">Thứ Hai</option>
-                        <option value="2">Thứ Ba</option>
-                        <option value="3">Thứ Tư</option>
-                        <option value="4">Thứ Năm</option>
-                        <option value="5">Thứ Sáu</option>
-                        <option value="6">Thứ Bảy</option>
+                        <option value="0">📅 All (Mon → Sat)</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
                     </select>
                     <div class="cal-date-hint" id="cal-day-hint"></div>
                 </div>
                 <div class="cal-form-group">
-                    <label>Hiệu lực từ</label>
+                    <label>Effective From</label>
                     <input id="cal-f-from" type="date" onchange="calSyncDateToDay('from')" />
                     <div class="cal-date-hint" id="cal-from-hint"></div>
                 </div>
@@ -1199,17 +1206,16 @@
 
             <div class="cal-form-row" style="grid-template-columns:1fr">
                 <div class="cal-form-group">
-                    <label>Hiệu lực đến <small style="text-transform:none;font-weight:400">(tuỳ chọn)</small></label>
+                    <label>Effective To <small style="text-transform:none;font-weight:400">(optional)</small></label>
                     <input id="cal-f-to" type="date" onchange="calSyncDateToDay('to')" />
                     <div class="cal-date-hint" id="cal-to-hint"></div>
                 </div>
             </div>
 
-            <div class="cal-slot-label">Khung giờ</div>
+            <div class="cal-slot-label">Time Slot</div>
 
-            <!-- Thông báo khi không còn slot nào khả dụng -->
             <div class="cal-no-slot-msg" id="cal-no-slot-msg">
-                ⏰ Không còn khung giờ nào khả dụng cho hôm nay. Vui lòng chọn ngày khác.
+                ⏰ No available time slots for today. Please select another date.
             </div>
 
             <div class="cal-slot-grid" id="cal-slot-grid">
@@ -1240,12 +1246,12 @@
             <div class="cal-modal-footer">
                 <div>
                     <button class="cal-btn-danger" id="cal-btn-deactivate" style="display:none" onclick="calDeactivate()">
-                        &#128683; Huỷ lịch &amp; Thông báo
+                        &#128683; Cancel Schedule &amp; Notify
                     </button>
                 </div>
                 <div style="display:flex;gap:8px">
-                    <button class="cal-btn" onclick="calCloseModal()">Đóng</button>
-                    <button class="cal-btn cal-btn-primary" onclick="calSave()">Lưu &amp; Thông báo</button>
+                    <button class="cal-btn" onclick="calCloseModal()">Close</button>
+                    <button class="cal-btn cal-btn-primary" onclick="calSave()">Save &amp; Notify</button>
                 </div>
             </div>
         </div>
@@ -1264,8 +1270,8 @@
             if (!Array.isArray(CAL_SCHEDULES)) CAL_SCHEDULES = [];
 
             var HOUR_START = 6, HOUR_END = 21;
-            var DAYS_SHORT = ['T2','T3','T4','T5','T6','T7'];
-            var DAY_NAMES  = ['','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+            var DAYS_SHORT = ['Mon','Tue','Wed','Thu','Fri','Sat'];
+            var DAY_NAMES  = ['','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
             var COLORS = [
                 {bg:'#1a73e8',fg:'#fff'},{bg:'#0b8043',fg:'#fff'},
                 {bg:'#c0392b',fg:'#fff'},{bg:'#7b1fa2',fg:'#fff'},
@@ -1281,6 +1287,7 @@
             var filterTo         = '';
             var filterInstructor = '';
 
+            // Date and time utilities
             function timeToMin(t) { var p=t.split(':'); return +p[0]*60+ +p[1]; }
             function minToY(m)    { return ((m-HOUR_START*60)/60)*48; }
             function pad2(n)      { return n<10?'0'+n:String(n); }
@@ -1289,6 +1296,7 @@
             function isoToDate(s) { var p=s.split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
             function dateToIso(d) { return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
 
+            // Get Monday of the week at the given offset
             function getMonday(offset) {
                 var now=new Date(), day=now.getDay();
                 var mon=new Date(now);
@@ -1296,21 +1304,27 @@
                 mon.setHours(0,0,0,0);
                 return mon;
             }
+
+            // Retrieve CSRF token from hidden form
             function getCsrf() {
                 var el=document.querySelector('#cal-csrf-form input[name="__RequestVerificationToken"]');
                 return el?el.value:'';
             }
+
+            // Get unique instructor list from schedule data
             function getInstructors() {
                 var seen={}, list=[];
                 CAL_SCHEDULES.forEach(function(s){ if(!seen[s.instructor]){seen[s.instructor]=true;list.push(s.instructor);} });
                 return list;
             }
+
+            // Assign a consistent color to each instructor by order of appearance
             function getColor(name) {
                 var list=getInstructors(), idx=list.indexOf(name);
                 return COLORS[idx<0?0:idx%COLORS.length];
             }
 
-            // ── Filter slot giờ đã qua ───────────────────────────────────────────────
+            // Hide past time slots when the selected date is today
             function calFilterSlotsByDate() {
                 var fromVal  = document.getElementById('cal-f-from').value;
                 var todayIso = dateToIso(new Date());
@@ -1337,7 +1351,7 @@
                 var noSlotEl = document.getElementById('cal-no-slot-msg');
                 if (noSlotEl) noSlotEl.style.display = anyVisible ? 'none' : 'block';
 
-                // Tự chọn slot đầu tiên còn hiển thị nếu chưa có slot nào được chọn
+                // Auto-select the first visible slot if none is currently selected
                 var selected = document.querySelector('.cal-slot-card.selected');
                 if (!selected) {
                     var firstVisible = Array.from(document.querySelectorAll('.cal-slot-card'))
@@ -1350,7 +1364,7 @@
                 }
             }
 
-            // ── Filter logic ─────────────────────────────────────────────────────────
+            // Check whether a schedule matches the current filter
             function scheduleVisible(s) {
                 if (filterFrom || filterTo) {
                     var rangeStart = filterFrom ? isoToDate(filterFrom) : null;
@@ -1383,6 +1397,7 @@
                 return true;
             }
 
+            // Apply date filter when user changes input
             window.calApplyFilter = function() {
                 filterFrom = document.getElementById('cal-filter-from').value;
                 filterTo   = document.getElementById('cal-filter-to').value;
@@ -1390,6 +1405,7 @@
                 calRender();
             };
 
+            // Clear all active filters
             window.calClearFilter = function() {
                 filterFrom = filterTo = filterInstructor = '';
                 document.getElementById('cal-filter-from').value       = '';
@@ -1400,6 +1416,7 @@
                 calRender();
             };
 
+            // Remove a single filter chip
             window.calClearFilterChip = function(type) {
                 if (type==='from') { filterFrom=''; document.getElementById('cal-filter-from').value=''; }
                 if (type==='to')   { filterTo='';   document.getElementById('cal-filter-to').value=''; }
@@ -1408,6 +1425,7 @@
                 calRender();
             };
 
+            // Search instructors and show autocomplete dropdown
             window.calSearchInstructor = function(val) {
                 filterInstructor = val.trim().toLowerCase();
                 var box = document.getElementById('cal-suggest-box');
@@ -1428,11 +1446,13 @@
                 calRender();
             };
 
+            // Re-open dropdown when the search input is focused
             window.calShowSuggestions = function() {
                 var val = document.getElementById('cal-filter-instructor').value;
                 if (val.trim()) calSearchInstructor(val);
             };
 
+            // Select an instructor from the autocomplete dropdown
             window.calSelectInstructor = function(name) {
                 document.getElementById('cal-filter-instructor').value = name;
                 filterInstructor = name.toLowerCase();
@@ -1441,6 +1461,7 @@
                 calRender();
             };
 
+            // Close dropdown when clicking outside
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.cal-suggest-wrap')) {
                     var b = document.getElementById('cal-suggest-box');
@@ -1448,25 +1469,26 @@
                 }
             });
 
+            // Update filter chips and visible schedule count stats
             function renderFilterChips() {
                 var chipsEl  = document.getElementById('cal-filter-chips');
                 var clearBtn = document.getElementById('cal-filter-clear-all');
                 var statEl   = document.getElementById('cal-filter-stat');
                 var chips    = [], hasFilter = false;
-                if (filterFrom) { hasFilter=true; chips.push('<span class="cal-filter-chip"><span class="cal-chip-icon">&#128197;</span>Từ '+fmtShort(filterFrom)+'<span class="cal-chip-x" onclick="calClearFilterChip(\'from\')">&#215;</span></span>'); }
-                if (filterTo)   { hasFilter=true; chips.push('<span class="cal-filter-chip"><span class="cal-chip-icon">&#128197;</span>Đến '+fmtShort(filterTo)+'<span class="cal-chip-x" onclick="calClearFilterChip(\'to\')">&#215;</span></span>'); }
+                if (filterFrom) { hasFilter=true; chips.push('<span class="cal-filter-chip"><span class="cal-chip-icon">&#128197;</span>From '+fmtShort(filterFrom)+'<span class="cal-chip-x" onclick="calClearFilterChip(\'from\')">&#215;</span></span>'); }
+                if (filterTo)   { hasFilter=true; chips.push('<span class="cal-filter-chip"><span class="cal-chip-icon">&#128197;</span>To '+fmtShort(filterTo)+'<span class="cal-chip-x" onclick="calClearFilterChip(\'to\')">&#215;</span></span>'); }
                 if (filterInstructor) {
                     var displayName = document.getElementById('cal-filter-instructor').value || filterInstructor;
                     hasFilter=true;
                     chips.push('<span class="cal-filter-chip"><span class="cal-chip-icon">&#128100;</span>'+displayName+'<span class="cal-chip-x" onclick="calClearFilterChip(\'ins\')">&#215;</span></span>');
                 }
-                chipsEl.innerHTML = hasFilter ? chips.join('') : '<span style="font-size:11px;color:#bdc1c6;font-style:italic">Chưa có bộ lọc nào được áp dụng</span>';
+                chipsEl.innerHTML = hasFilter ? chips.join('') : '<span style="font-size:11px;color:#bdc1c6;font-style:italic">No filters applied</span>';
                 clearBtn.style.display = hasFilter ? 'inline-block' : 'none';
                 var visible = CAL_SCHEDULES.filter(scheduleVisible);
                 var byIns = {};
                 visible.forEach(function(s){ if(!byIns[s.instructor]) byIns[s.instructor]=0; byIns[s.instructor]++; });
                 var entries = Object.entries ? Object.entries(byIns) : Object.keys(byIns).map(function(k){return[k,byIns[k]];});
-                var statHTML = '<span class="cal-stat-label">'+visible.length+' lịch hiển thị</span>';
+                var statHTML = '<span class="cal-stat-label">'+visible.length+' schedules shown</span>';
                 if (entries.length) {
                     statHTML += '<span class="cal-stat-sep">·</span>';
                     statHTML += entries.map(function(e){ var c=getColor(e[0]).bg; var short=e[0].split(' ').slice(-1)[0]; return '<span class="cal-stat-item"><span class="cal-stat-dot" style="background:'+c+'"></span>'+short+': '+e[1]+'</span>'; }).join('<span class="cal-stat-sep">·</span>');
@@ -1474,6 +1496,7 @@
                 statEl.innerHTML = statHTML;
             }
 
+            // Switch between week and month view
             window.calSetView = function(v) {
                 calView = v;
                 document.getElementById('btn-view-week').classList.toggle('active',  v==='week');
@@ -1483,11 +1506,13 @@
                 calRender();
             };
 
+            // Navigate week/month and jump to today
             window.calNavWeek = function(d) { if (calView==='month') monthOffset+=d; else weekOffset+=d; calRender(); };
             window.calGoToday = function() { weekOffset=0; monthOffset=0; calRender(); };
 
             function calRender() { renderLegend(); if (calView==='week') renderWeek(); else renderMonth(); }
 
+            // Render instructor color legend on toolbar
             function renderLegend() {
                 var lg = document.getElementById('cal-legend'); if (!lg) return;
                 var visible=CAL_SCHEDULES.filter(scheduleVisible), seen={}, list=[];
@@ -1495,6 +1520,7 @@
                 lg.innerHTML=list.map(function(name){ var c=getColor(name); var short=name.split(' ').slice(-1)[0]; return '<div class="cal-leg-item"><div class="cal-leg-dot" style="background:'+c.bg+'"></div>'+short+'</div>'; }).join('');
             }
 
+            // Render week grid with schedule event blocks
             function renderWeek() {
                 var mon=getMonday(weekOffset), sat=new Date(mon); sat.setDate(mon.getDate()+5);
                 document.getElementById('cal-week-label').textContent=mon.toLocaleDateString('vi-VN',{day:'2-digit',month:'long',year:'numeric'})+' \u2013 '+sat.toLocaleDateString('vi-VN',{day:'2-digit',month:'long'});
@@ -1519,18 +1545,19 @@
                     ev.style.cssText='top:'+top+'px;height:'+height+'px;background:'+c.bg+';color:'+c.fg;
                     var badge='',today=new Date();today.setHours(0,0,0,0);
                     var fromD=new Date(s.from),toD=s.to?new Date(s.to):null;
-                    if(fromD>today) badge='<span class="cal-event-badge">Sắp</span>';
-                    else if(toD&&toD<today) badge='<span class="cal-event-badge">Hết HH</span>';
+                    if(fromD>today) badge='<span class="cal-event-badge">Upcoming</span>';
+                    else if(toD&&toD<today) badge='<span class="cal-event-badge">Expired</span>';
                     ev.innerHTML='<div class="cal-event-title">'+s.subject+badge+(s.active?'':' \u2715')+'</div>'+'<div class="cal-event-instructor">'+s.instructor+'</div>'+'<div class="cal-event-detail">'+s.start+'\u2013'+s.end+' \xb7 '+s.lab+'</div>';
                     if(CAL_IS_ADMIN)(function(sid){ev.onclick=function(){calOpenModal(sid);};})(s.id);
                     cols[ci].appendChild(ev);
                 });
             }
 
+            // Render month grid with day cells and condensed schedule list
             function renderMonth() {
                 var now=new Date(),year=now.getFullYear(),month=now.getMonth()+monthOffset;
                 while(month>11){month-=12;year++;}while(month<0){month+=12;year--;}
-                document.getElementById('cal-week-label').textContent='Tháng '+(month+1)+', '+year;
+                document.getElementById('cal-week-label').textContent='Month '+(month+1)+', '+year;
                 var mh=document.getElementById('cal-month-header');
                 mh.innerHTML=DAYS_SHORT.map(function(d){return '<div class="cal-month-day-name">'+d+'</div>';}).join('');
                 var firstDay=new Date(year,month,1),todayStr=dateToIso(new Date()),startDow=firstDay.getDay(),startMon=new Date(firstDay);
@@ -1559,31 +1586,35 @@
                         (function(scheds,dateObj){evEl.onclick=function(e){e.stopPropagation();calShowDayPopup(isoDate,scheds,dateObj);};})(daySchedules,cell.date);
                         evWrap.appendChild(evEl);
                     });
-                    if(daySchedules.length>MAX_SHOW){var moreEl=document.createElement('div');moreEl.className='cal-month-more';moreEl.textContent='+'+(daySchedules.length-MAX_SHOW)+' nữa';(function(scheds,dateObj){moreEl.onclick=function(){calShowDayPopup(isoDate,scheds,dateObj);};})(daySchedules,cell.date);evWrap.appendChild(moreEl);}
+                    if(daySchedules.length>MAX_SHOW){var moreEl=document.createElement('div');moreEl.className='cal-month-more';moreEl.textContent='+'+(daySchedules.length-MAX_SHOW)+' more';(function(scheds,dateObj){moreEl.onclick=function(){calShowDayPopup(isoDate,scheds,dateObj);};})(daySchedules,cell.date);evWrap.appendChild(moreEl);}
                     if(!daySchedules.length&&cell.inMonth){var emptyEl=document.createElement('div');emptyEl.className='cal-month-empty';emptyEl.textContent='–';evWrap.appendChild(emptyEl);}
                     cellEl.appendChild(evWrap);grid.appendChild(cellEl);
                 });
             }
 
+            // Show popup listing all schedules for a specific day
             window.calShowDayPopup = function(isoDate, schedules, dateObj) {
                 var label=dateObj.toLocaleDateString('vi-VN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
                 var today=new Date();today.setHours(0,0,0,0);
                 var evRows=schedules.map(function(s){
                     var c=getColor(s.instructor),fromD=new Date(s.from),toD=s.to?new Date(s.to):null;
                     var badgeText='',badgeStyle='';
-                    if(!s.active){badgeText='Đã huỷ';badgeStyle='background:#fce8e6;color:#c5221f';}
-                    else if(fromD>today){badgeText='Sắp tới';badgeStyle='background:#fef7e0;color:#7a5900';}
-                    else if(toD&&toD<today){badgeText='Hết HH';badgeStyle='background:#f1f3f4;color:#5f6368';}
+                    if(!s.active){badgeText='Cancelled';badgeStyle='background:#fce8e6;color:#c5221f';}
+                    else if(fromD>today){badgeText='Upcoming';badgeStyle='background:#fef7e0;color:#7a5900';}
+                    else if(toD&&toD<today){badgeText='Expired';badgeStyle='background:#f1f3f4;color:#5f6368';}
                     var badge=badgeText?'<span class="cal-day-popup-badge" style="'+badgeStyle+'">'+badgeText+'</span>':'';
                     var clickAttr=CAL_IS_ADMIN?' onclick="calClosePopupAndEdit('+s.id+')" style="cursor:pointer"':'';
                     return '<div class="cal-day-popup-ev"'+clickAttr+'><div class="cal-day-popup-color" style="background:'+c.bg+'"></div><div class="cal-day-popup-info"><div class="cal-day-popup-name">'+s.subject+'</div><div class="cal-day-popup-meta">'+s.start+' – '+s.end+' &nbsp;·&nbsp; '+s.lab+'</div><div class="cal-day-popup-meta">'+s.instructor+'</div></div>'+badge+'</div>';
                 }).join('');
-                document.getElementById('cal-day-popup-container').innerHTML='<div class="cal-day-popup-overlay" onclick="if(event.target===this)calCloseDayPopup()"><div class="cal-day-popup"><div class="cal-day-popup-title">'+label+'</div>'+evRows+'<button class="cal-day-popup-close" onclick="calCloseDayPopup()">Đóng</button></div></div>';
+                document.getElementById('cal-day-popup-container').innerHTML='<div class="cal-day-popup-overlay" onclick="if(event.target===this)calCloseDayPopup()"><div class="cal-day-popup"><div class="cal-day-popup-title">'+label+'</div>'+evRows+'<button class="cal-day-popup-close" onclick="calCloseDayPopup()">Close</button></div></div>';
             };
+
             window.calCloseDayPopup = function() { document.getElementById('cal-day-popup-container').innerHTML=''; };
+
+            // Close day popup then open the edit modal
             window.calClosePopupAndEdit = function(id) { calCloseDayPopup(); calOpenModal(id); };
 
-            // ── Time slot cards ──────────────────────────────────────────────────────
+            // Select a time slot card on the modal
             window.calSelectSlot = function(card) {
                 document.querySelectorAll('.cal-slot-card').forEach(function(c){ c.classList.remove('selected'); });
                 card.classList.add('selected');
@@ -1591,6 +1622,7 @@
                 document.getElementById('cal-f-end').value   = card.dataset.end;
             };
 
+            // Mark the slot matching start/end time as selected; fall back to first visible slot if no match
             function calSetSlotByTime(start, end) {
                 var cards=document.querySelectorAll('.cal-slot-card');
                 var matched=false;
@@ -1604,61 +1636,68 @@
                 document.getElementById('cal-f-end').value=matched?end:(document.querySelector('.cal-slot-card.selected')||{dataset:{end:''}}).dataset.end||'';
             }
 
+            // Calculate the nearest date matching the selected day of week
             function nearestDateForDay(dayTarget) {
                 var today=new Date();today.setHours(0,0,0,0);
                 var diff=(dayTarget-today.getDay()+7)%7;
                 var result=new Date(today);result.setDate(today.getDate()+diff);return result;
             }
 
+            // On day-of-week change: update effective-from date and re-filter slots
             window.calSyncDayToDate = function() {
                 var day=+document.getElementById('cal-f-day').value;
                 var hintEl=document.getElementById('cal-day-hint');
-                if(day===0){hintEl.textContent='Áp dụng cho tất cả T2 → T7';updateEffectiveInfo();calFilterSlotsByDate();return;}
+                if(day===0){hintEl.textContent='Applies to all Mon → Sat';updateEffectiveInfo();calFilterSlotsByDate();return;}
                 var d=nearestDateForDay(day);
                 document.getElementById('cal-f-from').value=dateToIso(d);
                 hintEl.textContent=DAY_NAMES[day];
                 updateFromHint();updateEffectiveInfo();
-                calFilterSlotsByDate(); // ← filter slot khi đổi ngày trong tuần
+                calFilterSlotsByDate();
             };
 
+            // On effective date change: sync day-of-week selector and re-filter slots
             window.calSyncDateToDay = function(which) {
                 if(which==='from'){
                     var val=document.getElementById('cal-f-from').value;if(!val)return;
                     var d=isoToDate(val),jsD=d.getDay(),cur=+document.getElementById('cal-f-day').value;
                     if(cur!==0&&jsD>=1&&jsD<=6){document.getElementById('cal-f-day').value=jsD;document.getElementById('cal-day-hint').textContent=DAY_NAMES[jsD];}
                     updateFromHint();
-                    calFilterSlotsByDate(); // ← filter slot khi đổi ngày hiệu lực từ
+                    calFilterSlotsByDate();
                 }
                 if(which==='to') updateToHint();
                 updateEffectiveInfo();
             };
 
+            // Update from / to effective date hint labels
             function updateFromHint() {
                 var val=document.getElementById('cal-f-from').value,el=document.getElementById('cal-from-hint');
-                if(!val){el.textContent='';return;}var d=isoToDate(val);el.textContent='Từ '+fmtDate(d)+' ('+(DAY_NAMES[d.getDay()]||'CN')+')';
+                if(!val){el.textContent='';return;}var d=isoToDate(val);el.textContent='From '+fmtDate(d)+' ('+(DAY_NAMES[d.getDay()]||'Sun')+')';
             }
             function updateToHint() {
                 var val=document.getElementById('cal-f-to').value,el=document.getElementById('cal-to-hint');
-                if(!val){el.textContent='(không giới hạn)';return;}var d=isoToDate(val);el.textContent='Đến '+fmtDate(d)+' ('+(DAY_NAMES[d.getDay()]||'CN')+')';
+                if(!val){el.textContent='(no end date)';return;}var d=isoToDate(val);el.textContent='To '+fmtDate(d)+' ('+(DAY_NAMES[d.getDay()]||'Sun')+')';
             }
+
+            // Update the effective-date status banner
             function updateEffectiveInfo() {
                 var infoEl=document.getElementById('cal-effective-info');if(!infoEl)return;
                 var fromVal=document.getElementById('cal-f-from').value,toVal=document.getElementById('cal-f-to').value;
                 var today=new Date();today.setHours(0,0,0,0);
                 if(!fromVal){infoEl.style.display='none';return;}
                 var from=isoToDate(fromVal),to=toVal?isoToDate(toVal):null,msg='';
-                if(from>today) msg='⏳ Lịch này chưa có hiệu lực — sẽ bắt đầu từ '+fmtDate(from);
-                else if(to&&to<today) msg='⛔ Lịch này đã hết hiệu lực vào '+fmtDate(to);
-                else if(to) msg='✅ Đang hiệu lực đến '+fmtDate(to);
-                else msg='✅ Đang hiệu lực (không giới hạn ngày kết thúc)';
+                if(from>today) msg='⏳ Not yet effective — starts on '+fmtDate(from);
+                else if(to&&to<today) msg='⛔ Expired on '+fmtDate(to);
+                else if(to) msg='✅ Active until '+fmtDate(to);
+                else msg='✅ Active (no end date)';
                 infoEl.textContent=msg;infoEl.style.display='block';
             }
 
+            // Open modal: create new (id=null) or edit existing schedule by id
             window.calOpenModal = function(id) {
                 if(!CAL_IS_ADMIN) return;
                 editingId=id;
                 var s=id?CAL_SCHEDULES.find(function(x){return x.id===id;}):null;
-                document.getElementById('cal-modal-title').textContent=id?'Chỉnh sửa lịch':'Thêm lịch học';
+                document.getElementById('cal-modal-title').textContent=id?'Edit Schedule':'Add Schedule';
                 document.getElementById('cal-f-subject').value=s?s.subject:'';
                 document.getElementById('cal-f-day').value=s?s.day:1;
                 if(!s){var initDay=+document.getElementById('cal-f-day').value;document.getElementById('cal-f-from').value=dateToIso(nearestDateForDay(initDay));}
@@ -1669,10 +1708,10 @@
                     for(var i=0;i<ls.options.length;i++) if(ls.options[i].text===s.lab){ls.selectedIndex=i;break;}
                     for(var j=0;j<ins.options.length;j++) if(ins.options[j].text===s.instructor){ins.selectedIndex=j;break;}
                 }
-                calFilterSlotsByDate(); // ← filter trước khi set slot
+                calFilterSlotsByDate();
                 calSetSlotByTime(s?s.start:'07:00',s?s.end:'09:00');
                 var day=+document.getElementById('cal-f-day').value;
-                document.getElementById('cal-day-hint').textContent=day===0?'Áp dụng cho tất cả T2 → T7':(DAY_NAMES[day]||'');
+                document.getElementById('cal-day-hint').textContent=day===0?'Applies to all Mon → Sat':(DAY_NAMES[day]||'');
                 document.getElementById('cal-f-from').min=dateToIso(new Date());
                 updateFromHint();updateToHint();updateEffectiveInfo();
                 document.getElementById('cal-conflict').style.display='none';
@@ -1683,6 +1722,7 @@
 
             window.calCloseModal = function() { document.getElementById('cal-modal-bg').classList.remove('show'); editingId=null; };
 
+            // Validate, check conflicts, and submit the create/edit form
             window.calSave = function() {
                 var subj=document.getElementById('cal-f-subject').value.trim();
                 var start=document.getElementById('cal-f-start').value;
@@ -1690,12 +1730,12 @@
                 var day=+document.getElementById('cal-f-day').value;
                 var ls=document.getElementById('cal-f-lab'),is=document.getElementById('cal-f-instructor');
                 var from=document.getElementById('cal-f-from').value,to=document.getElementById('cal-f-to').value;
-                if(!subj){alert('Vui lòng nhập tên môn học');return;}
-                if(!ls.value){alert('Vui lòng chọn Lab');return;}
-                if(!is.value){alert('Vui lòng chọn Giảng viên');return;}
-                if(!start||!end){alert('Vui lòng chọn khung giờ');return;}
-                if(!from){alert('Vui lòng chọn ngày hiệu lực');return;}
-                if(to&&to<from){alert('Ngày kết thúc phải sau ngày bắt đầu hiệu lực');return;}
+                if(!subj){alert('Please enter the subject name');return;}
+                if(!ls.value){alert('Please select a Lab');return;}
+                if(!is.value){alert('Please select an Instructor');return;}
+                if(!start||!end){alert('Please select a time slot');return;}
+                if(!from){alert('Please select an effective date');return;}
+                if(to&&to<from){alert('End date must be after the effective start date');return;}
                 var daysToSubmit=(day===0)?[1,2,3,4,5,6]:[day];
                 var conflict=CAL_SCHEDULES.some(function(s){
                     if(editingId&&s.id===editingId)return false;
@@ -1704,7 +1744,9 @@
                     return ns<se&&ne>ss&&(s.lab===ls.options[ls.selectedIndex].text||s.instructor===is.options[is.selectedIndex].text);
                 });
                 if(conflict){document.getElementById('cal-conflict').style.display='block';return;}
-                if(day===0&&editingId){alert('Chức năng Tất cả chỉ dùng khi tạo mới. Vui lòng sửa từng ngày riêng.');return;}
+                if(day===0&&editingId){alert('The All-days option is only available when creating. Please edit each day individually.');return;}
+
+                // Submit days sequentially; last day uses a standard form submit to trigger redirect
                 function submitNext(i){
                     if(i>=daysToSubmit.length)return;
                     var d=daysToSubmit[i];
@@ -1714,19 +1756,20 @@
                     document.body.appendChild(form);
                     if(i<daysToSubmit.length-1){
                         form.action='/Schedule/CreateSilent';var data=new FormData(form);
-                        fetch('/Schedule/CreateSilent',{method:'POST',body:data}).then(function(r){if(!r.ok)r.text().then(function(t){alert('Lỗi ngày '+d+': '+t);});else submitNext(i+1);}).catch(function(){alert('Lỗi kết nối khi tạo lịch ngày '+d);});
+                        fetch('/Schedule/CreateSilent',{method:'POST',body:data}).then(function(r){if(!r.ok)r.text().then(function(t){alert('Error on day '+d+': '+t);});else submitNext(i+1);}).catch(function(){alert('Connection error while creating schedule for day '+d);});
                     } else {form.action=(editingId&&daysToSubmit.length===1)?'/Schedule/Edit':'/Schedule/Create';form.submit();}
                 }
                 submitNext(0);
             };
 
+            // Deactivate schedule: update UI immediately, call API silently
             window.calDeactivate = function() {
-                if(!editingId||!confirm('Xác nhận huỷ lịch học này?'))return;
+                if(!editingId||!confirm('Are you sure you want to cancel this schedule?'))return;
                 var sid=editingId,csrf=getCsrf();
                 var idx=CAL_SCHEDULES.findIndex(function(x){return x.id===sid;});
                 if(idx!==-1)CAL_SCHEDULES.splice(idx,1);
                 calCloseModal();calRender();renderFilterChips();
-                var toast=document.createElement('div');toast.className='cal-toast';toast.textContent='✅ Đã huỷ lịch học';document.body.appendChild(toast);
+                var toast=document.createElement('div');toast.className='cal-toast';toast.textContent='✅ Schedule cancelled';document.body.appendChild(toast);
                 setTimeout(function(){if(toast.parentNode)toast.parentNode.removeChild(toast);},2500);
                 var formData=new FormData();formData.append('__RequestVerificationToken',csrf);
                 fetch('/Schedule/Deactivate/'+sid,{method:'POST',body:formData}).catch(function(){});
@@ -1735,7 +1778,8 @@
             document.addEventListener('DOMContentLoaded', function(){
                 var bg=document.getElementById('cal-modal-bg');
                 if(bg) bg.addEventListener('click',function(e){if(e.target===this)calCloseModal();});
-                renderFilterChips();calRender();
+                renderFilterChips();
+                calRender();
             });
         })();
     </script>

@@ -32,7 +32,6 @@ namespace eAdmin.Web.Controllers
         {
             if (!ModelState.IsValid) return View(lab);
 
-            // Kiểm tra trùng LabName
             var exists = (await _uow.Labs.FindAsync(l =>
                 l.LabName.ToLower() == lab.LabName.ToLower().Trim()
             )).Any();
@@ -76,7 +75,6 @@ namespace eAdmin.Web.Controllers
         {
             if (!ModelState.IsValid) return View(lab);
 
-            // Kiểm tra trùng với lab khác (loại trừ chính nó)
             var exists = (await _uow.Labs.FindAsync(l =>
                 l.LabName.ToLower() == lab.LabName.ToLower().Trim() &&
                 l.LabId != lab.LabId
@@ -127,20 +125,32 @@ namespace eAdmin.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AuthorizeRoles("HOD")]
-        public async Task<IActionResult> RequestExtra(ExtraLabRequest request)
+        public async Task<IActionResult> RequestExtra(
+            ExtraLabRequest request,
+            [FromForm] string[] StartTimes,
+            [FromForm] string[] EndTimes)
         {
             async Task LoadLabs()
             {
                 ViewBag.Labs = new SelectList(await _uow.Labs.FindAsync(l => l.IsActive), "LabId", "LabName");
             }
 
-            // Gán RequestedBy TRƯỚC validation
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             request.RequestedBy = userId;
 
-            // Xoá lỗi navigation property không liên quan đến form
+            // Remove navigation property and direct StartTime/EndTime model errors (not bound from form)
             ModelState.Remove("Requester");
             ModelState.Remove("Lab");
+            ModelState.Remove("StartTime");
+            ModelState.Remove("EndTime");
+
+            // Validate that at least one slot was selected
+            if (StartTimes == null || StartTimes.Length == 0)
+            {
+                ModelState.AddModelError("", "Please select at least one time slot.");
+                await LoadLabs();
+                return View(request);
+            }
 
             if (!ModelState.IsValid)
             {
@@ -156,32 +166,44 @@ namespace eAdmin.Web.Controllers
                 return View(request);
             }
 
-            // Time validation
-            if (request.StartTime >= request.EndTime)
+            // Parse and validate each slot, then check for conflicts
+            for (int i = 0; i < StartTimes.Length; i++)
             {
-                ModelState.AddModelError("", "End time must be after start time.");
-                await LoadLabs();
-                return View(request);
+                if (!TimeSpan.TryParse(StartTimes[i], out var start) ||
+                    !TimeSpan.TryParse(EndTimes[i], out var end))
+                {
+                    ModelState.AddModelError("", $"Invalid time format for slot {i + 1}.");
+                    await LoadLabs();
+                    return View(request);
+                }
+
+                var conflict = await _uow.ExtraLabRequests.FindAsync(r =>
+                    r.LabId == request.LabId &&
+                    r.RequestDate.Date == request.RequestDate.Date &&
+                    r.Status == "Approved" &&
+                    start < r.EndTime &&
+                    end > r.StartTime
+                );
+
+                if (conflict.Any())
+                {
+                    ModelState.AddModelError("", $"Slot {StartTimes[i]}–{EndTimes[i]} is already booked.");
+                    await LoadLabs();
+                    return View(request);
+                }
+
+                await _uow.ExtraLabRequests.AddAsync(new ExtraLabRequest
+                {
+                    LabId = request.LabId,
+                    RequestDate = request.RequestDate,
+                    StartTime = start,
+                    EndTime = end,
+                    Purpose = request.Purpose,
+                    RequestedBy = userId,
+                    Status = "Pending"
+                });
             }
 
-            // Check trùng lịch Extra
-            var conflict = await _uow.ExtraLabRequests.FindAsync(r =>
-                r.LabId == request.LabId &&
-                r.RequestDate.Date == request.RequestDate.Date &&
-                r.Status == "Approved" &&
-                request.StartTime < r.EndTime &&
-                request.EndTime > r.StartTime
-            );
-
-            if (conflict.Any())
-            {
-                ModelState.AddModelError("", "This time slot is already booked.");
-                await LoadLabs();
-                return View(request);
-            }
-
-            request.Status = "Pending";
-            await _uow.ExtraLabRequests.AddAsync(request);
             await _uow.SaveChangesAsync();
 
             TempData["Success"] = "Request submitted. Admins have been notified.";
@@ -199,17 +221,16 @@ namespace eAdmin.Web.Controllers
             var req = await _uow.ExtraLabRequests.GetByIdAsync(id);
             if (req == null) return NotFound();
 
-            // Chặn approve nếu đã hết hạn (tính cả ngày + giờ kết thúc)
+            // Block approval if the request has already expired (date + end time have passed)
             if (status == "Approved" && DateTime.Now > req.RequestDate.Date.Add(req.EndTime))
             {
                 TempData["Error"] = "Cannot approve an expired request.";
                 return RedirectToAction(nameof(ExtraRequests));
             }
 
-            // Kiểm tra và xử lý conflict với LabSchedule thường khi Approve
             if (status == "Approved")
             {
-                // Chuyển đổi DayOfWeek: Sunday=0 → 7, Monday=1 → 1, ..., Saturday=6 → 6
+                // Convert DayOfWeek: Sunday=0 → 7, Monday=1 → 1, ..., Saturday=6 → 6
                 var jsDay = (int)req.RequestDate.DayOfWeek;
                 var dow = jsDay == 0 ? 7 : jsDay;
 
@@ -225,7 +246,6 @@ namespace eAdmin.Web.Controllers
 
                 if (conflictSchedules.Any() && !forceApprove)
                 {
-                    // Lưu thông tin conflict vào TempData để hiển thị cảnh báo
                     TempData["ConflictRequestId"] = id;
                     TempData["ConflictReply"] = reply;
                     TempData["ConflictStatus"] = status;
@@ -235,24 +255,23 @@ namespace eAdmin.Web.Controllers
 
                 if (conflictSchedules.Any() && forceApprove)
                 {
-                    // Deactivate các lịch bị trùng và notify giảng viên
+                    // Deactivate each conflicting regular schedule and notify its instructor
                     foreach (var s in conflictSchedules)
                     {
                         s.IsActive = false;
                         _uow.Schedules.Update(s);
 
-                        var cancelMsg = $"Lịch học '{s.SubjectName}' vào {req.RequestDate:dd/MM/yyyy} " +
-                                        $"({s.StartTime:hh\\:mm}–{s.EndTime:hh\\:mm}) đã bị huỷ " +
-                                        $"do phòng được sử dụng cho buổi học bổ sung của Khoa.";
+                        var cancelMsg = $"The schedule '{s.SubjectName}' on {req.RequestDate:dd/MM/yyyy} " +
+                                        $"({s.StartTime:hh\\:mm}–{s.EndTime:hh\\:mm}) has been cancelled " +
+                                        $"because the lab has been allocated for an extra session requested by the faculty.";
 
                         await _notify.SendAsync(s.InstructorId, "InApp",
-                            "Lịch học bị huỷ", cancelMsg, "LabSchedule", s.ScheduleId);
+                            "Schedule Cancelled", cancelMsg, "LabSchedule", s.ScheduleId);
                         await _notify.SendAsync(s.InstructorId, "SMS",
-                            "Lịch học bị huỷ", cancelMsg, "LabSchedule", s.ScheduleId);
+                            "Schedule Cancelled", cancelMsg, "LabSchedule", s.ScheduleId);
                     }
                 }
 
-                // Thêm vào LabSchedules: SubjectName = FullName HOD + Tên Khoa
                 var requester = await _uow.Users.GetByIdAsync(req.RequestedBy);
                 var department = requester?.DepartmentId != null
                     ? await _uow.Departments.GetByIdAsync(requester.DepartmentId.Value)
@@ -262,6 +281,7 @@ namespace eAdmin.Web.Controllers
                 if (department != null)
                     subjectName += $" – {department.DepartmentName}";
 
+                // Create a one-day schedule entry for the approved extra session
                 var schedule = new LabSchedule
                 {
                     LabId = req.LabId!.Value,
@@ -271,7 +291,7 @@ namespace eAdmin.Web.Controllers
                     StartTime = req.StartTime,
                     EndTime = req.EndTime,
                     EffectiveFrom = req.RequestDate.Date,
-                    EffectiveTo = req.RequestDate.Date,   // chỉ có hiệu lực 1 ngày
+                    EffectiveTo = req.RequestDate.Date,
                     IsActive = true
                 };
                 await _uow.Schedules.AddAsync(schedule);
@@ -282,7 +302,6 @@ namespace eAdmin.Web.Controllers
             _uow.ExtraLabRequests.Update(req);
             await _uow.SaveChangesAsync();
 
-            // Notify HOD kết quả
             var hodMsg = status == "Approved"
                 ? $"Your extra lab request for {req.RequestDate:dd/MM/yyyy} has been APPROVED. {reply}"
                 : $"Your extra lab request for {req.RequestDate:dd/MM/yyyy} has been REJECTED. Reason: {reply}";
